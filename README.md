@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-![Website Screenshot](./screenshot.png) <!-- Add a screenshot of your website here -->
+![Website Screenshot](./portfolio%20%website.png)
 
 Welcome to the repository of my personal portfolio website! A seamless blend of style and functionality, showcasing my journey, projects, and skills in the tech world. Built with modern web technologies and a touch of creativity to provide an interactive user experience. Dive in, explore, and let’s connect!
 
@@ -22,8 +22,8 @@ Welcome to the repository of my personal portfolio website! A seamless blend of 
 
 1. **Clone the Repository**
     ```bash
-    git clone https://github.com/yourusername/portfolio-website.git
-    cd portfolio-website
+    git clone https://github.com/hoangsonww/My-Portfolio-Website.git
+    cd My-Portfolio-Website
     ```
 2. **Open with Live Server**
     - If using VS Code, you can install the Live Server extension and start it to launch the website in your browser.
@@ -41,8 +41,7 @@ This project is open-source and available under the MIT License.
 
 I'm always open to connecting, collaborations, and conversations!
 
-- [LinkedIn](https://www.linkedin.com/in/yourusername/)
-- [Twitter](https://twitter.com/yourusername)
-- [Email](mailto:youremail@example.com)
+- [LinkedIn](https://www.linkedin.com/in/hoangsonw/)
+- [Email](mailto:hoangson091104@gmail.com)
 
 🚀 Let’s turn ideas into code, and code into experiences!
