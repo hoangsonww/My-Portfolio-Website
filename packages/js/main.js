@@ -174,6 +174,14 @@ function scrollUp() {
 }
 window.addEventListener("scroll", scrollUp);
 
+function scrollUp1() {
+    const scrollUp = document.getElementById("scroll-up1");
+    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
+    else scrollUp.classList.remove("show-scroll");
+}
+window.addEventListener("scroll", scrollUp1);
+
 /*==================== DARK LIGHT THEME ====================*/
 
 const themeButton = document.getElementById("theme-button");
@@ -322,3 +330,8 @@ document.getElementById('minimizeButton').addEventListener('click', function() {
         chatbotInput.style.display = '';
     }
 });
+
+window.onload = function() {
+    chatbotBody.style.display = 'none';
+    chatbotInput.style.display = 'none';
+};
