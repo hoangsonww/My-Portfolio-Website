@@ -16,7 +16,9 @@ Welcome to the repository of my personal portfolio website! A seamless blend of 
 - HTML5
 - CSS3
 - JavaScript
-- [Any other technologies or libraries used]
+- ReactJS
+- VueJS
+- Angular
 
 ## Installation and Usage
 
