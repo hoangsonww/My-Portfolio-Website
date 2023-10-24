@@ -46,4 +46,4 @@ I'm always open to connecting, collaborations, and conversations!
 - [LinkedIn](https://www.linkedin.com/in/hoangsonw/)
 - [Email](mailto:hoangson091104@gmail.com)
 
-🚀 Let’s turn ideas into code, and code into experiences!
+🚀 Let’s turn ideas into code, and code into experiences! Feel free to connect with me as well!
