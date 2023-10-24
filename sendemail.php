@@ -5,11 +5,11 @@
         $subject = $_POST['subject'];
         $message = $_POST['message'];
 
-        $to = "your_email_address@example.com";
+        $to = "hoangson091104@gmail.com";
         $headers = "From: $email" . "\r\n";
 
         mail($to, $subject, $message, $headers);
-        header('Location: thank-you.html');
+        header('Location: about.html');
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
