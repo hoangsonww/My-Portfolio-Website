@@ -35,14 +35,20 @@ const skillsContent = document.getElementsByClassName("skills__content"),
 
 function toggleSkills() {
     let itemClass = this.parentNode.className;
+    const offset = 100;
 
     for (i = 0; i < skillsContent.length; i++) {
         skillsContent[i].className = "skills__content skills__close";
     }
+
     if (itemClass === "skills__content skills__close") {
         this.parentNode.className = "skills__content skills__open";
+
+        const elementPosition = this.parentNode.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
     }
 }
+
 
 skillsHeader.forEach((el) => {
     el.addEventListener("click", toggleSkills);

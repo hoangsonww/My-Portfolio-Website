@@ -515,6 +515,9 @@ img {
 .skills__list {
     row-gap: 1.5rem;
     padding-left: 2.7rem;
+    overflow: hidden;
+    transition: max-height 0.9s ease-out;
+    max-height: 0;
 }
 
 .skills__titles {
@@ -623,6 +626,7 @@ img {
 .skills__open .skills__list {
     height: max-content;
     margin-bottom: var(--mb-2-5);
+    max-height: 1000px;
 }
 
 .skills__open .skills__arrow {
@@ -983,7 +987,7 @@ img {
 .footer__copy {
     font-size: var(--smaller-font-size);
     text-align: center;
-    color: var(--text-color-light);
+    color: white;
     margin-top: var(--mb-3);
 }
 
