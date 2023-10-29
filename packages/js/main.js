@@ -332,9 +332,12 @@ document.getElementById('minimizeButton').addEventListener('click', function() {
     }
 });
 
+const chatbotContainer = document.getElementById("chatbotContainer");
+
 window.onload = function() {
-    chatbotBody.style.display = 'none';
-    chatbotInput.style.display = 'none';
+    chatbotContainer.style.display = 'none';  // Hide the chatbot initially
+    chatbotBody.style.display = 'none';  // Existing line for chatbotBody
+    chatbotInput.style.display = 'none';  // Existing line for chatbotInput
 };
 
 const backToTopButton = document.getElementById("back-to-top");
@@ -346,8 +349,11 @@ backToTopButton.addEventListener("click", function() {
 
 window.addEventListener("scroll", function() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        backToTopButton.style.bottom = "10px"; // Moves the button into view
-    } else {
-        backToTopButton.style.bottom = "-20%"; // Hides the button
+        chatbotContainer.style.display = "block";
+        backToTopButton.style.bottom = "10px"; // The existing line for "back to top" button
+    }
+    else {
+        chatbotContainer.style.display = "none";
+        backToTopButton.style.bottom = "-20%"; // The existing line for "back to top" button
     }
 });
