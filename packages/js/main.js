@@ -315,6 +315,7 @@ function sendMessage(message) {
         chatbotBody.innerHTML += `
             <div style="text-align: left; margin-bottom: 10px; color: white;">${botReply}</div>
         `;
+        chatbotBody.scrollTop = chatbotBody.scrollHeight; // Auto-scroll to the latest message
     }, 1000);
 }
 
@@ -335,3 +336,18 @@ window.onload = function() {
     chatbotBody.style.display = 'none';
     chatbotInput.style.display = 'none';
 };
+
+const backToTopButton = document.getElementById("back-to-top");
+
+backToTopButton.addEventListener("click", function() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For other browsers
+});
+
+window.addEventListener("scroll", function() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        backToTopButton.style.bottom = "10px"; // Moves the button into view
+    } else {
+        backToTopButton.style.bottom = "-20%"; // Hides the button
+    }
+});
