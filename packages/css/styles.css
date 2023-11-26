@@ -69,6 +69,10 @@
     }
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /*========== Variables Dark theme ==========*/
 body.dark-theme {
     /* HSL color mode */
