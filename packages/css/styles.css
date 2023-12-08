@@ -1425,9 +1425,10 @@ scrollup1:hover {
 #back-to-top {
     position: fixed;
     left: 1rem;
+    cursor: pointer;
     bottom: -20%;
-    background-color: var(--first-color);
-    color: #fff;
+    background: none;
+    color: #000;
     padding: 0.3rem;
     border-radius: 8px;
     z-index: var(--z-tooltip);
