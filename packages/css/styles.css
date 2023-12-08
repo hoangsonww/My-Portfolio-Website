@@ -1425,14 +1425,14 @@ scrollup1:hover {
 #back-to-top {
     position: fixed;
     left: 1rem;
-    bottom: -20%; /* Initially placed outside of view */
-    background-color: var(--first-color); /* Use your primary color */
-    color: #fff; /* White text color */
+    bottom: -20%;
+    background-color: var(--first-color);
+    color: #fff;
     padding: 0.3rem;
     border-radius: 8px;
-    z-index: var(--z-tooltip); /* Use your z-index value */
-    transition: bottom 0.4s, background-color 0.4s; /* Smooth transition for moving up and color */
-    font-size: 1.5rem; /* Icon size */
+    z-index: var(--z-tooltip);
+    transition: bottom 0.4s, background-color 0.4s;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1442,7 +1442,7 @@ scrollup1:hover {
 }
 
 #back-to-top:hover {
-    background-color: var(--first-color-alt); /* Alternate color on hover */
+    color: var(--first-color-alt);
 }
 
 #back-to-top {
