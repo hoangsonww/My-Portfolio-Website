@@ -1428,7 +1428,7 @@ scrollup1:hover {
     cursor: pointer;
     bottom: -20%;
     background: none;
-    color: #000;
+    color: var(--first-color);
     padding: 0.3rem;
     border-radius: 8px;
     z-index: var(--z-tooltip);
@@ -1443,7 +1443,7 @@ scrollup1:hover {
 }
 
 #back-to-top:hover {
-    color: var(--first-color-alt);
+    color: #000;
 }
 
 #back-to-top {
