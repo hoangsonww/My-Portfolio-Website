@@ -60,6 +60,17 @@ class ProjectForm(FlaskForm):
     description = TextAreaField('Description')
     link = StringField('Link')
 
+class ContactForm(FlaskForm):
+    name = StringField('Name', validators=[validators.InputRequired(), validators.Length(min=4, max=15)])
+    email = StringField('Email', validators=[validators.InputRequired(), validators.Email(), validators.Length(max=50)])
+    message = TextAreaField('Message', validators=[validators.InputRequired(), validators.Length(max=500)])
+
+class Contact(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.Text)
+    message = db.Column(db.Text)
+
 class ProjectList(Resource):
     def get(self):
         projects = Project.query.all()
@@ -145,6 +156,65 @@ def logout():
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/projects')
+def projects():
+    projects = Project.query.all()
+    return render_template('projects.html', projects=projects)
+
+@app.route('/projects/<int:project_id>')
+def project_details(project_id):
+    project = Project.query.get_or_404(project_id)
+    return render_template('project-details.html', project=project)
+
+@app.route('/projects/<int:project_id>/edit', methods=['GET', 'POST'])
+@login_required
+def edit_project(project_id):
+    project = Project.query.get_or_404(project_id)
+    form = ProjectForm(obj=project)
+    if form.validate_on_submit():
+        project.title = form.title.data
+        project.description = form.description.data
+        project.link = form.link.data
+        db.session.commit()
+        return redirect(url_for('project_details', project_id=project.id))
+    return render_template('edit-project.html', form=form)
+
+@app.route('/projects/create', methods=['GET', 'POST'])
+@login_required
+def create_project():
+    form = ProjectForm()
+    if form.validate_on_submit():
+        project = Project(title=form.title.data, description=form.description.data, link=form.link.data)
+        db.session.add(project)
+        db.session.commit()
+        return redirect(url_for('project_details', project_id=project.id))
+    return render_template('create-project.html', form=form)
+
+@app.route('/projects/<int:project_id>/delete', methods=['POST'])
+@login_required
+def delete_project(project_id):
+    project = Project.query.get_or_404(project_id)
+    db.session.delete(project)
+    db.session.commit()
+    db.session.commit()
+    return redirect(url_for('projects'))
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/linkedin')
+def linkedin():
+    return render_template('linkedin.html')
+
+@app.route('/github')
+def github():
+    return render_template('github.html')
 
 if __name__ == '__main__':
     db.create_all()

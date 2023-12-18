@@ -766,6 +766,7 @@ img {
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
+    overflow-y: auto;
 }
 
 .services__modal-content {
@@ -773,6 +774,7 @@ img {
     background-color: var(--container-color);
     padding: 1.5rem;
     border-radius: 0.5rem;
+    overflow-y: auto;
 }
 
 .services__modal-services {
