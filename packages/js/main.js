@@ -98,22 +98,31 @@ modalCloses.forEach((modalClose) => {
 });
 
 /*==================== PORTFOLIO SWIPER  ====================*/
-let swiperPortfolio = new Swiper(".portfolio__container", {
-    cssMode: true,
+const swiperPortfolio = new Swiper('.portfolio__container', {
     loop: true,
-
+    loopAdditionalSlides: 3,
+    slidesPerView: 1, // Show only one slide at a time
+    spaceBetween: 3500, // You can adjust this value for spacing between slides
     navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
-
     pagination: {
-        el: ".swiper-pagination",
+        el: '.swiper-pagination',
         clickable: true,
     },
-
-    /* mousewheel: true,
-    keyboard: true, */
+    mousewheel: true,
+    keyboard: true,
+    on: {
+        reachBeginning: function() {
+            this.loopDestroy(); // Destroy loop
+            this.loopCreate(); // Create loop again
+        },
+        reachEnd: function() {
+            this.loopDestroy(); // Destroy loop
+            this.loopCreate(); // Create loop again
+        }
+    }
 });
 
 /*==================== TESTIMONIAL ====================*/
