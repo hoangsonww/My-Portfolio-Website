@@ -1480,5 +1480,31 @@ scrollup1:hover {
     #back-to-top {
         display: block;
     }
+}
 
+.scrollup[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-39%);
+    white-space: nowrap;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.scrollup[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover i.fa {
+    color: #00a4cc;
 }

@@ -438,3 +438,19 @@ function checkModalHeight() {
         modalContent.style.overflowY = 'hidden';
     }
 }
+
+document.addEventListener('scroll', function() {
+    var scrollUpButton = document.getElementById('back-to-top');
+    var footer = document.querySelector('footer');
+
+    var footerPosition = footer.getBoundingClientRect().top + window.scrollY;
+    var scrollPosition = window.scrollY + window.innerHeight;
+
+    if (scrollPosition >= footerPosition) {
+        // Change color to white when the scroll-up button reaches the footer
+        scrollUpButton.style.color = 'white';
+    } else {
+        // Revert to original color when not at the footer
+        scrollUpButton.style.color = ''; // replace '' with the original color if needed
+    }
+});

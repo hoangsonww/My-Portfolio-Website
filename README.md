@@ -18,7 +18,9 @@ Welcome to the repository of my personal portfolio website! A seamless blend of 
 - JavaScript
 - ReactJS
 - VueJS
-- Angular
+- SwiperJS
+- Django
+- REST APIs
 
 ## Installation and Usage
 
@@ -28,7 +30,7 @@ Welcome to the repository of my personal portfolio website! A seamless blend of 
     cd My-Portfolio-Website
     ```
 2. **Open with Live Server**
-    - If using VS Code, you can install the Live Server extension and start it to launch the website in your browser.
+    - If you're using VS Code, you can install the Live Server extension and start it to launch the website in your browser.
     - Alternatively, simply open the `index.html` file in your browser.
 
 ## Contributing
