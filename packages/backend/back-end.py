@@ -19,6 +19,94 @@ login_manager.login_view = 'login'
 photos = UploadSet('photos', IMAGES)
 configure_uploads(app, photos)
 
+class Chatbot(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    question = db.Column(db.String(100), nullable=False)
+    answer = db.Column(db.Text)
+
+class ChatbotForm(FlaskForm):
+    question = StringField('Question', validators=[validators.InputRequired()])
+    answer = TextAreaField('Answer')
+
+class ChatbotList(Resource):
+    def get(self):
+        chatbots = Chatbot.query.all()
+        return [{'id': chatbot.id, 'question': chatbot.question, 'answer': chatbot.answer} for chatbot in chatbots]
+
+    def post(self):
+        data = request.get_json()
+        new_chatbot = Chatbot(question=data['question'], answer=data['answer'])
+        db.session.add(new_chatbot)
+        db.session.commit()
+        return {'id': new_chatbot.id}, 201
+
+class ChatbotResource(Resource):
+    def get(self, chatbot_id):
+        chatbot = Chatbot.query.get_or_404(chatbot_id)
+        return {'question': chatbot.question, 'answer': chatbot.answer}
+
+    def put(self, chatbot_id):
+        chatbot = Chatbot.query.get_or_404(chatbot_id)
+        data = request.get_json()
+        chatbot.question = data['question']
+        chatbot.answer = data['answer']
+        db.session.commit()
+        return {'msg': 'Chatbot updated'}
+
+    def delete(self, chatbot_id):
+        chatbot = Chatbot.query.get_or_404(chatbot_id)
+        db.session.delete(chatbot)
+        db.session.commit()
+        return {'msg': 'Chatbot deleted'}
+
+api = Api(app)
+api.add_resource(ChatbotList, '/api/chatbots')
+api.add_resource(ChatbotResource, '/api/chatbots/<int:chatbot_id>')
+
+class Skill(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), nullable=False)
+    proficiency = db.Column(db.Integer)
+
+class SkillForm(FlaskForm):
+    name = StringField('Name', validators=[validators.InputRequired()])
+    proficiency = StringField('Proficiency')
+
+class SkillList(Resource):
+    def get(self):
+        skills = Skill.query.all()
+        return [{'id': skill.id, 'name': skill.name, 'proficiency': skill.proficiency} for skill in skills]
+
+    def post(self):
+        data = request.get_json()
+        new_skill = Skill(name=data['name'], proficiency=data['proficiency'])
+        db.session.add(new_skill)
+        db.session.commit()
+        return {'id': new_skill.id}, 201
+
+class SkillResource(Resource):
+    def get(self, skill_id):
+        skill = Skill.query.get_or_404(skill_id)
+        return {'name': skill.name, 'proficiency': skill.proficiency}
+
+    def put(self, skill_id):
+        skill = Skill.query.get_or_404(skill_id)
+        data = request.get_json()
+        skill.name = data['name']
+        skill.proficiency = data['proficiency']
+        db.session.commit()
+        return {'msg': 'Skill updated'}
+
+    def delete(self, skill_id):
+        skill = Skill.query.get_or_404(skill_id)
+        db.session.delete(skill)
+        db.session.commit()
+        return {'msg': 'Skill deleted'}
+
+api = Api(app)
+api.add_resource(SkillList, '/api/skills')
+api.add_resource(SkillResource, '/api/skills/<int:skill_id>')
+
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(100), unique=True)
@@ -110,6 +198,108 @@ api.add_resource(ProjectResource, '/api/projects/<int:project_id>')
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    if form.validate_on_submit():
+        new_contact = Contact(name=form.name.data, email=form.email.data, message=form.message.data)
+        db.session.add(new_contact)
+        db.session.commit()
+        return redirect(url_for('contact'))
+    return render_template('contact.html', form=form)
+
+@app.route('/contact/<int:contact_id>/delete', methods=['POST'])
+@login_required
+def delete_contact(contact_id):
+    contact = Contact.query.get_or_404(contact_id)
+    db.session.delete(contact)
+    db.session.commit()
+    return redirect(url_for('contact'))
+
+@app.route('/contact/<int:contact_id>/edit', methods=['GET', 'POST'])
+@login_required
+def edit_contact(contact_id):
+    contact = Contact.query.get_or_404(contact_id)
+    form = ContactForm(obj=contact)
+    if form.validate_on_submit():
+        contact.name = form.name.data
+        contact.email = form.email.data
+        contact.message = form.message.data
+        db.session.commit()
+        return redirect(url_for('contact'))
+    return render_template('edit-contact.html', form=form)
+
+@app.route('/contact/<int:contact_id>')
+@login_required
+def contact_details(contact_id):
+    contact = Contact.query.get_or_404(contact_id)
+    return render_template('contact-details.html', contact=contact)
+
+@app.route('/contacts')
+@login_required
+def contacts():
+    contacts = Contact.query.all()
+    return render_template('contacts.html', contacts=contacts)
+
+@app.route('/projects')
+def projects():
+    projects = Project.query.all()
+    return render_template('projects.html', projects=projects)
+
+@app.route('/projects/<int:project_id>')
+def project_details(project_id):
+    project = Project.query.get_or_404(project_id)
+    return render_template('project-details.html', project=project)
+
+@app.route('/projects/<int:project_id>/edit', methods=['GET', 'POST'])
+@login_required
+def edit_project(project_id):
+    project = Project.query.get_or_404(project_id)
+    form = ProjectForm(obj=project)
+    if form.validate_on_submit():
+        project.title = form.title.data
+        project.description = form.description.data
+        project.link = form.link.data
+        db.session.commit()
+        return redirect(url_for('project_details', project_id=project.id))
+    return render_template('edit-project.html', form=form)
+
+@app.route('/projects/create', methods=['GET', 'POST'])
+@login_required
+def create_project():
+    form = ProjectForm()
+    if form.validate_on_submit():
+        project = Project(title=form.title.data, description=form.description.data, link=form.link.data)
+        db.session.add(project)
+        db.session.commit()
+        return redirect(url_for('project_details', project_id=project.id))
+    return render_template('create-project.html', form=form)
+
+@app.route('/projects/<int:project_id>/delete', methods=['POST'])
+@login_required
+def delete_project(project_id):
+    project = Project.query.get_or_404(project_id)
+    db.session.delete(project)
+    db.session.commit()
+    return redirect(url_for('projects'))
+
+@app.route('/send_mail', methods=['POST'])
+def send_mail():
+    data = request.form
+    new_contact = Contact(name=data['name'], email=data['email'], message=data['message'])
+    db.session.add(new_contact)
+    db.session.commit()
+    return jsonify({"status": "success"}), 201
+
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.form
+    user = User(username=data['username'], email=data['email'])
+    user.set_password(data['password'])
+    db.session.add(user)
+    db.session.commit()
+    return jsonify({"status": "User registered successfully"}), 201
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

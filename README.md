@@ -19,7 +19,7 @@ Welcome to the repository of my personal portfolio website! A seamless blend of 
 - ReactJS
 - VueJS
 - SwiperJS
-- Django
+- Flask
 - REST APIs
 
 ## Installation and Usage
