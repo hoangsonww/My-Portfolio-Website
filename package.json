@@ -1,0 +1,44 @@
+{
+  "name": "son-nguyen-hoang-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website of Son Nguyen Hoang, showcasing skills and projects.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangsonww/portfolio.git"
+  },
+  "author": "Son Nguyen Hoang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoangsonww/portfolio/issues"
+  },
+  "homepage": "https://hoangsonww.github.io/portfolio",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "swiper": "^6.7.5",
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-plugin-react": "^7.24.0"
+  }
+}
