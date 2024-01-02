@@ -51,12 +51,10 @@ const tabs = document.querySelectorAll("[data-target]"),
 tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
         const target = document.querySelector(tab.dataset.target);
-
         tabContents.forEach((tabContent) => {
             tabContent.classList.remove("qualification__active");
         });
         target.classList.add("qualification__active");
-
         tabs.forEach((tab) => {
             tab.classList.remove("qualification__active");
         });
@@ -89,8 +87,8 @@ modalCloses.forEach((modalClose) => {
 const swiperPortfolio = new Swiper('.portfolio__container', {
     loop: true,
     loopAdditionalSlides: 3,
-    slidesPerView: 1, // Show only one slide at a time
-    spaceBetween: 3500, // You can adjust this value for spacing between slides
+    slidesPerView: 1,
+    spaceBetween: 3500,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -127,7 +125,8 @@ function scrollActive() {
             document
                 .querySelector(".nav__menu a[href*=" + sectionId + "]")
                 .classList.add("active-link");
-        } else {
+        }
+        else {
             document
                 .querySelector(".nav__menu a[href*=" + sectionId + "]")
                 .classList.remove("active-link");
@@ -138,7 +137,6 @@ window.addEventListener("scroll", scrollActive);
 
 function scrollHeader() {
     const nav = document.getElementById("header");
-    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
     if (this.scrollY >= 80) nav.classList.add("scroll-header");
     else nav.classList.remove("scroll-header");
 }
@@ -452,7 +450,8 @@ function checkModalHeight() {
 
     if (modalContentHeight > windowHeight) {
         modalContent.style.overflowY = 'scroll';
-    } else {
+    }
+    else {
         modalContent.style.overflowY = 'hidden';
     }
 }
@@ -466,7 +465,23 @@ document.addEventListener('scroll', function() {
 
     if (scrollPosition >= footerPosition) {
         scrollUpButton.style.color = 'white';
-    } else {
+    }
+    else {
         scrollUpButton.style.color = '';
     }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var chatbotContainer = document.getElementById('chatbotContainer');
+    var minimizeButton = document.getElementById('minimizeButton');
+
+    minimizeButton.addEventListener('click', function() {
+        if (chatbotContainer.classList.contains('minimized')) {
+            chatbotContainer.classList.remove('minimized');
+            minimizeButton.innerHTML = '+';
+        } else {
+            chatbotContainer.classList.add('minimized');
+            minimizeButton.innerHTML = '-';
+        }
+    });
 });

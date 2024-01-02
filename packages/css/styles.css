@@ -1471,6 +1471,11 @@ scrollup1:hover {
     z-index: 20;
 }
 
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 #scroll-up,
 #back-to-top {
     display: none;
