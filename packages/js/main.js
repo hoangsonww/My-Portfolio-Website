@@ -97,8 +97,6 @@ const swiperPortfolio = new Swiper('.portfolio__container', {
         el: '.swiper-pagination',
         clickable: true,
     },
-    mousewheel: true,
-    keyboard: true,
     on: {
         reachBeginning: function() {
             this.loopDestroy();

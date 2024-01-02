@@ -1471,6 +1471,11 @@ scrollup1:hover {
     z-index: 20;
 }
 
+#minimizeButton:hover {
+    background-color: #30abc2;
+
+}
+
 body {
     overflow-x: hidden;
     max-width: 100%;
