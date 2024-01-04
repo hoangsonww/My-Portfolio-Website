@@ -97,6 +97,8 @@ const swiperPortfolio = new Swiper('.portfolio__container', {
         el: '.swiper-pagination',
         clickable: true,
     },
+    mousewheel: true,
+    keyboard: true,
     on: {
         reachBeginning: function() {
             this.loopDestroy();
@@ -142,14 +144,14 @@ window.addEventListener("scroll", scrollHeader);
 
 function scrollUp() {
     const scrollUp = document.getElementById("scroll-up");
-    if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
+    if (this.scrollY >= 80) scrollUp.classList.add("show-scroll");
     else scrollUp.classList.remove("show-scroll");
 }
 window.addEventListener("scroll", scrollUp);
 
 function scrollUp1() {
     const scrollUp = document.getElementById("scroll-up1");
-    if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
+    if (this.scrollY >= 80) scrollUp.classList.add("show-scroll");
     else scrollUp.classList.remove("show-scroll");
 }
 window.addEventListener("scroll", scrollUp1);
