@@ -1,6 +1,10 @@
 # My Portfolio Website
 
-![Website Screenshot](utils/portfolioWebsite.png)
+<p align="center">
+  <a href="https://sonnguyenhoang.com">
+    <img src="utils/portfolioWebsite.png" alt="Website Screenshot" style="border-radius: 8px">
+  </a>
+</p>
 
 🚀 Welcome to the repository of my personal portfolio website! A seamless blend of style and functionality, showcasing my journey, projects, and skills in the tech world. Built with modern web technologies and a touch of creativity to provide an interactive user experience. Live at [https://sonnguyenhoang.com](https://sonnguyenhoang.com). Dive in, explore, and let’s connect!
 
@@ -19,7 +23,7 @@
 - **Performance:** Optimized for performance to ensure the website loads quickly and efficiently.
 - **Security:** Secure HTTPS connection to protect the integrity and confidentiality of the website.
 - **Version Control:** Version controlled with Git and hosted on GitHub for easy collaboration and deployment.
-- **Deployment:** Deployed on GitHub Paegs with a custom domain name for easy access and a professional look.
+- **Deployment:** Deployed on GitHub Pages with a custom domain name for easy access and a professional look.
 - **Analytics:** Google Analytics integration to track and analyze website traffic and user behavior.
 - **Maintenance:** Regularly maintained and updated to ensure the website is up-to-date and running smoothly.
 - **Documentation:** Well-documented code for easy understanding and future maintenance.
