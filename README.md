@@ -37,8 +37,7 @@
 - jQuery
 - Bootstrap
 - VanillaJS
-- ReactJS
-- VueJS
+- React
 - SwiperJS
 - Flask
 - REST APIs
