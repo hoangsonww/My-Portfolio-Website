@@ -166,7 +166,6 @@ img {
 
 .button:hover {
     background-color: var(--text-color);
-    color: var(--title-color);
 }
 
 .button__icon {
