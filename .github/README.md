@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://sonnguyenhoang.com">
-    <img src="utils/portfolioWebsite.png" alt="Website Screenshot" style="border-radius: 8px">
+    <img src="../utils/portfolioWebsite.png" alt="Website Screenshot" style="border-radius: 8px">
   </a>
 </p>
 
