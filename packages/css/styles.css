@@ -504,6 +504,7 @@ img {
 
 .skills__title {
     font-size: var(--h3-font-size);
+    color: var(--title-color);
 }
 
 .skills__subtitle {
