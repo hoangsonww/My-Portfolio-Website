@@ -10,6 +10,5 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="line" level="application" />
     <orderEntry type="library" name="line" level="application" />
-    <orderEntry type="library" name="font-awesome" level="application" />
   </component>
 </module>
