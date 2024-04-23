@@ -211,20 +211,14 @@ function elizaResponse(message) {
     else if (lowerMessage.includes("projects")) {
         return "Son has contributed to projects like RecipeGenie, MovieVerse, and is developing CommunitySphere. He also enhanced facial and user habit recognition at VNG Corporation.";
     }
-    else if (lowerMessage.includes("contact") || lowerMessage.includes("connect")) {
-        return "You can connect with Son through the contact form on this website or explore his LinkedIn profile linked here.";
-    }
     else if (lowerMessage.includes("internship") || lowerMessage.includes("job")) {
         return "Son has experience as a software engineering intern at VNG Corporation and is always open to new opportunities to apply his skills and contribute to innovative projects.";
     }
     else if (lowerMessage.includes("education")) {
         return "Son is pursuing a Bachelor of Science in Computer Science and a Bachelor of Arts in Economics from The University of North Carolina at Chapel Hill.";
     }
-    else if (lowerMessage.includes("vng corporation")) {
-        return "At VNG Corporation, Son played a significant role in AI and web development. He contributed to ZaloAI and TrueID, enhancing facial and user habit recognition using advanced technologies.";
-    }
-    else if (lowerMessage.includes("vng")) {
-        return "At VNG Corporation, Son played a significant role in AI and web development. He contributed to ZaloAI and TrueID, enhancing facial and user habit recognition using advanced technologies.";
+    else if (lowerMessage.includes("vng corporation") || lowerMessage.includes("vng corp") || lowerMessage.includes("vng")) {
+        return "At VNG Corporation, Son played a significant role in web development. He enhanced vCloudcam's security camera streaming using Web Assembly and WebRTC by optimizing the video streaming process, resulting in a 20% reduction in latency.";
     }
     else if (lowerMessage.includes("leadership")) {
         return "Son exhibited leadership as the Software Engineering Team Leader for the Google Student Developer Clubs. He organized weekly meetings, trained members, and reviewed codes.";
@@ -274,9 +268,6 @@ function elizaResponse(message) {
     else if (lowerMessage.includes("full-stack developer")) {
         return "Son has amassed significant experience as a full-stack developer. He has a comprehensive understanding of both front-end and back-end development, ensuring cohesive and seamless web applications.";
     }
-    else if (lowerMessage.includes("vng")) {
-        return "VNG Corporation is where Son interned and gained substantial experience in AI and web development. His contributions significantly impacted projects like ZaloAI and TrueID.";
-    }
     else if (lowerMessage.includes("pytorch") || lowerMessage.includes("tensorflow") || lowerMessage.includes("transformers")) {
         return "In his projects, Son has utilized advanced AI and machine learning technologies like PyTorch, TensorFlow, and Transformers. These tools enabled him to enhance functionalities like facial and user habit recognition.";
     }
@@ -295,7 +286,7 @@ function elizaResponse(message) {
     else if (lowerMessage.includes("recommendation")) {
         return "If you're looking for insights into a specific technology or seeking recommendations on web development tools, Son has extensive knowledge to share!";
     }
-    else if (lowerMessage.includes("contact")) {
+    else if (lowerMessage.includes("contact") || lowerMessage.includes("connect")) {
         return "You can connect with Son through the contact form on this website or explore his LinkedIn profile linked here: linkedin.com/in/hoangsonw.";
     }
     else if (lowerMessage.includes("linkedin")) {
@@ -312,9 +303,6 @@ function elizaResponse(message) {
     }
     else if (lowerMessage.includes("phone")) {
         return "You can find Son's phone number here: +1 (413) 437-6759";
-    }
-    else if (lowerMessage.includes("contact")) {
-        return "You can connect with Son through the contact form on this website or explore his LinkedIn profile linked here: linkedin.com/in/hoangsonw.";
     }
     else if (lowerMessage.includes("eventhorizon") || lowerMessage.includes("event horizon") || lowerMessage.includes("event-horizon") || lowerMessage.includes("event horizon project") || lowerMessage.includes("event-horizon project")) {
         return "EventHorizon is a project Son is currently developing. It's a platform that enables users to create and manage events.";

@@ -51,7 +51,3 @@ USER nodejs
 
 # Run the application
 CMD ["npm", "start"]
-CMD ["node", "index.js"]
-CMD ["node", "server.js"]
-CMD ["node", "app.js"]
-CMD ["node", "main.js"]
