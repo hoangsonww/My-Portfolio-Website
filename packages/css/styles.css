@@ -504,6 +504,7 @@ img {
 
 .skills__title {
     font-size: var(--h3-font-size);
+    color: var(--title-color);
 }
 
 .skills__subtitle {
@@ -1040,7 +1041,7 @@ img {
     transition: 0.4s;
 }
 
-scrollup1:hover {
+.scrollup1:hover {
     background-color: var(--first-color-alt);
 }
 
