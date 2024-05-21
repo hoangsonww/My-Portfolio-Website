@@ -1,4 +1,4 @@
-# My Portfolio Website
+# Welcome to My Portfolio Website!
 
 <p align="center">
   <a href="https://sonnguyenhoang.com">
@@ -45,7 +45,7 @@
 - GitHub
 - GitHub Pages
 - Google Analytics
-- Google Domains
+- Google Domains (now on Squarespace)
 
 ## Installation and Usage
 
@@ -74,7 +74,8 @@ I'm always open to connecting, collaborations, and conversations!
 
 - [LinkedIn](https://www.linkedin.com/in/hoangsonw/)
 - [Email](mailto:hoangson091104@gmail.com)
-
-🚀 Let’s turn ideas into code, and code into experiences! Feel free to connect with me as well!
+- [Portfolio](https://sonnguyenhoang.com)
 
 ---
+
+Created with ❤️ by [Son Nguyen](https://sonnguyenhoang.com) in 2023. Thanks for visiting!
