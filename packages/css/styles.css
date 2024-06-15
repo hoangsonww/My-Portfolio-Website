@@ -123,6 +123,23 @@ body {
     font-size: var(--normal-font-size);
     background-color: var(--body-color);
     color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+footer {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+input {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+textarea {
+    transition: background-color 0.5s, color 0.5s;
 }
 
 h1,
@@ -930,6 +947,7 @@ img {
     background-color: var(--input-color);
     border-radius: 0.5rem;
     padding: 0.75rem 1rem 0.25rem;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 .contact__label {
