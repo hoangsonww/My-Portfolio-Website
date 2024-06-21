@@ -430,11 +430,11 @@ window.addEventListener('resize', checkModalHeight);
 document.addEventListener('DOMContentLoaded', checkModalHeight);
 
 function checkModalHeight() {
-    var modalContent = document.querySelector('.services__modal-content');
+    let modalContent = document.querySelector('.services__modal-content');
     if (!modalContent) return;
 
-    var windowHeight = window.innerHeight;
-    var modalContentHeight = modalContent.scrollHeight;
+    let windowHeight = window.innerHeight;
+    let modalContentHeight = modalContent.scrollHeight;
 
     if (modalContentHeight > windowHeight) {
         modalContent.style.overflowY = 'scroll';
@@ -445,11 +445,11 @@ function checkModalHeight() {
 }
 
 document.addEventListener('scroll', function() {
-    var scrollUpButton = document.getElementById('back-to-top');
-    var footer = document.querySelector('footer');
+    let scrollUpButton = document.getElementById('back-to-top');
+    let footer = document.querySelector('footer');
 
-    var footerPosition = footer.getBoundingClientRect().top + window.scrollY;
-    var scrollPosition = window.scrollY + window.innerHeight;
+    let footerPosition = footer.getBoundingClientRect().top + window.scrollY;
+    let scrollPosition = window.scrollY + window.innerHeight;
 
     if (scrollPosition >= footerPosition) {
         scrollUpButton.style.color = 'white';
@@ -460,14 +460,15 @@ document.addEventListener('scroll', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var chatbotContainer = document.getElementById('chatbotContainer');
-    var minimizeButton = document.getElementById('minimizeButton');
+    let chatbotContainer = document.getElementById('chatbotContainer');
+    let minimizeButton = document.getElementById('minimizeButton');
 
     minimizeButton.addEventListener('click', function() {
         if (chatbotContainer.classList.contains('minimized')) {
             chatbotContainer.classList.remove('minimized');
             minimizeButton.innerHTML = '+';
-        } else {
+        }
+        else {
             chatbotContainer.classList.add('minimized');
             minimizeButton.innerHTML = '-';
         }
