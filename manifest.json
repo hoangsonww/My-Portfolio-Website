@@ -3,24 +3,24 @@
   "name": "Son Nguyen Hoang - Portfolio",
   "icons": [
     {
-      "src": "utils/icon-192x192.png",
+      "src": "utils/icon-192x192.webp",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/webp"
     },
     {
-      "src": "utils/icon-256x256.png",
+      "src": "utils/icon-256x256.webp",
       "sizes": "256x256",
-      "type": "image/png"
+      "type": "image/webp"
     },
     {
-      "src": "utils/icon-384x384.png",
+      "src": "utils/icon-384x384.webp",
       "sizes": "384x384",
-      "type": "image/png"
+      "type": "image/webp"
     },
     {
-      "src": "utils/icon-512x512.png",
+      "src": "utils/icon-512x512.webp",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/webp"
     }
   ],
   "start_url": "/",

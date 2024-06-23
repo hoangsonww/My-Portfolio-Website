@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--==================== UNICONS ====================-->
@@ -45,7 +43,7 @@
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Son Nguyen Hoang - Portfolio">
     <meta property="og:description" content="Explore the portfolio of Son Nguyen Hoang, a skilled Software Engineer and Business Analyst. Discover projects, skills, and professional insights.">
-    <meta property="og:image" content="https://sonnguyenhoang.com/utils/image.png">
+    <meta property="og:image" content="https://sonnguyenhoang.com/utils/image.webp">
     <meta property="og:url" content="https://sonnguyenhoang.com">
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website">
@@ -56,7 +54,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Son Nguyen Hoang - Portfolio">
     <meta name="twitter:description" content="Professional portfolio of Son Nguyen Hoang featuring diverse projects and skills in software engineering and business analysis.">
-    <meta name="twitter:image" content="https://sonnguyenhoang.com/utils/image.png">
+    <meta name="twitter:image" content="https://sonnguyenhoang.com/utils/image.webp">
     <link rel="icon" type="image/x-icon" href="utils/favicon.ico">
     <meta name="theme-color" content="#ffffff">
     <meta name="mobile-web-app-capable" content="yes">
@@ -75,6 +73,14 @@
 
         gtag('config', 'G-69TKSZGS7T');
     </script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
 </head>
 
 <body style="overflow-x: hidden">
@@ -101,6 +107,11 @@
                         </a>
                     </li>
                     <li class="nav__item">
+                        <a href="#qualifications" class="nav__link" title="View My Qualifications">
+                            <i class="uil uil-graduation-cap nav__icon" title="View My Qualifications"></i>Qualifications
+                        </a>
+                    </li>
+                    <li class="nav__item">
                         <a href="#services" class="nav__link" title="View The Services That I Can Provide!">
                             <i class="uil uil-briefcase-alt nav__icon" title="View The Services That I Can Provide!"></i>Services
                         </a>
@@ -119,8 +130,6 @@
                 <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
             <div class="nav__btns" style="margin-left: 9px;">
-                <!-- Theme change button -->
-
                 <i class="uil uil-moon change-theme" id="theme-button" title="Toggle Between Light/Dark Modes"></i>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -136,7 +145,6 @@
         <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__content grid">
-
                     <div class="home__social">
                         <a href="https://www.linkedin.com/in/hoangsonw/" target="_blank" class="home__social-icon" title="Visit my LinkedIn profile">
                             <i class="uil uil-linkedin-alt"></i>
@@ -170,9 +178,7 @@
                     <div class="home__data">
                         <h1 class="home__title">Hi, I'm Son Nguyen</h1>
                         <h3 class="home__subtitle">Software Engineer</h3>
-    <!--                    <h3 class="home__subtitle">Software Engineer & Business Analyst</h3>-->
-    <!--                    <p class="home__description">As a dedicated double-major in Computer Science & Economics from The University of North Carolina at Chapel Hill, I'm passionate about harnessing the synergy between technology and economics to drive innovation!</p>-->
-                        <p class="home__description">As a dedicated student at The University of North Carolina at Chapel Hill, I'm passionate about harnessing the synergy between technology and economics to drive innovation and growth!</p>
+                        <p class="home__description">As a dedicated CS & Econ student at The University of North Carolina at Chapel Hill, I'm passionate about harnessing the synergy between technology and economics to drive innovation and growth!</p>
                         <a href="#contact" class="button button--flex home__button">
                             Let's Connect! <i class="uil uil-message button__icon"></i>
                         </a>
@@ -182,7 +188,7 @@
                 <div class="home__scroll">
                     <a href="#about" class="home__scroll-button button--flex">
                         <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                        <span class="home__scroll-name">Please Scroll Down</span>
+                        <span class="home__scroll-name">Learn more about me!</span>
                         <i class="uil uil-arrow-down home__scroll-arrow"></i>
                     </a>
                 </div>
@@ -195,13 +201,13 @@
             <span class="section__subtitle">My introduction</span>
 
             <div class="about__container container grid">
-                <img src="packages/images/1684993594868.jfif" alt="Son Nguyen's Image" class="about__img">
+                <img src="packages/images/124531104.jpg" alt="Son Nguyen's Image" class="about__img">
                 <div class="about__data">
                     <p class="about__description">
-                        As a rising junior (3rd year) at the UNC-Chapel Hill, I am excited to embark on my journey to gain more experience and knowledge in my field of interest.
-                        I am open to any internships or work experiences that will help me prepare for my future career.
+                        Hello, world 👋 ! I'm currently a rising junior (3rd year student) at UNC-Chapel Hill, and I'm excited to embark on a journey to gain more experience and knowledge in my field of interest - Computer Science.
+                        Therefore, I'm open to any internships or work experiences that will help me prepare for my future career.
                         In addition to gaining professional experience, I am also excited to be a part of any professional team.
-                        I consider myself to be an outgoing, hard-working, and cooperative individual, and I believe I can contribute positively to any team that I join!
+                        I consider myself to be an outgoing, hard-working, and cooperative individual, and I believe I can contribute positively to any team that I am a part of!
                     </p>
                     <div class="about__info">
                         <div>
@@ -232,7 +238,7 @@
 
         <!--==================== SKILLS ====================-->
         <section class="skills section" id="skills">
-            <h2 class="section__title">Notable Skills</h2>
+            <h2 class="section__title">Skills</h2>
             <span class="section__subtitle">My technical levels</span>
 
             <div class="skills__container container grid">
@@ -242,7 +248,7 @@
                         <div class="skills__header">
                             <i class="uil uil-analytics skills__icon"></i>
                             <div>
-                                <div style="font-weight: bold;" class="skills__title">Generic SWE Skills</div>
+                                <div style="font-weight: bold;" class="skills__title">Languages & Tools</div>
                                 <span class="skills__subtitle">More than 3 years</span>
                             </div>
 
@@ -252,10 +258,10 @@
                             <div class="skills__data">
                                 <div class="skills__titles">
                                     <h3 class="skills__name">Python</h3>
-                                    <span class="skills__number">80%</span>
+                                    <span class="skills__number">90%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__python"></span>
+                                    <span class="skills__percentage skills__react"></span>
                                 </div>
                             </div>
                             <div class="skills__data">
@@ -279,10 +285,10 @@
                             <div class="skills__data">
                                 <div class="skills__titles">
                                     <h3 class="skills__name">TypeScript</h3>
-                                    <span class="skills__number">90%</span>
+                                    <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__react"></span>
+                                    <span class="skills__percentage skills__tab"></span>
                                 </div>
                             </div>
                             <div class="skills__data">
@@ -297,24 +303,42 @@
                             <div class="skills__data">
                                 <div class="skills__titles">
                                     <h3 class="skills__name">Go</h3>
-                                    <span class="skills__number">90%</span>
+                                    <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__google"></span>
+                                    <span class="skills__percentage skills__tab"></span>
                                 </div>
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">C</h3>
-                                    <span class="skills__number">70%</span>
+                                    <h3 class="skills__name">C/C++</h3>
+                                    <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__C"></span>
+                                    <span class="skills__percentage skills__tab"></span>
                                 </div>
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
                                     <h3 class="skills__name">Swift</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__js"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">R</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__js"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">PHP</h3>
                                     <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
@@ -324,28 +348,19 @@
                             <div class="skills__data">
                                 <div class="skills__titles">
                                     <h3 class="skills__name">Git</h3>
-                                    <span class="skills__number">100%</span>
+                                    <span class="skills__number">90%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__git"></span>
+                                    <span class="skills__percentage skills__google"></span>
                                 </div>
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
                                     <h3 class="skills__name">Docker</h3>
-                                    <span class="skills__number">70%</span>
+                                    <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__C"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Object-Oriented Programming</h3>
-                                    <span class="skills__number">84%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__OOP"></span>
+                                    <span class="skills__percentage skills__swift"></span>
                                 </div>
                             </div>
                         </div>
@@ -364,15 +379,6 @@
                             <i class="uil uil-angle-down skills__arrow"></i>
                         </div>
                         <div class="skills__list grid">
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">HTML5 & CSS3 & SASS</h3>
-                                    <span class="skills__number">90%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__html"></span>
-                                </div>
-                            </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
                                     <h3 class="skills__name">React</h3>
@@ -420,7 +426,7 @@
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">Express.js</h3>
+                                    <h3 class="skills__name">Express</h3>
                                     <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
@@ -463,6 +469,24 @@
                                     <span class="skills__percentage skills__react"></span>
                                 </div>
                             </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">RESTful APIs</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__react"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">HTML5 & CSS3 & SASS</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__html"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -481,29 +505,11 @@
                         <div class="skills__list grid">
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">Tableau</h3>
+                                    <h3 class="skills__name">Firebase</h3>
                                     <span class="skills__number">90%</span>
                                 </div>
                                 <div class="skills__bar">
                                     <span class="skills__percentage skills__office"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">MongoDB</h3>
-                                    <span class="skills__number">80%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__bank"></span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <div class="skills__titles">
-                                    <h3 class="skills__name">Firebase</h3>
-                                    <span class="skills__number">80%</span>
-                                </div>
-                                <div class="skills__bar">
-                                    <span class="skills__percentage skills__counter"></span>
                                 </div>
                             </div>
                             <div class="skills__data">
@@ -535,7 +541,7 @@
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">R</h3>
+                                    <h3 class="skills__name">MongoDB</h3>
                                     <span class="skills__number">90%</span>
                                 </div>
                                 <div class="skills__bar">
@@ -544,7 +550,7 @@
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">Stata</h3>
+                                    <h3 class="skills__name">Redis</h3>
                                     <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
@@ -553,7 +559,34 @@
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">SAS</h3>
+                                    <h3 class="skills__name">DynamoDB</h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__counter"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Red5 Media Server</h3>
+                                    <span class="skills__number">80%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__counter"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Tableau</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__office"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">PowerBI</h3>
                                     <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
@@ -640,16 +673,25 @@
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">Data Preprocessing</h3>
-                                    <span class="skills__number">80%</span>
+                                    <h3 class="skills__name">Optuna</h3>
+                                    <span class="skills__number">90%</span>
                                 </div>
                                 <div class="skills__bar">
-                                    <span class="skills__percentage skills__counter"></span>
+                                    <span class="skills__percentage skills__office"></span>
                                 </div>
                             </div>
                             <div class="skills__data">
                                 <div class="skills__titles">
-                                    <h3 class="skills__name">Neural Networks</h3>
+                                    <h3 class="skills__name">YOLOv3 & YOLOv8</h3>
+                                    <span class="skills__number">90%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__office"></span>
+                                </div>
+                            </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Data Preprocessing</h3>
                                     <span class="skills__number">80%</span>
                                 </div>
                                 <div class="skills__bar">
@@ -718,14 +760,13 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <!--==================== QUALIFICATIONS ====================-->
-        <section class="qualification__section">
-            <h2 class="section__title">Qualifications</h2>
+        <section class="qualification__section" id="qualifications" style="padding-top: 50px">
+            <h2 class="section__title" style="margin-top: 20px">Qualifications</h2>
             <span class="section__subtitle">My educational & professional journeys</span>
 
             <div class="qualification__container container">
@@ -744,100 +785,8 @@
                 <div class="qualification__sections">
                     <!--==================== QUALIFICATION CONTENT 1 ====================-->
                     <div class="qualification__content qualification__active" data-content id="education">
-    <!--                    &lt;!&ndash;==================== QUALIFICATION 1 ====================&ndash;&gt;-->
-    <!--                    <div class="qualification__data">-->
-    <!--                        <div>-->
-    <!--                            <h3 class="qualification__title">Bachelor of Science in Computer Science</h3>-->
-    <!--                            <span class="qualification__subtitle">-->
-    <!--                                <a href="https://www.unc.edu/" style="color: inherit;">The University of North Carolina at Chapel Hill</a>-->
-    <!--                            </span>-->
-    <!--                            <div class="qualification__calendar">-->
-    <!--                                <i class="uil uil-calendar-alt"></i>-->
-    <!--                                2022 - 2026-->
-    <!--                            </div>-->
-    <!--                            <span class="button button&#45;&#45;flex button&#45;&#45;small button&#45;&#45;link services__button">-->
-    <!--                                View my journey-->
-    <!--                                <i class="uil uil-arrow-right button__icon"></i>-->
-    <!--                            </span>-->
-    <!--                            <div class="services__modal">-->
-    <!--                                <div class="services__modal-content">-->
-    <!--                                    <h4 class="services__modal-title">The University of North Carolina at Chapel Hill <br></h4>-->
-    <!--                                    <i class="uil uil-times services__modal-close"></i>-->
 
-    <!--                                    <ul class="services__modal-services grid" style="overflow-x: auto">-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>Minoring in <strong>Data Science</strong>.</p>-->
-    <!--                                        </li>-->
-
-    <!--&lt;!&ndash;                                        <li class="services__modal-service">&ndash;&gt;-->
-    <!--&lt;!&ndash;                                            <i class="uil uil-check-circle services__modal-icon"></i>&ndash;&gt;-->
-    <!--&lt;!&ndash;                                            <p>Cumulative GPA: <strong>3.9/4.0</strong> (including transferred GPA from Case Western Reserve University).</p>&ndash;&gt;-->
-    <!--&lt;!&ndash;                                        </li>&ndash;&gt;-->
-
-    <!--&lt;!&ndash;                                        <li class="services__modal-service">&ndash;&gt;-->
-    <!--&lt;!&ndash;                                            <i class="uil uil-check-circle services__modal-icon"></i>&ndash;&gt;-->
-    <!--&lt;!&ndash;                                            <p>Current GPA: <strong>3.7/4.0</strong> (excluding transferred GPA from Case Western Reserve University).</p>&ndash;&gt;-->
-    <!--&lt;!&ndash;                                        </li>&ndash;&gt;-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>On the Dean's List for the Fall 2023 semester.</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>On the Dean's High Honors List for the Spring 2023 semester at Case Western Reserve University.</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>On the Dean's High Honors List for the Fall 2022 semester at Case Western Reserve University.</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>Member of the Competitive Programming Club at UNC-Chapel Hill.</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>Member of Carolina Analytics and Data Science (CADS).</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>Member of the Google Developer Student Clubs.</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>Student Ambassador for the Microsoft Learn Student Ambassador Program.</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        &lt;!&ndash;                                        <li class="services__modal-service">&ndash;&gt;-->
-    <!--                                        &lt;!&ndash;                                            <i class="uil uil-check-circle services__modal-icon"></i>&ndash;&gt;-->
-    <!--                                        &lt;!&ndash;                                            <p>Member of the Development Society at Carolina.</p>&ndash;&gt;-->
-    <!--                                        &lt;!&ndash;                                        </li>&ndash;&gt;-->
-
-    <!--                                        &lt;!&ndash;                                        <li class="services__modal-service">&ndash;&gt;-->
-    <!--                                        &lt;!&ndash;                                            <i class="uil uil-check-circle services__modal-icon"></i>&ndash;&gt;-->
-    <!--                                        &lt;!&ndash;                                            <p>Member of the Carolina Economics Club.</p>&ndash;&gt;-->
-    <!--                                        &lt;!&ndash;                                        </li>&ndash;&gt;-->
-
-    <!--                                    </ul>-->
-    <!--                                </div>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-
-    <!--                        <div>-->
-    <!--                            <span class="qualification__rounder"></span>-->
-    <!--                            <span class="qualification__line"></span>-->
-    <!--                        </div>-->
-    <!--                    </div>-->
-
-                        <!--==================== QUALIFICATION 2 ====================-->
+                        <!--==================== QUALIFICATION 1 ====================-->
                         <div class="qualification__data">
                             <div></div>
                             <div>
@@ -845,14 +794,13 @@
                                 <span class="qualification__line"></span>
                             </div>
                             <div>
-    <!--                            <h3 class="qualification__title">Bachelor of Arts in Economics</h3>-->
                                 <h3 class="qualification__title">Undergraduate Diploma</h3>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://www.unc.edu/" style="color: inherit;">The University of North Carolina at Chapel Hill</a>
                                 </span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
-                                    2022 - 2026
+                                    2022 - 2025
                                 </div>
                                 <span class="button button--flex button--small button--link services__button">
                                     View my journey
@@ -864,50 +812,34 @@
                                         <i class="uil uil-times services__modal-close"></i>
 
                                         <ul class="services__modal-services grid" style="overflow-x: auto">
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>Minoring in <strong>Data Science</strong>.</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>Cumulative GPA: <strong>3.9/4.0</strong> (including transferred GPA from Case Western Reserve University).</p>-->
-    <!--                                        </li>-->
-
-    <!--                                        <li class="services__modal-service">-->
-    <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-    <!--                                            <p>Current GPA: <strong>3.7/4.0</strong> (excluding transferred GPA from Case Western Reserve University).</p>-->
-    <!--                                        </li>-->
-
                                             <li class="services__modal-service">
                                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>On the Dean's List for 3 consecutive semesters.</p>
-                                            </li>
-
-<!--                                            <li class="services__modal-service">-->
-<!--                                                <i class="uil uil-check-circle services__modal-icon"></i>-->
-<!--                                                <p>On the Dean's List for the Spring 2023 semester.</p>-->
-<!--                                            </li>-->
-
-<!--                                            <li class="services__modal-service">-->
-<!--                                                <i class="uil uil-check-circle services__modal-icon"></i>-->
-<!--                                                <p>On the Dean's List for the Fall 2022 semester.</p>-->
-<!--                                            </li>-->
-
-                                            <li class="services__modal-service">
-                                                <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>Member of the Competitive Programming Club at UNC-Chapel Hill.</p>
+                                                <p>Pursuing <strong>Computer Science (B.S.), Economics (B.A.), and Data Science (Minor)</strong> degrees.</p>
                                             </li>
 
                                             <li class="services__modal-service">
                                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>Member of Carolina Analytics and Data Science (CADS).</p>
+                                                <p>Cumulative GPA: <strong>3.9/4.0</strong>.</p>
                                             </li>
 
                                             <li class="services__modal-service">
                                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>Member of the Google Developer Student Clubs.</p>
+                                                <p>On the Dean's List for <strong>4</strong> consecutive semesters.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>On track to graduate with distinction in December 2025.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Software Engineering Team Leader of the Google Developer Student Clubs at UNC-Chapel Hill.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Key Member of the Competitive Programming Club at UNC-Chapel Hill.</p>
                                             </li>
 
                                             <li class="services__modal-service">
@@ -915,27 +847,26 @@
                                                 <p>Student Ambassador for the Microsoft Learn Student Ambassador Program.</p>
                                             </li>
 
-                                            <!--                                        <li class="services__modal-service">-->
-                                            <!--                                            <i class="uil uil-check-circle services__modal-icon"></i>-->
-                                            <!--                                            <p>Member of the Development Society at Carolina.</p>-->
-                                            <!--                                        </li>-->
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Key Member of the Carolina Economics Club.</p>
+                                            </li>
 
                                             <li class="services__modal-service">
                                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>Member of the Carolina Economics Club.</p>
+                                                <p>Member of Carolina Analytics and Data Science (CADS).</p>
                                             </li>
-
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 3 ====================-->
+                        <!--==================== QUALIFICATION 2 ====================-->
                         <div class="qualification__data">
                             <div>
                                 <h3 class="qualification__title">High School Diploma</h3>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://macduffie.org/" style="color: inherit;">The MacDuffie School</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -955,7 +886,7 @@
 
                                             <li class="services__modal-service">
                                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>Final/Graduating GPA: <strong>4.36</strong> </p>
+                                                <p>Graduating GPA: <strong>4.36/4.0</strong> </p>
                                             </li>
 
                                             <li class="services__modal-service">
@@ -975,17 +906,17 @@
 
                                             <li class="services__modal-service">
                                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>President & Founder of the Video Games & Technology Club at MacDuffie</p>
+                                                <p>Founder of the Video Games & Technology Club at MacDuffie</p>
                                             </li>
 
                                             <li class="services__modal-service">
                                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>Vice President of the MacDuffie Economics Club.</p>
+                                                <p>Member of the MacDuffie Economics Club.</p>
                                             </li>
 
                                             <li class="services__modal-service">
                                                 <i class="uil uil-check-circle services__modal-icon"></i>
-                                                <p>Key Member of the MacDuffie Mustangs Robotics Club.</p>
+                                                <p>Member of the MacDuffie Robotics Club.</p>
                                             </li>
 
                                             <li class="services__modal-service">
@@ -1003,7 +934,7 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 4 ====================-->
+                        <!--==================== QUALIFICATION 3 ====================-->
                         <div class="qualification__data">
                             <div></div>
                             <div>
@@ -1013,7 +944,7 @@
 
                             <div>
                                 <a href="https://drive.google.com/file/d/12fheivRqdW3BXn_fAZvvUzDsKcpGPX3K/view?usp=drive_link" style="color: inherit;"><h3 class="qualification__title">DS102X: Machine Learning for Data Science and Analytics Certificate</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://drive.google.com/file/d/12fheivRqdW3BXn_fAZvvUzDsKcpGPX3K/view?usp=drive_link" style="color: inherit;">Columbia University</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -1023,11 +954,11 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 5 ====================-->
+                        <!--==================== QUALIFICATION 4 ====================-->
                         <div class="qualification__data">
                             <div>
                                 <a href="https://drive.google.com/file/d/1X2LTbKEve16P3QlT0ySS-uougq-8JlaE/view?usp=drive_link" style="color: inherit;"><h3 class="qualification__title">BDE1x: Big Data & Education Certificate</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://drive.google.com/file/d/1X2LTbKEve16P3QlT0ySS-uougq-8JlaE/view?usp=drive_link" style="color: inherit;">The University of Pennsylvania</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -1042,7 +973,7 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 6 ====================-->
+                        <!--==================== QUALIFICATION 5 ====================-->
                         <div class="qualification__data">
                             <div></div>
                             <div>
@@ -1052,7 +983,7 @@
 
                             <div>
                                 <a href="https://drive.google.com/file/d/10MVhLYfhjF8GMuyC6bj4M6A6ReccmIx3/view?usp=drive_link/" style="color: inherit;"><h3 class="qualification__title">PH125.4x: Data Science Certificates</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://drive.google.com/file/d/10MVhLYfhjF8GMuyC6bj4M6A6ReccmIx3/view?usp=drive_link/" style="color: inherit;">Harvard University</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -1062,11 +993,11 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 7 ====================-->
+                        <!--==================== QUALIFICATION 6 ====================-->
                         <div class="qualification__data">
                             <div>
                                 <a href="https://drive.google.com/file/d/1qM1YAlNScGq1rBjfWgtTlvoakGTJlnLV/view?usp=drive_link" style="color: inherit;"><h3 class="qualification__title">HCIxI: Human-Computer Interaction Certificate</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://drive.google.com/file/d/1qM1YAlNScGq1rBjfWgtTlvoakGTJlnLV/view?usp=drive_link" style="color: inherit;">Georgia Institute of Technology</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -1081,17 +1012,17 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 8 ====================-->
+                        <!--==================== QUALIFICATION 7 ====================-->
                         <div class="qualification__data">
                             <div></div>
                             <div>
-                                <span class="qualification__rounder"></span>
+                                <span class="qualification__rounder" style="margin-bottom: 5px"></span>
                                 <span class="qualification__line"></span>
                             </div>
 
                             <div>
                                 <a href="https://drive.google.com/file/d/1CX5JIPisEZTBlDLix6QjRDCRK8q0juHT/view?usp=sharing" style="color: inherit;"><h3 class="qualification__title">REST APIs Certificate</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://drive.google.com/file/d/1CX5JIPisEZTBlDLix6QjRDCRK8q0juHT/view?usp=sharing" style="color: inherit;">Codecademy</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -1101,11 +1032,11 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 9 ====================-->
+                        <!--==================== QUALIFICATION 8 ====================-->
                         <div class="qualification__data">
                             <div>
                                 <a href="https://drive.google.com/file/d/1YAg2Lfw661wurvCmS8OL15aEkZ6K8imG/view?usp=drive_link" style="color: inherit;"><h3 class="qualification__title">Analyzing Business Metrics with SQL Certificate</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://drive.google.com/file/d/1YAg2Lfw661wurvCmS8OL15aEkZ6K8imG/view?usp=drive_link" style="color: inherit;">Codecademy</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -1120,7 +1051,7 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 10 ====================-->
+                        <!--==================== QUALIFICATION 9 ====================-->
                         <div class="qualification__data">
                             <div></div>
                             <div>
@@ -1130,7 +1061,7 @@
 
                             <div>
                                 <a href="https://drive.google.com/file/d/1l8kl4sydQnGlezSMqUUQpHZhybL3LWQm/view?usp=drive_link" style="color: inherit;"><h3 class="qualification__title">CS198.1x: Bitcoin & Cryptocurrencies</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://drive.google.com/file/d/1l8kl4sydQnGlezSMqUUQpHZhybL3LWQm/view?usp=drive_link" style="color: inherit;">University of California, Berkeley</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -1140,11 +1071,11 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 11 ====================-->
+                        <!--==================== QUALIFICATION 10 ====================-->
                         <div class="qualification__data">
                             <div>
                                 <a href="https://drive.google.com/file/d/1Oovwt22whlkLqXl6H4XjTa5zRltpe3qy/view?usp=drive_link" style="color: inherit;"><h3 class="qualification__title">CYB003x: Building A Cybersecurity Toolkit</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 5px">
                                     <a href="https://drive.google.com/file/d/1Oovwt22whlkLqXl6H4XjTa5zRltpe3qy/view?usp=drive_link" style="color: inherit;">The University of Washington</a>
                                 </span>
                                 <div class="qualification__calendar">
@@ -1160,10 +1091,66 @@
                         </div>
                     </div>
 
-                    <!--==================== QUALIFICATION CONTENT 2 ====================-->
+                    <!--==================== QUALIFICATION CONTENT 2 - WORK ====================-->
                     <div class="qualification__content" data-content id="work">
 
                         <!--==================== QUALIFICATION 1 ====================-->
+                        <div class="qualification__data">
+                            <div>
+                                <a href="https://fpt.com/en/" style="color: inherit;"><h3 class="qualification__title">Software Engineering Intern</h3></a>
+                                <span class="qualification__subtitle" style="margin-bottom: 0">
+                                    <a href="https://fpt.com/en/" style="color: inherit;">FPT Corporation</a>
+                                </span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    June 2024 - August 2024
+                                </div>
+                                <span class="button button--flex button--small button--link services__button">
+                                    View Details
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <h4 class="services__modal-title">FPT Corporation <br></h4>
+                                        <i class="uil uil-times services__modal-close"></i>
+
+                                        <ul class="services__modal-services grid" style="overflow-x: auto">
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Contributed to the development of FPT ICDP, FPT Telecom’s internal communication platform.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Developed a new feature for FPT ICDP that allows users to send and receive encrypted messages.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Enhanced collaboration and communication between FPT teams by 25%.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Contributed to the development of AI-powered chatbots for FPT ICDP.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Technology Stack: <strong>React, Node.js, Express, MongoDB, Redis, Apache Kafka, RabbitMQ, and Docker.</strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <!--==================== QUALIFICATION 2 ====================-->
                         <div class="qualification__data">
                             <div></div>
                             <div>
@@ -1173,27 +1160,106 @@
 
                             <div>
                                 <a title="Click to visit our website!" href="https://huonghuacoltd.com" style="color: inherit;"><h3 class="qualification__title">Contract Fullstack Software Engineer</h3></a>
-                                <span class="qualification__subtitle" title="Click to visit our website! (FYI, we're in the process of choosing, negotiating, and purchasing a suitable domain name, and it'll take a while...)">
+                                <span class="qualification__subtitle" style="margin-bottom: 0" title="Click to visit our website!">
                                     <a href="https://huonghuacoltd.com" style="color: inherit;">Huong Hua Co., Ltd.</a>
                                 </span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
                                     December 2023 - February 2024
                                 </div>
+                                <span class="button button--flex button--small button--link services__button">
+                                    View Details
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <h4 class="services__modal-title">Huong Hua Co., Ltd. <br></h4>
+                                        <i class="uil uil-times services__modal-close"></i>
+
+                                        <ul class="services__modal-services grid" style="overflow-x: auto">
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Developed the company’s full-stack web application and job application database from scratch.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Implemented a new feature that allows users to apply for jobs directly on the company’s website.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Enhanced operational efficiency by 40%, handled over 50,000 users, and managed approx. 200 job applications per month.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Allowed the company to enhance its online presence and attract more foreign customers.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Technology Stack: <strong>PHP, React, Django, Figma, MongoDB, MySQL, Docker, and AWS.</strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 2 ====================-->
+                        <!--==================== QUALIFICATION 3 ====================-->
                         <div class="qualification__data">
                             <div>
                                 <a href="https://vng.com.vn/" style="color: inherit;"><h3 class="qualification__title">Software Engineering Intern</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 0">
                                     <a href="https://vng.com.vn/" style="color: inherit;">VNG Corporation</a>
                                 </span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
                                     June 2023 - August 2023
                                 </div>
+                                <span class="button button--flex button--small button--link services__button">
+                                    View Details
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <h4 class="services__modal-title">VNG Corporation <br></h4>
+                                        <i class="uil uil-times services__modal-close"></i>
+
+                                        <ul class="services__modal-services grid" style="overflow-x: auto">
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Contributed to the design and development of vCloudcam’s security camera management website.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Enhanced the website’s user interface and user experience, boosting site performance by 30%, and supporting user traffic of over 50,000 monthly visits.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Identified a performance issue and implemented a WASM-based solution that increased the website’s efficiency by 30%.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Rewrote the website’s backend code, improving the server’s response time by 40%.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Received the Best Intern Award for the 2023 Summer Internship Program by VNG Corporation.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Technology Stack: <strong>React, Angular, TailwindCSS, Webpack, Red5, Web Assembly, Golang, Beego, MongoDB, PostgreSQL, and Docker.</strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
 
                             <div>
@@ -1202,75 +1268,114 @@
                             </div>
                         </div>
 
-                        <!--==================== QUALIFICATION 3 ====================-->
+                        <!--==================== QUALIFICATION 4 ====================-->
                         <div class="qualification__data">
                             <div></div>
                             <div>
                                 <span class="qualification__rounder"></span>
                                 <span class="qualification__line"></span>
                             </div>
-
-                            <div>
-                                <a href="https://nativex.edu.vn/" style="color: inherit;"><h3 class="qualification__title">Teaching Assistant</h3></a>
-                                <span class="qualification__subtitle">
-                                    <a href="https://nativex.edu.vn/" style="color: inherit;">Topica NativeX Vietnam</a>
-                                </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    February 2023 - August 2023
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--==================== QUALIFICATION 4 ====================-->
-                        <div class="qualification__data">
                             <div>
                                 <a href="https://case.edu/" style="color: inherit;"><h3 class="qualification__title">Research Assistant</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 0">
                                     <a href="https://case.edu/" style="color: inherit;">Case Western Reserve University</a>
                                 </span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
                                     December 2022 - May 2023
                                 </div>
-                            </div>
+                                <span class="button button--flex button--small button--link services__button">
+                                    View Details
+                                    <i class="uil uil-arrow-right button__icon"></i>
+                                </span>
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <h4 class="services__modal-title">Case Western Reserve University <br></h4>
+                                        <i class="uil uil-times services__modal-close"></i>
 
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
+                                        <ul class="services__modal-services grid" style="overflow-x: auto">
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Research assistant of the Study of Southeast Asian Economics and Politics (SSEAP) project at CWRU's Jack, Joseph, and Morton Mandel School of Applied Social Sciences.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Conducted research on the economic and political development of Southeast Asian countries, focusing on Vietnam, Thailand, and Indonesia.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Assisted the researchers with minor tasks such as data entry and performing data simulations/visualizations.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>AEnsured data security and integrity for the research, allowing researchers to focus on more pressing tasks, while ensuring that the data was accurately recorded and analyzed.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Reviewed research information and proposals. This involved critically assessing the information provided and providing constructive feedback to the researchers, with the aim of enhancing the quality of their research.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Technology Stack: <strong>Microsoft Excel, Python's plotly, R's ggplot, GraphQL, and Tableau.</strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <!--==================== QUALIFICATION 5 ====================-->
                         <div class="qualification__data">
-                            <div></div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-
                             <div>
                                 <a href="https://case.edu/" style="color: inherit;"><h3 class="qualification__title">Peer Tutor</h3></a>
-                                <span class="qualification__subtitle">
+                                <span class="qualification__subtitle" style="margin-bottom: 0">
                                     <a href="https://case.edu/" style="color: inherit;">Case Western Reserve University</a>
                                 </span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
                                     February 2023 - May 2023
                                 </div>
-                            </div>
-                        </div>
-
-                        <!--==================== QUALIFICATION 6 ====================-->
-                        <div class="qualification__data">
-                            <div>
-                                <a href="https://www.upmerch.com/" style="color: inherit;"><h3 class="qualification__title">Sales & Business Partner and Customer Representative</h3></a>
-                                <span class="qualification__subtitle">
-                                    <a href="https://www.upmerch.com/" style="color: inherit;">UpMerch</a>
+                                <span class="button button--flex button--small button--link services__button">
+                                    View Details
+                                    <i class="uil uil-arrow-right button__icon"></i>
                                 </span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    December 2022 - May 2023
+                                <div class="services__modal">
+                                    <div class="services__modal-content">
+                                        <h4 class="services__modal-title">Case Western Reserve University <br></h4>
+                                        <i class="uil uil-times services__modal-close"></i>
+
+                                        <ul class="services__modal-services grid" style="overflow-x: auto">
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Peer tutor for the Programming in Java (CSDS 132) course at Case Western Reserve University.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Assisted students with understanding the course material, completing assignments, and preparing for exams.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Conducted weekly review sessions to help students understand the course material and prepare for exams.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Provided students with additional resources and study materials to help them succeed in the course.</p>
+                                            </li>
+
+                                            <li class="services__modal-service">
+                                                <i class="uil uil-check-circle services__modal-icon"></i>
+                                                <p>Technology Stack: <strong>Java, Eclipse, and IntelliJ IDEA.</strong></p>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
 
@@ -1285,7 +1390,7 @@
         </section>
 
         <!--==================== SERVICES ====================-->
-        <section class="services section" id="services">
+        <section class="services section" id="services" style="margin-top: 50px">
             <h2 class="section__title">Services</h2>
             <span class="section__subtitle">What I have to offer</span>
 
@@ -1307,12 +1412,6 @@
                             <i class="uil uil-times services__modal-close"></i>
 
                             <ul class="services__modal-services grid">
-
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Proficient in programming languages like Python, R, and Julia, commonly used for data analysis and machine learning.</p>
-                                </li>
-
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
                                     <p>Proficient in utilizing both supervised and unsupervised learning models to achieve desired outcomes.</p>
@@ -1320,7 +1419,7 @@
 
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Experience in building and deploying predictive models with tools like TensorFlow, PyTorch, and Scikit-Learn.</p>
+                                    <p>Experience in building and deploying predictive models with tools like TensorFlow, PyTorch, and Scikit-Learn & model fine-tuning with Optuna.</p>
                                 </li>
 
                                 <li class="services__modal-service">
@@ -1417,35 +1516,19 @@
                             <i class="uil uil-times services__modal-close"></i>
 
                             <ul class="services__modal-services grid">
-
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Experience with cloud platforms like AWS, Azure, and GCP for deploying and managing applications.</p>
+                                    <p>Experience with cloud platforms like Heroku and GCP for deploying and managing applications.</p>
                                 </li>
 
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Proficiency in full-stack development, working with both front-end and back-end technologies.</p>
+                                    <p>Proficiency in full-stack development - having worked with both front-end and back-end technologies.</p>
                                 </li>
 
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Experience with design & develop UI/UX.</p>
-                                </li>
-
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Strong knowledge in Data Structures and Algorithms.</p>
-                                </li>
-
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Familiar with various Version Control systems.</p>
-                                </li>
-
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Proficient in a variety of programming languages such as Java, Python, C++, and JavaScript.</p>
+                                    <p>Experience with designing & developing UI/UX.</p>
                                 </li>
 
                                 <li class="services__modal-service">
@@ -1460,14 +1543,13 @@
 
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Knowledgeable in containerization and orchestration with tools like Docker and Kubernetes.</p>
+                                    <p>Experience in containerization and orchestration with Docker and Kubernetes.</p>
                                 </li>
 
                                 <li class="services__modal-service">
                                     <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Familiarity with CI/CD pipelines using tools like Jenkins, GitLab CI, and Travis CI.</p>
+                                    <p>Familiarity with CI/CD pipelines using tools like Jenkins and GitLab CI.</p>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -1603,37 +1685,6 @@
                             </a>
                         </div>
                     </div>
-
-    <!--                &lt;!&ndash;==================== PORTFOLIO 9 ====================&ndash;&gt;-->
-
-    <!--                <div class="portfolio__content grid swiper-slide">-->
-    <!--                    <img src="./packages/images/vcloudcam.png" alt="vCloudcam website screenshot" class="portfolio__img">-->
-
-    <!--                    <div class="portfolio_">-->
-    <!--                        <h3 class="portfolio__title">vCloudcam's Websites</h3>-->
-    <!--                        <p class="portfolio__description">A project that I significantly contributed to during my internship at VNG Corporation, including the sales website and versions 1, 2, and 3 of the camera management website.</p>-->
-    <!--                        <a href="https://www.vngcloud.vn/en/product/vcloudcam" class="button button&#45;&#45;flex button&#45;&#45;small portfolio__button">-->
-    <!--                            View Live-->
-    <!--                            <i class="uil uil-arrow-right button__icon"></i>-->
-    <!--                        </a>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-
-    <!--                &lt;!&ndash;==================== PORTFOLIO 10 ====================&ndash;&gt;-->
-
-    <!--                <div class="portfolio__content grid swiper-slide">-->
-    <!--                    <img src="./packages/images/huonghua.png" alt="Huong Hua Co., Ltd. company website screenshot" class="portfolio__img">-->
-
-    <!--                    <div class="portfolio_">-->
-    <!--                        <h3 class="portfolio__title">Huong Hua Co., Ltd.'s Company Website</h3>-->
-    <!--                        <p class="portfolio__description">A full-stack website project that I built from scratch for a local business as a Freelance Fullstack Software Engineer.</p>-->
-    <!--                        <a href="https://huonghuacoltd.com/" class="button button&#45;&#45;flex button&#45;&#45;small portfolio__button">-->
-    <!--                            View Live-->
-    <!--                            <i class="uil uil-arrow-right button__icon"></i>-->
-    <!--                        </a>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-
                 </div>
 
                 <!-- Swiper arrows-->
@@ -1684,9 +1735,9 @@
 
                         <div>
                             <h3 class="contact__title">Call me</h3>
-                            <span class="contatc__subtitle">+1 (413) 437-6759</span>
+                            <span class="contatc__subtitle" style="color: inherit">+1 (413) 437-6759</span>
                             <br/>
-                            <span class="contatc__subtitle">+84 368971072</span>
+                            <span class="contatc__subtitle" style="color: inherit">+84 368971072</span>
                         </div>
                     </div>
 
@@ -1755,7 +1806,6 @@
                 <div>
                     <div style="font-weight: bold" class="footer__title">Son Nguyen</div>
                     <span class="footer__subtitle">Software Engineer</span>
-    <!--                <span class="footer__subtitle">Software Engineer & Business Analyst</span>-->
                 </div>
 
                 <ul class="footer__links">
@@ -1774,8 +1824,8 @@
                     <a href="https://www.linkedin.com/in/hoangsonw/" target="_blank" class="footer__social">
                         <i class="uil uil-linkedin"></i>
                     </a>
-                    <a href="https://www.instagram.com/hoangsonw_/" target="_blank" class="footer__social">
-                        <i class="uil uil-instagram"></i>
+                    <a href="mailto:hoangson091104@gmail.com" target="_blank" class="footer__social">
+                        <i class="uil uil-envelope"></i>
                     </a>
                     <a href="https://github.com/hoangsonww" target="_blank" class="footer__social">
                         <i class="uil uil-github"></i>
@@ -1803,7 +1853,7 @@
     <script src="./packages/js/swiper-bundle.min.js"></script>
 
     <!--==================== MAIN JS ====================-->
-    <script src="./packages/js/main.js"></script>
+    <script type="module" src="./packages/js/main.js"></script>
 
 </body>
 
