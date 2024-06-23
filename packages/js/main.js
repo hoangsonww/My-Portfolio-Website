@@ -22,6 +22,7 @@ function linkAction() {
     const navMenu = document.getElementById("nav-menu");
     navMenu.classList.remove("show-menu");
 }
+
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 const skillsContent = document.getElementsByClassName("skills__content"),
