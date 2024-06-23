@@ -264,6 +264,7 @@ async function sendMessage(message) {
     chatbotBody.appendChild(loadingElement);
 
     let dotCount = 0;
+
     let loadingInterval = setInterval(() => {
         loadingElement.textContent = "Loading" + ".".repeat(dotCount);
         dotCount = (dotCount + 1) % 4;
