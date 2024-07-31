@@ -7,6 +7,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "format": "prettier --config ./project-config/.prettierrc --write \"packages/js/*.{html,css,js,jsx,ts,tsx}\" \"packages/css/*.{html,css,js,jsx,ts,tsx}\" \"404.html\" \"index.html\"",
     "eject": "react-scripts eject"
   },
   "repository": {
@@ -26,13 +27,14 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.1",
+    "axios": "^1.7.2",
     "formik": "^2.2.9",
+    "prettier": "^3.3.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^3.0.1",
     "swiper": "^6.7.5",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.9"
