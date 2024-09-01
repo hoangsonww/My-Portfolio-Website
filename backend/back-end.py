@@ -333,6 +333,7 @@ def register():
     db.session.commit()
     return jsonify({"status": "User registered successfully"}), 201
 
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -345,6 +346,7 @@ def login():
             return redirect(url_for('login'))
     return render_template('login.html', form=form)
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
@@ -355,6 +357,7 @@ def register():
         db.session.commit()
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
+
 
 @app.route('/profile', methods=['GET', 'POST'])
 @login_required
@@ -368,6 +371,7 @@ def profile():
         db.session.commit()
         return redirect(url_for('profile'))
     return render_template('profile.html', form=form)
+
 
 @app.route('/logout')
 @login_required
