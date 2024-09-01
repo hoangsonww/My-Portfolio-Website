@@ -90,6 +90,7 @@ class SkillList(Resource):
         db.session.commit()
         return {'id': new_skill.id}, 201
 
+
 class SkillResource(Resource):
     def get(self, skill_id):
         skill = Skill.query.get_or_404(skill_id)
