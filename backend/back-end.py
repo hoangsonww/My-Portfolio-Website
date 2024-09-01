@@ -252,11 +252,13 @@ def edit_contact(contact_id):
         return redirect(url_for('contact'))
     return render_template('edit-contact.html', form=form)
 
+
 @app.route('/contact/<int:contact_id>')
 @login_required
 def contact_details(contact_id):
     contact = Contact.query.get_or_404(contact_id)
     return render_template('contact-details.html', contact=contact)
+
 
 @app.route('/contacts')
 @login_required
