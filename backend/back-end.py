@@ -279,6 +279,7 @@ def project_details(project_id):
     project = Project.query.get_or_404(project_id)
     return render_template('project-details.html', project=project)
 
+
 @app.route('/projects/<int:project_id>/edit', methods=['GET', 'POST'])
 @login_required
 def edit_project(project_id):
@@ -292,6 +293,7 @@ def edit_project(project_id):
         return redirect(url_for('project_details', project_id=project.id))
     return render_template('edit-project.html', form=form)
 
+
 @app.route('/projects/create', methods=['GET', 'POST'])
 @login_required
 def create_project():
@@ -302,6 +304,7 @@ def create_project():
         db.session.commit()
         return redirect(url_for('project_details', project_id=project.id))
     return render_template('create-project.html', form=form)
+
 
 @app.route('/projects/<int:project_id>/delete', methods=['POST'])
 @login_required
