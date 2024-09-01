@@ -48,10 +48,12 @@ def handle_500_error(e):
     logging.error(f'Internal Server Error: {e}')
     return jsonify({'message': 'Internal Server Error'}), 500
 
+
 @app.errorhandler(404)
 def handle_404_error(e):
     logging.warning(f'Not Found: {e}')
     return jsonify({'message': 'Resource not found'}), 404
+
 
 @app.route('/protected')
 @login_required
