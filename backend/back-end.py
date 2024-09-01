@@ -187,6 +187,7 @@ class ProjectList(Resource):
         db.session.commit()
         return {'id': new_project.id}, 201
 
+
 class ProjectResource(Resource):
     def get(self, project_id):
         project = Project.query.get_or_404(project_id)
