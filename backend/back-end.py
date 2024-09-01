@@ -239,6 +239,7 @@ def delete_contact(contact_id):
     db.session.commit()
     return redirect(url_for('contact'))
 
+
 @app.route('/contact/<int:contact_id>/edit', methods=['GET', 'POST'])
 @login_required
 def edit_contact(contact_id):
@@ -266,10 +267,12 @@ def contacts():
     contacts = Contact.query.all()
     return render_template('contacts.html', contacts=contacts)
 
+
 @app.route('/projects')
 def projects():
     projects = Project.query.all()
     return render_template('projects.html', projects=projects)
+
 
 @app.route('/projects/<int:project_id>')
 def project_details(project_id):
