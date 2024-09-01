@@ -437,17 +437,21 @@ def delete_project(project_id):
 def about():
     return render_template('about.html')
 
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
+
 
 @app.route('/linkedin')
 def linkedin():
     return render_template('linkedin.html')
 
+
 @app.route('/github')
 def github():
     return render_template('github.html')
+
 
 if __name__ == '__main__':
     db.create_all()
