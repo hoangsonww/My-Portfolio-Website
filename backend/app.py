@@ -10,14 +10,14 @@ import logging
 # Initialize Flask App
 app = Flask(__name__)
 
-# Database Configuration
+# Database Configuration (Replace with your own database URI if you want to use my project)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portfolio.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# Mail Configuration
+# Mail Configuration (Replace with your own mail server details if you want to use my project)
 app.config['MAIL_SERVER']='smtp.yourmailserver.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = 'your_email@example.com'
