@@ -1,7 +1,7 @@
 {
   "name": "son-nguyen-hoang-portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio website of Son Nguyen Hoang, showcasing skills and projects.",
+  "description": "Personal portfolio website of Son Nguyen Hoang, showcasing my skills and projects.",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/hoangsonww/portfolio.git"
   },
-  "author": "Son Nguyen Hoang",
+  "author": "Son Nguyen",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hoangsonww/portfolio/issues"
