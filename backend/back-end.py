@@ -379,19 +379,23 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/projects')
 def projects():
     projects = Project.query.all()
     return render_template('projects.html', projects=projects)
 
+
 @app.route('/projects/<int:project_id>')
 def project_details(project_id):
     project = Project.query.get_or_404(project_id)
     return render_template('project-details.html', project=project)
+
 
 @app.route('/projects/<int:project_id>/edit', methods=['GET', 'POST'])
 @login_required
