@@ -24,9 +24,11 @@ class Chatbot(db.Model):
     question = db.Column(db.String(100), nullable=False)
     answer = db.Column(db.Text)
 
+
 class ChatbotForm(FlaskForm):
     question = StringField('Question', validators=[validators.InputRequired()])
     answer = TextAreaField('Answer')
+
 
 class ChatbotList(Resource):
     def get(self):
@@ -39,6 +41,7 @@ class ChatbotList(Resource):
         db.session.add(new_chatbot)
         db.session.commit()
         return {'id': new_chatbot.id}, 201
+
 
 class ChatbotResource(Resource):
     def get(self, chatbot_id):
