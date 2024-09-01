@@ -193,6 +193,7 @@ class ProjectResource(Resource):
         project = Project.query.get_or_404(project_id)
         return {'title': project.title, 'description': project.description, 'link': project.link}
 
+
     def put(self, project_id):
         project = Project.query.get_or_404(project_id)
         data = request.get_json()
