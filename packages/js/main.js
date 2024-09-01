@@ -102,6 +102,7 @@ const swiperPortfolio = new Swiper('.portfolio__container', {
   },
   mousewheel: true,
   keyboard: true,
+  threshold: 20,
   on: {
     reachBeginning: function () {
       this.loopDestroy();
@@ -131,6 +132,7 @@ function scrollActive() {
     }
   });
 }
+
 window.addEventListener('scroll', scrollActive);
 
 function scrollHeader() {
@@ -138,6 +140,7 @@ function scrollHeader() {
   if (this.scrollY >= 80) nav.classList.add('scroll-header');
   else nav.classList.remove('scroll-header');
 }
+
 window.addEventListener('scroll', scrollHeader);
 
 function scrollUp() {
@@ -145,6 +148,7 @@ function scrollUp() {
   if (this.scrollY >= 80) scrollUp.classList.add('show-scroll');
   else scrollUp.classList.remove('show-scroll');
 }
+
 window.addEventListener('scroll', scrollUp);
 
 function scrollUp1() {
@@ -152,6 +156,7 @@ function scrollUp1() {
   if (this.scrollY >= 80) scrollUp.classList.add('show-scroll');
   else scrollUp.classList.remove('show-scroll');
 }
+
 window.addEventListener('scroll', scrollUp1);
 
 const themeButton = document.getElementById('theme-button');

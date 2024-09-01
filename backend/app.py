@@ -10,14 +10,14 @@ import logging
 # Initialize Flask App
 app = Flask(__name__)
 
-# Database Configuration
+# Database Configuration (Replace with your own database URI if you want to use my project)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///portfolio.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# Mail Configuration
+# Mail Configuration (Replace with your own mail server details if you want to use my project)
 app.config['MAIL_SERVER']='smtp.yourmailserver.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = 'your_email@example.com'
@@ -46,6 +46,7 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+
 # Database models
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -54,20 +55,24 @@ class Contact(db.Model):
     subject = db.Column(db.String(150))
     message = db.Column(db.Text)
 
+
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text)
     link = db.Column(db.String(200))
 
+
 class Skill(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     proficiency = db.Column(db.Integer)
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -78,6 +83,7 @@ def register():
     db.session.commit()
     return jsonify({"status": "User registered successfully"}), 201
 
+
 @app.route('/login', methods=['POST'])
 def login():
     data = request.form
@@ -87,11 +93,13 @@ def login():
         return jsonify({"status": "Logged in successfully"}), 200
     return jsonify({"status": "Invalid username or password"}), 401
 
+
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return jsonify({"status": "Logged out successfully"}), 200
+
 
 # Routes
 @app.route('/contact', methods=['POST'])
@@ -102,11 +110,13 @@ def contact():
     db.session.commit()
     return jsonify({"status": "success"}), 201
 
+
 @app.route('/projects', methods=['GET'])
 def get_projects():
     projects = Project.query.all()
     project_data = [{"title": project.title, "description": project.description, "link": project.link} for project in projects]
     return jsonify(project_data)
+
 
 @app.route('/skills', methods=['GET'])
 def get_skills():
@@ -114,14 +124,12 @@ def get_skills():
     skill_data = [{"name": skill.name, "proficiency": skill.proficiency} for skill in skills]
     return jsonify(skill_data)
 
+
 # Error handling
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
-if __name__ == '__main__':
-    db.create_all()
-    app.run(debug=True)
 
 @app.route('/send_mail', methods=['POST'])
 def send_mail():
@@ -130,6 +138,7 @@ def send_mail():
     msg.body = data['message']
     mail.send(msg)
     return jsonify({"status": "Email sent successfully"}), 200
+
 
 if __name__ == '__main__':
     db.create_all()

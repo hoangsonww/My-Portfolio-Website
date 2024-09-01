@@ -1,25 +1,25 @@
 {
   "name": "son-nguyen-hoang-portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio website of Son Nguyen Hoang, showcasing skills and projects.",
+  "description": "Personal portfolio website of Son Nguyen Hoang, showcasing my skills and projects.",
   "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "http-server -o",
+    "build": "npm run start",
+    "test": "http-server -o",
     "format": "prettier --config ./project-config/.prettierrc --write \"packages/js/*.{html,css,js,jsx,ts,tsx}\" \"packages/css/*.{html,css,js,jsx,ts,tsx}\" \"404.html\" \"index.html\"",
-    "eject": "react-scripts eject"
+    "install-deps": "npm install"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoangsonww/portfolio.git"
+    "url": "git+https://github.com/hoangsonww/My-Portfolio-Website.git"
   },
-  "author": "Son Nguyen Hoang",
+  "author": "Son Nguyen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hoangsonww/portfolio/issues"
+    "url": "https://github.com/hoangsonww/My-Portfolio-Website/issues"
   },
-  "homepage": "https://hoangsonww.github.io/portfolio",
+  "homepage": "https://github.com/hoangsonww/My-Portfolio-Website",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -32,15 +32,15 @@
     "prettier": "^3.3.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "^5.0.1",
     "swiper": "^6.7.5",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.9"
   },
   "devDependencies": {
     "eslint": "^7.31.0",
-    "eslint-plugin-react": "^7.24.0"
+    "eslint-plugin-react": "^7.24.0",
+    "http-server": "^14.1.1"
   }
 }

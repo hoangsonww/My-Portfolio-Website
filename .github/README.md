@@ -1,18 +1,21 @@
-# Welcome to My Portfolio Website!
+# Welcome to My Portfolio Website! 🌟
 
 <p align="center">
   <a href="https://sonnguyenhoang.com">
-    <img src="../utils/portfolioWebsite.png" alt="Website Screenshot" style="border-radius: 8px">
+    <img src="../utils/portfolioWebsite.png" alt="Portfolio UI" style="border-radius: 8px">
   </a>
 </p>
 
-🚀 Welcome to the repository of my personal portfolio website! A seamless blend of style and functionality, showcasing my journey, projects, and skills in the tech world. Built with modern web technologies and a touch of creativity to provide an interactive user experience. Live at [https://sonnguyenhoang.com](https://sonnguyenhoang.com). Dive in, explore, and let’s connect!
+🚀 Welcome to the repository of my personal portfolio website! A seamless blend of style and functionality, showcasing my journey, projects, and skills in the tech world. Built with modern web technologies and a touch of creativity to provide an interactive user experience. Dive in, explore, and let’s connect!
+
+**Currently live at [sonnguyenhoang.com](https://sonnguyenhoang.com).**
 
 ## Features
 
 - **Interactive UI/UX:** A user-friendly interface with interactive elements for an engaging user experience.
 - **Responsive Design:** Optimized for a variety of screen sizes and devices, ensuring accessibility and usability.
 - **Project Showcase:** A detailed glimpse into my projects, complete with images, descriptions, and live demo links.
+- **Personal Chatbot:** A personal chatbot for answering FAQs and providing information about me and my work.
 - **Contact Form:** A built-in contact form for easy communication, making staying in touch a breeze.
 - **Dark Mode:** A toggleable dark mode for a more comfortable viewing experience in low-light environments.
 - **Animations:** Smooth animations and transitions to enhance the user experience and make the website more dynamic.
@@ -22,12 +25,11 @@
 - **Accessibility:** Accessibility features to ensure the website is usable by people with disabilities.
 - **Performance:** Optimized for performance to ensure the website loads quickly and efficiently.
 - **Security:** Secure HTTPS connection to protect the integrity and confidentiality of the website.
+- **Flask Backend:** A Flask backend for handling contact form submissions and chatbot functionality.
 - **Version Control:** Version controlled with Git and hosted on GitHub for easy collaboration and deployment.
 - **Deployment:** Deployed on GitHub Pages with a custom domain name for easy access and a professional look.
 - **Analytics:** Google Analytics integration to track and analyze website traffic and user behavior.
 - **Maintenance:** Regularly maintained and updated to ensure the website is up-to-date and running smoothly.
-- **Documentation:** Well-documented code for easy understanding and future maintenance.
-- **Open-Source:** Open-source and available under the MIT License for easy sharing and collaboration.
 
 ## Technologies Used
 
@@ -36,16 +38,15 @@
 - JavaScript
 - jQuery
 - Bootstrap
-- VanillaJS
-- React
 - SwiperJS
+- HTTP Server
+- Webpack
 - Flask
 - REST APIs
 - Git
-- GitHub
 - GitHub Pages
 - Google Analytics
-- Google Domains (now on Squarespace)
+- Google Domains
 
 ## Installation and Usage
 
@@ -54,9 +55,15 @@
     git clone https://github.com/hoangsonww/My-Portfolio-Website.git
     cd My-Portfolio-Website
     ```
+   
 2. **Open with Live Server**
     - If you're using VS Code, you can install the Live Server extension and start it to launch the website in your browser.
     - Alternatively, simply open the `index.html` file in your browser.
+    - Also, you can run the following command:
+    ```bash
+    npm install
+    npm start
+    ```
 
 ## Contributing
 
@@ -66,7 +73,7 @@ If you use any ideas or code from this repository, please credit me by linking b
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the MIT License. See the [LICENSE](../LICENSE) file for more information.
 
 ## Connect with Me
 
@@ -78,4 +85,4 @@ I'm always open to connecting, collaborations, and conversations!
 
 ---
 
-Created with ❤️ by [Son Nguyen](https://sonnguyenhoang.com) in 2023. Thanks for visiting!
+Created with ❤️ by [Son Nguyen](https://sonnguyenhoang.com) in 2023. Thanks for visiting today! 🚀

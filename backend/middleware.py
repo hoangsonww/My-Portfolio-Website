@@ -13,6 +13,7 @@ logging.basicConfig(level=logging.INFO)
 def log_request_info():
     logging.info(f'Request URL: {request.url} Method: {request.method} Body: {request.get_data()}')
 
+
 # Middleware for Authenticating Routes
 def login_required(f):
     @wraps(f)
@@ -22,6 +23,7 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+
 def admin_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -29,6 +31,7 @@ def admin_required(f):
             return jsonify({'message': 'Admin rights are required'}), 403
         return f(*args, **kwargs)
     return decorated_function
+
 
 def admin_or_owner_required(f):
     @wraps(f)
@@ -38,21 +41,25 @@ def admin_or_owner_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+
 # Global Error Handler
 @app.errorhandler(500)
 def handle_500_error(e):
     logging.error(f'Internal Server Error: {e}')
     return jsonify({'message': 'Internal Server Error'}), 500
 
+
 @app.errorhandler(404)
 def handle_404_error(e):
     logging.warning(f'Not Found: {e}')
     return jsonify({'message': 'Resource not found'}), 404
 
+
 @app.route('/protected')
 @login_required
 def protected():
     return jsonify({'message': 'This is a protected route'})
+
 
 if __name__ == '__main__':
     app.run(debug=True)

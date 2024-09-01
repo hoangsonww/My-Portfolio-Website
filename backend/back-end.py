@@ -24,9 +24,11 @@ class Chatbot(db.Model):
     question = db.Column(db.String(100), nullable=False)
     answer = db.Column(db.Text)
 
+
 class ChatbotForm(FlaskForm):
     question = StringField('Question', validators=[validators.InputRequired()])
     answer = TextAreaField('Answer')
+
 
 class ChatbotList(Resource):
     def get(self):
@@ -39,6 +41,7 @@ class ChatbotList(Resource):
         db.session.add(new_chatbot)
         db.session.commit()
         return {'id': new_chatbot.id}, 201
+
 
 class ChatbotResource(Resource):
     def get(self, chatbot_id):
@@ -59,6 +62,7 @@ class ChatbotResource(Resource):
         db.session.commit()
         return {'msg': 'Chatbot deleted'}
 
+
 api = Api(app)
 api.add_resource(ChatbotList, '/api/chatbots')
 api.add_resource(ChatbotResource, '/api/chatbots/<int:chatbot_id>')
@@ -68,9 +72,11 @@ class Skill(db.Model):
     name = db.Column(db.String(80), nullable=False)
     proficiency = db.Column(db.Integer)
 
+
 class SkillForm(FlaskForm):
     name = StringField('Name', validators=[validators.InputRequired()])
     proficiency = StringField('Proficiency')
+
 
 class SkillList(Resource):
     def get(self):
@@ -83,6 +89,7 @@ class SkillList(Resource):
         db.session.add(new_skill)
         db.session.commit()
         return {'id': new_skill.id}, 201
+
 
 class SkillResource(Resource):
     def get(self, skill_id):
@@ -102,6 +109,7 @@ class SkillResource(Resource):
         db.session.delete(skill)
         db.session.commit()
         return {'msg': 'Skill deleted'}
+
 
 api = Api(app)
 api.add_resource(SkillList, '/api/skills')
@@ -124,18 +132,22 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[validators.InputRequired(), validators.Length(min=4, max=15)])
     password = PasswordField('Password', validators=[validators.InputRequired(), validators.Length(min=8, max=80)])
+
 
 class RegisterForm(FlaskForm):
     username = StringField('Username', validators=[validators.InputRequired(), validators.Length(min=4, max=15)])
     email = StringField('Email', validators=[validators.InputRequired(), validators.Email(), validators.Length(max=50)])
     password = PasswordField('Password', validators=[validators.InputRequired(), validators.Length(min=8, max=80)])
 
+
 class ProfileForm(FlaskForm):
     bio = TextAreaField('Bio', validators=[validators.Length(max=500)])
     resume = FileField('Upload Resume')
+
 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -143,21 +155,25 @@ class Project(db.Model):
     description = db.Column(db.Text)
     link = db.Column(db.String(200))
 
+
 class ProjectForm(FlaskForm):
     title = StringField('Title', validators=[validators.InputRequired()])
     description = TextAreaField('Description')
     link = StringField('Link')
+
 
 class ContactForm(FlaskForm):
     name = StringField('Name', validators=[validators.InputRequired(), validators.Length(min=4, max=15)])
     email = StringField('Email', validators=[validators.InputRequired(), validators.Email(), validators.Length(max=50)])
     message = TextAreaField('Message', validators=[validators.InputRequired(), validators.Length(max=500)])
 
+
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.Text)
     message = db.Column(db.Text)
+
 
 class ProjectList(Resource):
     def get(self):
@@ -171,10 +187,12 @@ class ProjectList(Resource):
         db.session.commit()
         return {'id': new_project.id}, 201
 
+
 class ProjectResource(Resource):
     def get(self, project_id):
         project = Project.query.get_or_404(project_id)
         return {'title': project.title, 'description': project.description, 'link': project.link}
+
 
     def put(self, project_id):
         project = Project.query.get_or_404(project_id)
@@ -185,11 +203,13 @@ class ProjectResource(Resource):
         db.session.commit()
         return {'msg': 'Project updated'}
 
+
     def delete(self, project_id):
         project = Project.query.get_or_404(project_id)
         db.session.delete(project)
         db.session.commit()
         return {'msg': 'Project deleted'}
+
 
 api = Api(app)
 api.add_resource(ProjectList, '/api/projects')
@@ -198,6 +218,7 @@ api.add_resource(ProjectResource, '/api/projects/<int:project_id>')
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -209,6 +230,7 @@ def contact():
         return redirect(url_for('contact'))
     return render_template('contact.html', form=form)
 
+
 @app.route('/contact/<int:contact_id>/delete', methods=['POST'])
 @login_required
 def delete_contact(contact_id):
@@ -216,6 +238,7 @@ def delete_contact(contact_id):
     db.session.delete(contact)
     db.session.commit()
     return redirect(url_for('contact'))
+
 
 @app.route('/contact/<int:contact_id>/edit', methods=['GET', 'POST'])
 @login_required
@@ -230,11 +253,13 @@ def edit_contact(contact_id):
         return redirect(url_for('contact'))
     return render_template('edit-contact.html', form=form)
 
+
 @app.route('/contact/<int:contact_id>')
 @login_required
 def contact_details(contact_id):
     contact = Contact.query.get_or_404(contact_id)
     return render_template('contact-details.html', contact=contact)
+
 
 @app.route('/contacts')
 @login_required
@@ -242,15 +267,18 @@ def contacts():
     contacts = Contact.query.all()
     return render_template('contacts.html', contacts=contacts)
 
+
 @app.route('/projects')
 def projects():
     projects = Project.query.all()
     return render_template('projects.html', projects=projects)
 
+
 @app.route('/projects/<int:project_id>')
 def project_details(project_id):
     project = Project.query.get_or_404(project_id)
     return render_template('project-details.html', project=project)
+
 
 @app.route('/projects/<int:project_id>/edit', methods=['GET', 'POST'])
 @login_required
@@ -265,6 +293,7 @@ def edit_project(project_id):
         return redirect(url_for('project_details', project_id=project.id))
     return render_template('edit-project.html', form=form)
 
+
 @app.route('/projects/create', methods=['GET', 'POST'])
 @login_required
 def create_project():
@@ -276,6 +305,7 @@ def create_project():
         return redirect(url_for('project_details', project_id=project.id))
     return render_template('create-project.html', form=form)
 
+
 @app.route('/projects/<int:project_id>/delete', methods=['POST'])
 @login_required
 def delete_project(project_id):
@@ -283,6 +313,7 @@ def delete_project(project_id):
     db.session.delete(project)
     db.session.commit()
     return redirect(url_for('projects'))
+
 
 @app.route('/send_mail', methods=['POST'])
 def send_mail():
@@ -292,6 +323,7 @@ def send_mail():
     db.session.commit()
     return jsonify({"status": "success"}), 201
 
+
 @app.route('/register', methods=['POST'])
 def register():
     data = request.form
@@ -300,6 +332,7 @@ def register():
     db.session.add(user)
     db.session.commit()
     return jsonify({"status": "User registered successfully"}), 201
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -313,6 +346,7 @@ def login():
             return redirect(url_for('login'))
     return render_template('login.html', form=form)
 
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
@@ -323,6 +357,7 @@ def register():
         db.session.commit()
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
+
 
 @app.route('/profile', methods=['GET', 'POST'])
 @login_required
@@ -337,25 +372,30 @@ def profile():
         return redirect(url_for('profile'))
     return render_template('profile.html', form=form)
 
+
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/projects')
 def projects():
     projects = Project.query.all()
     return render_template('projects.html', projects=projects)
 
+
 @app.route('/projects/<int:project_id>')
 def project_details(project_id):
     project = Project.query.get_or_404(project_id)
     return render_template('project-details.html', project=project)
+
 
 @app.route('/projects/<int:project_id>/edit', methods=['GET', 'POST'])
 @login_required
@@ -370,6 +410,7 @@ def edit_project(project_id):
         return redirect(url_for('project_details', project_id=project.id))
     return render_template('edit-project.html', form=form)
 
+
 @app.route('/projects/create', methods=['GET', 'POST'])
 @login_required
 def create_project():
@@ -381,6 +422,7 @@ def create_project():
         return redirect(url_for('project_details', project_id=project.id))
     return render_template('create-project.html', form=form)
 
+
 @app.route('/projects/<int:project_id>/delete', methods=['POST'])
 @login_required
 def delete_project(project_id):
@@ -390,21 +432,26 @@ def delete_project(project_id):
     db.session.commit()
     return redirect(url_for('projects'))
 
+
 @app.route('/about')
 def about():
     return render_template('about.html')
+
 
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
 
+
 @app.route('/linkedin')
 def linkedin():
     return render_template('linkedin.html')
 
+
 @app.route('/github')
 def github():
     return render_template('github.html')
+
 
 if __name__ == '__main__':
     db.create_all()
