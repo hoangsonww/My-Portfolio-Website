@@ -37,6 +37,8 @@
 - jQuery
 - Bootstrap
 - SwiperJS
+- HTTP Server
+- Webpack
 - Flask
 - REST APIs
 - Git
