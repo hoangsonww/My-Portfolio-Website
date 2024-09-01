@@ -155,15 +155,18 @@ class Project(db.Model):
     description = db.Column(db.Text)
     link = db.Column(db.String(200))
 
+
 class ProjectForm(FlaskForm):
     title = StringField('Title', validators=[validators.InputRequired()])
     description = TextAreaField('Description')
     link = StringField('Link')
 
+
 class ContactForm(FlaskForm):
     name = StringField('Name', validators=[validators.InputRequired(), validators.Length(min=4, max=15)])
     email = StringField('Email', validators=[validators.InputRequired(), validators.Email(), validators.Length(max=50)])
     message = TextAreaField('Message', validators=[validators.InputRequired(), validators.Length(max=500)])
+
 
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
