@@ -102,6 +102,7 @@ const swiperPortfolio = new Swiper('.portfolio__container', {
   },
   mousewheel: true,
   keyboard: true,
+  threshold: 20,
   on: {
     reachBeginning: function () {
       this.loopDestroy();
