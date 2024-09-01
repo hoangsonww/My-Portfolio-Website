@@ -109,6 +109,7 @@ def contact():
     db.session.add(new_contact)
     db.session.commit()
     return jsonify({"status": "success"}), 201
+    
 
 @app.route('/projects', methods=['GET'])
 def get_projects():
