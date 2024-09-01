@@ -62,6 +62,7 @@ class ChatbotResource(Resource):
         db.session.commit()
         return {'msg': 'Chatbot deleted'}
 
+
 api = Api(app)
 api.add_resource(ChatbotList, '/api/chatbots')
 api.add_resource(ChatbotResource, '/api/chatbots/<int:chatbot_id>')
