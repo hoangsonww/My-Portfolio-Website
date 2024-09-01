@@ -219,6 +219,7 @@ api.add_resource(ProjectResource, '/api/projects/<int:project_id>')
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
@@ -228,6 +229,7 @@ def contact():
         db.session.commit()
         return redirect(url_for('contact'))
     return render_template('contact.html', form=form)
+
 
 @app.route('/contact/<int:contact_id>/delete', methods=['POST'])
 @login_required
