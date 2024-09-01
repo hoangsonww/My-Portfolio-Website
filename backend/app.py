@@ -124,6 +124,7 @@ def get_skills():
     skill_data = [{"name": skill.name, "proficiency": skill.proficiency} for skill in skills]
     return jsonify(skill_data)
 
+
 # Error handling
 @app.errorhandler(404)
 def not_found(error):
