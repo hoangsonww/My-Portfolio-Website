@@ -54,6 +54,11 @@
 2. **Open with Live Server**
     - If you're using VS Code, you can install the Live Server extension and start it to launch the website in your browser.
     - Alternatively, simply open the `index.html` file in your browser.
+    - Also, you can run the following command:
+    ```bash
+    npm install
+    npm start
+    ```
 
 ## Contributing
 
