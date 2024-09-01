@@ -314,6 +314,7 @@ def delete_project(project_id):
     db.session.commit()
     return redirect(url_for('projects'))
 
+
 @app.route('/send_mail', methods=['POST'])
 def send_mail():
     data = request.form
@@ -321,6 +322,7 @@ def send_mail():
     db.session.add(new_contact)
     db.session.commit()
     return jsonify({"status": "success"}), 201
+
 
 @app.route('/register', methods=['POST'])
 def register():
