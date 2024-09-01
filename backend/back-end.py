@@ -137,14 +137,17 @@ class LoginForm(FlaskForm):
     username = StringField('Username', validators=[validators.InputRequired(), validators.Length(min=4, max=15)])
     password = PasswordField('Password', validators=[validators.InputRequired(), validators.Length(min=8, max=80)])
 
+
 class RegisterForm(FlaskForm):
     username = StringField('Username', validators=[validators.InputRequired(), validators.Length(min=4, max=15)])
     email = StringField('Email', validators=[validators.InputRequired(), validators.Email(), validators.Length(max=50)])
     password = PasswordField('Password', validators=[validators.InputRequired(), validators.Length(min=8, max=80)])
 
+
 class ProfileForm(FlaskForm):
     bio = TextAreaField('Bio', validators=[validators.Length(max=500)])
     resume = FileField('Upload Resume')
+
 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
