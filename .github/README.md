@@ -82,4 +82,4 @@ I'm always open to connecting, collaborations, and conversations!
 
 ---
 
-Created with ❤️ by [Son Nguyen](https://sonnguyenhoang.com) in 2023. Thanks for visiting!
+Created with ❤️ by [Son Nguyen](https://sonnguyenhoang.com) in 2023. Thanks for visiting today! 🚀
