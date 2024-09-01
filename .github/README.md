@@ -29,6 +29,7 @@
 - **Maintenance:** Regularly maintained and updated to ensure the website is up-to-date and running smoothly.
 
 ## Technologies Used
+
 - HTML5
 - CSS3
 - JavaScript
