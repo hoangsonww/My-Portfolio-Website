@@ -27,8 +27,6 @@
 - **Deployment:** Deployed on GitHub Pages with a custom domain name for easy access and a professional look.
 - **Analytics:** Google Analytics integration to track and analyze website traffic and user behavior.
 - **Maintenance:** Regularly maintained and updated to ensure the website is up-to-date and running smoothly.
-- **Documentation:** Well-documented code for easy understanding and future maintenance.
-- **Open-Source:** Open-source and available under the MIT License for easy sharing and collaboration.
 
 ## Technologies Used
 
