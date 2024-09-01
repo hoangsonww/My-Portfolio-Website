@@ -109,13 +109,14 @@ def contact():
     db.session.add(new_contact)
     db.session.commit()
     return jsonify({"status": "success"}), 201
-    
+
 
 @app.route('/projects', methods=['GET'])
 def get_projects():
     projects = Project.query.all()
     project_data = [{"title": project.title, "description": project.description, "link": project.link} for project in projects]
     return jsonify(project_data)
+
 
 @app.route('/skills', methods=['GET'])
 def get_skills():
