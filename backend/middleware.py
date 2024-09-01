@@ -32,6 +32,7 @@ def admin_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+
 def admin_or_owner_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -39,6 +40,7 @@ def admin_or_owner_required(f):
             return jsonify({'message': 'Admin rights or owner status required'}), 403
         return f(*args, **kwargs)
     return decorated_function
+
 
 # Global Error Handler
 @app.errorhandler(500)
