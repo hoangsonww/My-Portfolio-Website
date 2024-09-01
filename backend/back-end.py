@@ -203,11 +203,13 @@ class ProjectResource(Resource):
         db.session.commit()
         return {'msg': 'Project updated'}
 
+
     def delete(self, project_id):
         project = Project.query.get_or_404(project_id)
         db.session.delete(project)
         db.session.commit()
         return {'msg': 'Project deleted'}
+
 
 api = Api(app)
 api.add_resource(ProjectList, '/api/projects')
