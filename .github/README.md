@@ -1,4 +1,4 @@
-# Welcome to My Portfolio Website!
+# Welcome to My Portfolio Website! 🌟
 
 <p align="center">
   <a href="https://sonnguyenhoang.com">
