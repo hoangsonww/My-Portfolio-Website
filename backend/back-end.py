@@ -174,6 +174,7 @@ class Contact(db.Model):
     email = db.Column(db.Text)
     message = db.Column(db.Text)
 
+
 class ProjectList(Resource):
     def get(self):
         projects = Project.query.all()
