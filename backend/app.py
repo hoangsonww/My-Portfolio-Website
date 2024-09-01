@@ -100,6 +100,7 @@ def logout():
     logout_user()
     return jsonify({"status": "Logged out successfully"}), 200
 
+
 # Routes
 @app.route('/contact', methods=['POST'])
 def contact():
