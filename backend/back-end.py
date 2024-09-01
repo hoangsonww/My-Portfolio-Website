@@ -110,6 +110,7 @@ class SkillResource(Resource):
         db.session.commit()
         return {'msg': 'Skill deleted'}
 
+
 api = Api(app)
 api.add_resource(SkillList, '/api/skills')
 api.add_resource(SkillResource, '/api/skills/<int:skill_id>')
