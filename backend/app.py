@@ -131,11 +131,6 @@ def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
 
-if __name__ == '__main__':
-    db.create_all()
-    app.run(debug=True)
-
-
 @app.route('/send_mail', methods=['POST'])
 def send_mail():
     data = request.form
@@ -143,6 +138,7 @@ def send_mail():
     msg.body = data['message']
     mail.send(msg)
     return jsonify({"status": "Email sent successfully"}), 200
+
 
 if __name__ == '__main__':
     db.create_all()
