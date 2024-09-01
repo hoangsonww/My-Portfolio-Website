@@ -82,7 +82,7 @@ def register():
     db.session.add(user)
     db.session.commit()
     return jsonify({"status": "User registered successfully"}), 201
-    
+
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -92,6 +92,7 @@ def login():
         login_user(user)
         return jsonify({"status": "Logged in successfully"}), 200
     return jsonify({"status": "Invalid username or password"}), 401
+
 
 @app.route('/logout')
 @login_required
