@@ -132,6 +132,7 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[validators.InputRequired(), validators.Length(min=4, max=15)])
     password = PasswordField('Password', validators=[validators.InputRequired(), validators.Length(min=8, max=80)])
