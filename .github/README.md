@@ -44,6 +44,7 @@
 - Google Analytics
 - Google Domains
 - HTTP Server
+- Webpack
 
 ## Installation and Usage
 
