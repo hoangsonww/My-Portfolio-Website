@@ -75,6 +75,7 @@ class SkillForm(FlaskForm):
     name = StringField('Name', validators=[validators.InputRequired()])
     proficiency = StringField('Proficiency')
 
+
 class SkillList(Resource):
     def get(self):
         skills = Skill.query.all()
