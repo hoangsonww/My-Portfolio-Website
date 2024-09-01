@@ -82,6 +82,7 @@ def register():
     db.session.add(user)
     db.session.commit()
     return jsonify({"status": "User registered successfully"}), 201
+    
 
 @app.route('/login', methods=['POST'])
 def login():
