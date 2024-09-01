@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/hoangsonww/My-Portfolio-Website/issues"
   },
-  "homepage": "https://hoangsonww.github.io/portfolio",
+  "homepage": "https://github.com/hoangsonww/My-Portfolio-Website",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
