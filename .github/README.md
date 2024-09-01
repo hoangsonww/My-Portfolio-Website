@@ -13,7 +13,7 @@
 - **Interactive UI/UX:** A user-friendly interface with interactive elements for an engaging user experience.
 - **Responsive Design:** Optimized for a variety of screen sizes and devices, ensuring accessibility and usability.
 - **Project Showcase:** A detailed glimpse into my projects, complete with images, descriptions, and live demo links.
-- **Personal Charisma:** A personal touch to showcase my journey, skills, and personality, making the website unique and memorable.
+- **Personal Chatbot:** A personal chatbot for answering FAQs and providing information about me and my work.
 - **Contact Form:** A built-in contact form for easy communication, making staying in touch a breeze.
 - **Dark Mode:** A toggleable dark mode for a more comfortable viewing experience in low-light environments.
 - **Animations:** Smooth animations and transitions to enhance the user experience and make the website more dynamic.
