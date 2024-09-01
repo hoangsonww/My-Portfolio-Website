@@ -156,6 +156,7 @@ function scrollUp1() {
   if (this.scrollY >= 80) scrollUp.classList.add('show-scroll');
   else scrollUp.classList.remove('show-scroll');
 }
+
 window.addEventListener('scroll', scrollUp1);
 
 const themeButton = document.getElementById('theme-button');
