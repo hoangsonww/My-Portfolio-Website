@@ -130,6 +130,7 @@ def get_skills():
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
 
+
 if __name__ == '__main__':
     db.create_all()
     app.run(debug=True)
