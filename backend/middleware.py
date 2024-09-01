@@ -60,5 +60,6 @@ def handle_404_error(e):
 def protected():
     return jsonify({'message': 'This is a protected route'})
 
+
 if __name__ == '__main__':
     app.run(debug=True)
