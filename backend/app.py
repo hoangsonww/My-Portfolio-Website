@@ -46,6 +46,7 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+
 # Database models
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -54,20 +55,24 @@ class Contact(db.Model):
     subject = db.Column(db.String(150))
     message = db.Column(db.Text)
 
+
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text)
     link = db.Column(db.String(200))
 
+
 class Skill(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     proficiency = db.Column(db.Integer)
 
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
 
 @app.route('/register', methods=['POST'])
 def register():
