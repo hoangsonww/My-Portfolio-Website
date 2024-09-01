@@ -43,7 +43,7 @@
 - GitHub Pages
 - Google Analytics
 - Google Domains
-- 
+- HTTP Server
 
 ## Installation and Usage
 
