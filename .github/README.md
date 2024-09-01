@@ -36,16 +36,13 @@
 - JavaScript
 - jQuery
 - Bootstrap
-- VanillaJS
-- React
 - SwiperJS
 - Flask
 - REST APIs
 - Git
-- GitHub
 - GitHub Pages
 - Google Analytics
-- Google Domains (now on Squarespace)
+- Google Domains
 
 ## Installation and Usage
 
