@@ -23,6 +23,7 @@
 - **Accessibility:** Accessibility features to ensure the website is usable by people with disabilities.
 - **Performance:** Optimized for performance to ensure the website loads quickly and efficiently.
 - **Security:** Secure HTTPS connection to protect the integrity and confidentiality of the website.
+- **Flask Backend:** A Flask backend for handling contact form submissions and chatbot functionality.
 - **Version Control:** Version controlled with Git and hosted on GitHub for easy collaboration and deployment.
 - **Deployment:** Deployed on GitHub Pages with a custom domain name for easy access and a professional look.
 - **Analytics:** Google Analytics integration to track and analyze website traffic and user behavior.
