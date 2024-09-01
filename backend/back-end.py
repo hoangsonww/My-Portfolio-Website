@@ -71,6 +71,7 @@ class Skill(db.Model):
     name = db.Column(db.String(80), nullable=False)
     proficiency = db.Column(db.Integer)
 
+
 class SkillForm(FlaskForm):
     name = StringField('Name', validators=[validators.InputRequired()])
     proficiency = StringField('Proficiency')
