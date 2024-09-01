@@ -13,6 +13,7 @@ logging.basicConfig(level=logging.INFO)
 def log_request_info():
     logging.info(f'Request URL: {request.url} Method: {request.method} Body: {request.get_data()}')
 
+
 # Middleware for Authenticating Routes
 def login_required(f):
     @wraps(f)
@@ -21,6 +22,7 @@ def login_required(f):
             return jsonify({'message': 'Authentication is required'}), 403
         return f(*args, **kwargs)
     return decorated_function
+
 
 def admin_required(f):
     @wraps(f)
