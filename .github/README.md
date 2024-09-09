@@ -64,6 +64,12 @@
     npm install
     npm start
     ```
+   
+3. **Code Formatting**
+    - Sometimes, you may want to format the code using Prettier. You can do so by running the following command:
+    ```bash
+    npm run format
+    ```
 
 ## Contributing
 
