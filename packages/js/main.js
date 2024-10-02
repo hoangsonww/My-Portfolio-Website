@@ -17,7 +17,7 @@ if (navClose) {
 }
 const ctx = document.getElementById('skillsChart').getContext('2d');
 const skillsChart = new Chart(ctx, {
-  type: 'radar', // Radar chart
+  type: 'radar',
   data: {
     labels: [
       'Languages',
@@ -32,47 +32,47 @@ const skillsChart = new Chart(ctx, {
     ],
     datasets: [{
       label: 'Skill Level (%)',
-      data: [85, 88, 85, 90, 85, 85, 85, 90, 80], // Calculated averages
-      backgroundColor: 'rgba(75, 192, 192, 0.2)', // Light green fill
-      borderColor: 'rgba(75, 192, 192, 1)', // Dark green border
+      data: [85, 88, 85, 90, 85, 85, 85, 90, 80],
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
       borderWidth: 2,
-      pointBackgroundColor: 'rgba(75, 192, 192, 1)', // Point color
-      pointBorderColor: '#fff', // Point border
-      pointHoverBackgroundColor: '#fff', // Hover background
-      pointHoverBorderColor: 'rgba(75, 192, 192, 1)', // Hover border
+      pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
     }]
   },
   options: {
     responsive: true,
-    maintainAspectRatio: false, // Makes chart larger and responsive
+    maintainAspectRatio: false,
     scales: {
       r: {
         angleLines: {
           display: true,
-          color: 'rgba(128, 128, 128, 0.3)' // Customize the radar grid line color
+          color: 'rgba(128, 128, 128, 0.3)'
         },
         suggestedMin: 50,
         suggestedMax: 100,
         ticks: {
-          display: false // Removes number labels
+          display: false
         },
         grid: {
-          color: 'rgba(128, 128, 128, 0.2)' // Subtle grid color
+          color: 'rgba(128, 128, 128, 0.2)'
         }
       }
     },
     plugins: {
       legend: {
-        position: 'top', // Keeps the legend on top
+        position: 'top',
         labels: {
-          color: 'rgba(75, 192, 192, 1)' // Match text color
+          color: 'rgba(75, 192, 192, 1)'
         }
       },
       tooltip: {
-        enabled: true, // Interactive tooltips
+        enabled: true,
         callbacks: {
           label: function(context) {
-            return context.dataset.label + ': ' + context.formattedValue + '%'; // Tooltip formatting
+            return context.dataset.label + ': ' + context.formattedValue + '%';
           }
         }
       }
@@ -424,9 +424,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const observerOptions = {
-    root: null, // Use the browser viewport as the container
+    root: null,
     rootMargin: "0px",
-    threshold: 0.1 // Trigger when 10% of the element is visible
+    threshold: 0.1
   };
 
   const elementsToAnimate = document.querySelectorAll('.scroll-animation');
@@ -435,7 +435,7 @@ document.addEventListener("DOMContentLoaded", function () {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('scroll-in-view');
-        observer.unobserve(entry.target); // Stop observing once animated
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
