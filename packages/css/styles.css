@@ -415,6 +415,7 @@ img {
 .home__scroll-arrow {
   font-size: 1.25rem;
 }
+
 /*==================== BUTTONS ====================*/
 
 .button {
@@ -1508,6 +1509,23 @@ img {
   background-color: #30abc2;
 }
 
+.skills-chart-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+canvas#skillsChart {
+  margin: 0 auto;
+}
+
+canvas {
+  width: 100% !important; /* Ensure canvas takes up the full width */
+  height: auto !important; /* Adjust height dynamically */
+  max-height: 500px; /* Maximum height to prevent the chart from being too large */
+  min-height: 300px; /* Minimum height to prevent clipping */
+  margin-bottom: 10px;
+}
+
 body {
   overflow-x: hidden;
   max-width: 100%;
@@ -1552,4 +1570,15 @@ body {
 
 #back-to-top:hover i.fa {
   color: #00a4cc;
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-in-view {
+  opacity: 1;
+  transform: translateY(0);
 }

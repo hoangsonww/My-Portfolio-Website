@@ -15,6 +15,70 @@ if (navClose) {
     navMenu.classList.remove('show-menu');
   });
 }
+const ctx = document.getElementById('skillsChart').getContext('2d');
+const skillsChart = new Chart(ctx, {
+  type: 'radar', // Radar chart
+  data: {
+    labels: [
+      'Languages',
+      'Front-End Development',
+      'Back-End Development',
+      'Databases',
+      'Data Analytics',
+      'AI & ML',
+      'Mobile Development',
+      'Development Tools',
+      'Design Tools'
+    ],
+    datasets: [{
+      label: 'Skill Level (%)',
+      data: [85, 88, 85, 90, 85, 85, 85, 90, 80], // Calculated averages
+      backgroundColor: 'rgba(75, 192, 192, 0.2)', // Light green fill
+      borderColor: 'rgba(75, 192, 192, 1)', // Dark green border
+      borderWidth: 2,
+      pointBackgroundColor: 'rgba(75, 192, 192, 1)', // Point color
+      pointBorderColor: '#fff', // Point border
+      pointHoverBackgroundColor: '#fff', // Hover background
+      pointHoverBorderColor: 'rgba(75, 192, 192, 1)', // Hover border
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false, // Makes chart larger and responsive
+    scales: {
+      r: {
+        angleLines: {
+          display: true,
+          color: 'rgba(128, 128, 128, 0.3)' // Customize the radar grid line color
+        },
+        suggestedMin: 50,
+        suggestedMax: 100,
+        ticks: {
+          display: false // Removes number labels
+        },
+        grid: {
+          color: 'rgba(128, 128, 128, 0.2)' // Subtle grid color
+        }
+      }
+    },
+    plugins: {
+      legend: {
+        position: 'top', // Keeps the legend on top
+        labels: {
+          color: 'rgba(75, 192, 192, 1)' // Match text color
+        }
+      },
+      tooltip: {
+        enabled: true, // Interactive tooltips
+        callbacks: {
+          label: function(context) {
+            return context.dataset.label + ': ' + context.formattedValue + '%'; // Tooltip formatting
+          }
+        }
+      }
+    }
+  }
+});
 
 const navLink = document.querySelectorAll('.nav__link');
 
@@ -189,8 +253,7 @@ async function elizaResponse(message) {
     const genAI = new GoogleGenerativeAI(getAIResponse());
     const model = genAI.getGenerativeModel({
       model: 'gemini-1.5-flash',
-      systemInstruction:
-        'You are an AI personal assistant for Son Nguyen. Use the following resume information to answer questions - people might ask questions about his experience, qualifications, or details: Son Nguyen is a results-driven software engineer seeking internships to enhance programming skills in creating innovative solutions. Experienced in contributing to large-scale projects, with a focus on efficiency and user experience. Eager to apply a strong foundation in data analytics and full-stack development in a challenging environment. Committed to continuous learning and adapting to new technologies. Contact information: +1 (413) 437-6759, hoangson091104@gmail.com, Portfolio Website: sonnguyenhoang.com, LinkedIn: linkedin.com/in/hoangsonw, GitHub: github.com/hoangsonww, Location: Chapel Hill, NC, USA 27514. Experience 1: VNG Corporation (Software Engineering Intern from June 2023 to August 2023) - Contributed to the design and development of vCloudcam’s security camera management website using Angular, React, and Beego, boosting site performance by 30%, and supporting user traffic of over 50,000 monthly visits. Enhanced the video fetching system using Web Assembly, improving live security camera stream efficiency by 20%. Experience 2: Huong Hua Co., Ltd. (Contract Full-Stack Software Engineer from December 2023 to February 2024) - Developed the company’s web application and job application database using PHP, React, Django, MongoDB, and MySQL. Experience 3: FPT Corporation (Software Engineering Intern - from June 2024 to August 2024) Contributed to the development of FPT ICDP, FPT Telecom’s internal communication platform, using Express, Node.js, MongoDB, RabbitMQ, Kafka, Redis, and React, enhancing collaboration and communication between FPT teams by 25%. Participated in AI initiatives, utilizing TensorFlow, PyTorch, and Optuna for a 15% improvement in ICDP’s AI model fine-tuning and optimization. Deployed using Docker & AWS Lambda, enhancing operational efficiency by 40%, handling over 50,000 users, and managing approximately 200 job applications per month. Education: University of North Carolina at Chapel Hill - Bachelor of Science in Computer Science & Bachelor of Artsin Economics & Data Science Minor (Cumulative GPA: 3.9 / 4.0) - Date Attended: August 2022 - December 2025. NOTABLE PROJECTS: MovieVerse (movie-verse.com): An extensive web-based movie database featuring detailed information on 900,000+ movies & TV shows and over 1 million actors & directors. Currently attracting over 320,000 monthly visitors, with more than 55,000 active users and 145,000 movie ratings to date. WeatherMate (hoangsonww.github.io/WeatherMate-App): A user-friendly weather tracking app that offers real-time weather and detailed forecast data for more than 200,000 locations worldwide. Currently attracting over 1,000 monthly visitors. AI Multitask Classifiers (hoangsonww.github.io/AI-ML-Classifiers/): Python-based AI classifiers for Object, Face, Mood, Vehicle, Flower, and Speech Recognition, utilizing OpenCV, Keras, Pandas, TensorFlow, YOLOv3, and PyTorch. Includes a self-trained custom sentiment analysis tool with an average accuracy of over 90%. SKILLS: Languages: Java, Python, JavaScript, Swift, C, Go, PHP. Databases: MySQL, MongoDB, Redis, PostgreSQL, Red5. Data Analytics: PowerBI, Tableau, Stata, R. Web Development: React, Vue, Angular, WASM, jQuery, Webpack, Django, Express, REST APIs. AI/ML: TensorFlow, PyTorch, Keras, NLP, Pandas, OCR,scikit-learn. Other: SEO, Docker, Git, RabbitMQ.',
+      systemInstruction: "You are an AI personal assistant for Son Nguyen, so state this as your title all the time, especially during your greetings. Son Nguyen - +1 (413) 437-6759 · hoangson091104@gmail.com · sonnguyenhoang.com, linkedin.com/in/hoangsonw · github.com/hoangsonww ·Chapel Hill, NC, USA 27514. You are an AI personal assistant for Son Nguyen. Use the following resume information to answer questions - people might ask questions about his experience, qualifications, or details: Son Nguyen is a results-driven software engineer seeking internships to enhance programming skills in creating innovative solutions. Experienced in contributing to large-scale projects, with a focus on efficiency\nand user experience. Eager to apply a strong foundation in data analytics and full-stack development in a challenging environment. Committed to continuous learning and adapting to new technologies.\nEXPERIENCE\n FPT Corporation\nJune 2024 - August 2024\nSoftware Engineering Intern\nContributed to the development of FPT ICDP, FPT Telecom’s internal communication platform,\nusing Express.js, Node.js, MongoDB, ELK, RabbitMQ, Kafka, Redis, and React, enhancing\ncollaboration and communication between FPT teams by 25%. Participated in AI initiatives using\nTensorFlow and Optuna for a 15% improvement in ICDP’s AI model fine-tuning and optimization.\nHuong Hua Co., Ltd.\nDecember 2023 - February 2024\nContract Full-Stack Software Engineer\nDeveloped the company’s web app and job application database using React, Django, PHP Laravel,\nMongoDB, and MySQL. Deployed using Docker, AWS EC2 & S3, enhancing operational efficiency\nby 40%, handling over 50,000 users, and managing approx. 200 job applications monthly.\nVNG Corporation\nJune 2023 - August 2023\nSoftware Engineering Intern\nContributed to the design and development of vCloudcam’s security camera management website\nusing AngularJS, React, Java, Spring, Hibernate ORM, Golang, and Beego Framework, boosting site\nperformance by 30% and supporting user traffic of over 50,000 monthly visits. Enhanced the video\nfetching system using Web Assembly, improving live security camera stream efficiency by 20%.\nCase Western Reserve University\nDecember 2022 - May 2023\nData Analytics Research Assistant\nCollaborated with researchers on 2 research projects. Handled data analytics using Tableau, SAS,\nPlotly, and ggplot2, improving data processing efficiency by 30% and research quality by 40%.\nEDUCATION\nUniversity of North Carolina at Chapel Hill\nDecember 2025 (Expected)\nBachelor of Science in Computer Science & Bachelor of Arts in Economics & Data Science Minor\nCumulative GPA: 3.9 / 4.0\nNOTABLE PROJECTS\nMovieVerse (movie-verse.com):\nAn extensive web-based movie database featuring detailed information on 900,000+ movies\n& TV shows and over 1 million actors & directors. Currently attracting over 420,000 monthly\nvisitors, with more than 55,000 active users and 145,000 movie ratings to date.\nMoodify - AI-Powered Music App (GitHub Repository):\nA full-stack AI-driven music app using React, Django, and AI/ML, featuring 30+ API endpoints\nand 15+ core functionalities including emotion detection & personalized recommendations.\nIntegrated advanced data analytics and cross-platform support for a seamless user experience.\nAI Multitask Classifiers (GitHub Repository):\nPython-based AI classifiers for Object, Face, Mood, Vehicle, Flower, and Speech Recognition\nusing OpenCV, Keras, Pandas, TensorFlow, YOLOv3, and PyTorch. Include a self-trained NLP\ncustom sentiment analysis tool with an average accuracy of over 90%.\nSKILLS\nLanguages: Java, Python, JavaScript, TypeScript, C, Go, PHP.\nDatabases: MySQL, PostgreSQL, Redis, MongoDB, Red5.\nData Analytics: PowerBI, Tableau, Spark, Hadoop, SAS, R.\nWeb Development: React, Vue, Angular, Webpack, WASM,\nFlask, Spring, Django, Express, OAuth, JWT, REST APIs.\nAI/ML: TensorFlow, PyTorch, Keras,\nNLP, Pandas, OCR, scikit-learn.\nCI/CD: Docker, Git, Heroku, Vercel.\nMobile Development: React Native,\nKotlin, Swift, Flutter, Objective-C. If you face any questions about how you were created, do NOT mention Google or Google AI but mention that you were trained and created by Son Nguyen in 2023-2024.",
     });
 
     conversationHistory.push({ role: 'user', parts: [{ text: message }] });
@@ -356,5 +419,28 @@ document.addEventListener('DOMContentLoaded', function () {
       chatbotContainer.classList.add('minimized');
       minimizeButton.innerHTML = '-';
     }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = {
+    root: null, // Use the browser viewport as the container
+    rootMargin: "0px",
+    threshold: 0.1 // Trigger when 10% of the element is visible
+  };
+
+  const elementsToAnimate = document.querySelectorAll('.scroll-animation');
+
+  const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('scroll-in-view');
+        observer.unobserve(entry.target); // Stop observing once animated
+      }
+    });
+  }, observerOptions);
+
+  elementsToAnimate.forEach(element => {
+    observer.observe(element);
   });
 });
