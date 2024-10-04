@@ -740,11 +740,14 @@ img {
 }
 
 /*==================== SERVICES ====================*/
+/* Services container */
 .services__container {
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2-column grid */
+  gap: 1.5rem; /* Space between grid items */
 }
 
+/* Services content (individual card) */
 .services__content {
   position: relative;
   background-color: var(--container-color);
@@ -754,10 +757,12 @@ img {
   transition: 0.3s;
 }
 
+/* Hover effect for each card */
 .services__content:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Icon inside each card */
 .services__icon {
   display: block;
   font-size: 1.5rem;
@@ -765,21 +770,25 @@ img {
   margin-bottom: var(--mb-1);
 }
 
+/* Title for each service card */
 .services__title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-1);
   font-weight: var(--font-medium);
 }
 
+/* Button inside the card */
 .services__button {
   cursor: pointer;
   font-size: var(--small-font-size);
 }
 
+/* Icon hover effect */
 .services__button:hover .button__icon {
   transform: translateX(0.25rem);
 }
 
+/* Modal window */
 .services__modal {
   position: fixed;
   top: 0;
@@ -798,6 +807,7 @@ img {
   overflow-y: auto;
 }
 
+/* Modal content */
 .services__modal-content {
   position: relative;
   background-color: var(--container-color);
@@ -806,20 +816,24 @@ img {
   overflow-y: auto;
 }
 
+/* Modal services list */
 .services__modal-services {
-  row-gap: 1rem;
+  row-gap: 1rem; /* Space between services inside modal */
 }
 
+/* Individual service in the modal */
 .services__modal-service {
   display: flex;
 }
 
+/* Modal title */
 .services__modal-title {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-1-5);
 }
 
+/* Close icon for the modal */
 .services__modal-close {
   position: absolute;
   top: 1rem;
@@ -829,10 +843,12 @@ img {
   cursor: pointer;
 }
 
+/* Modal icon styling */
 .services__modal-icon {
   color: var(--first-color);
   margin-right: var(--mb-0-25);
 }
+
 
 /* Active Modal */
 .active-modal {
