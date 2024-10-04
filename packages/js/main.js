@@ -254,8 +254,10 @@ function typeSubtitle() {
     setTimeout(typeSubtitle, subtitleDelay);
   } else {
     cursorSubtitle.style.display = 'none';
-    scrollButton.style.display = 'inline-block';
-    scrollButton.classList.add('drop-down');
+    setTimeout(() => {
+      scrollButton.style.display = 'inline-block';
+      scrollButton.classList.add('drop-down');
+    }, 600);
   }
 }
 
