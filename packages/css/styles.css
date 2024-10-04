@@ -249,6 +249,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: var(--z-fixed);
 }
 
 .nav__logo,
@@ -270,24 +272,43 @@ img {
   color: var(--first-color);
 }
 
+/* For mobile view */
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
-    bottom: -100%;
+    top: 0; /* Make sure it stays fixed at the top */
     left: 0;
     width: 100%;
+    height: 100vh; /* Fullscreen */
     background-color: var(--body-color);
-    padding: 2rem 1.5rem 4rem;
+    padding: 2rem 1.5rem;
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 1.5rem 1.5rem 0 0;
-    transition: 0.3s;
+    transition: transform 0.3s ease;
+    transform: translateY(-100%); /* Initially hidden */
+    overflow: hidden; /* Prevent scrolling inside the menu */
+    z-index: 999; /* Ensure it appears above all other elements */
+  }
+
+  /* Show menu */
+  .show-menu {
+    transform: translateY(0); /* Slide the menu down */
+  }
+
+  /* Prevent body from scrolling when menu is open */
+  body.menu-open {
+    height: 100vh; /* Force the body to take up the full viewport height */
+    overflow: hidden; /* Disable both vertical and horizontal scrolling */
+    position: fixed; /* Prevent any background scrolling */
+    width: 100%; /* Ensure no unwanted resizing occurs */
   }
 }
 
 .nav__list {
-  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
+
 .nav__link {
   display: flex;
   flex-direction: column;
@@ -307,8 +328,8 @@ img {
 
 .nav__close {
   position: absolute;
-  right: 1.3rem;
-  bottom: 0.5rem;
+  top: 1.5rem;
+  right: 1.5rem;
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--first-color);
@@ -317,6 +338,14 @@ img {
 .nav__close:hover {
   color: var(--first-color-alt);
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Ensure no horizontal scroll */
+  height: 100%;
+}
+
 
 /* show menu */
 .show-menu {
@@ -1120,7 +1149,6 @@ img {
 }
 
 /*==================== MEDIA QUERIES ====================*/
-/* For small devices */
 @media screen and (max-width: 380px) {
   .container {
     margin-left: var(--mb-1);
@@ -1199,7 +1227,6 @@ img {
   }
 }
 
-/* For medium devices */
 @media screen and (min-width: 568px) {
   .home__content {
     grid-template-columns: max-content 1fr 1fr;
@@ -1600,4 +1627,84 @@ body {
 .scroll-in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+.welcome {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--body-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.5s;
+}
+
+body.dark-theme .welcome {
+  background-color: var(--body-color);
+}
+
+.welcome__content {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+}
+
+.welcome__title {
+  font-size: 3rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+.welcome__subtitle {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-top: var(--mb-1);
+}
+
+.welcome__button {
+  margin-top: var(--mb-2);
+  background-color: transparent;
+  padding: 10px 20px;
+  color: var(--title-color);
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.button__icon {
+  margin-right: 10px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: var(--text-color);
+  animation: blink 1s step-end infinite;
+}
+
+#cursor, #cursor-subtitle {
+  position: relative;
+  left: 0;
+}
+
+@keyframes dropDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.drop-down {
+  animation: dropDown 0.8s ease-out forwards;
+}
+
+.welcome__button:hover {
+  background-color: transparent;
+  color: var(--first-color);
 }
