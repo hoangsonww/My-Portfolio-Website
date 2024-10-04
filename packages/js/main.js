@@ -222,18 +222,18 @@ function scrollActive() {
 }
 
 const textArray = ['Welcome!'];
-const subtitleArray = ['Explore my portfolio and see my journey as a software engineer.'];
+const subtitleArray = ['Explore my portfolio and see my journey as a software engineer!'];
 let charIndex = 0;
 let subtitleIndex = 0;
 let typingDelay = 150;
-let newTextDelay = 1000; // Delay between current and next text
+let subtitleDelay = 100;
+let newTextDelay = 1000;
 let typedTextSpan = document.getElementById('typed-text');
 let typedSubtitleSpan = document.getElementById('typed-subtitle');
 let cursor = document.getElementById('cursor');
 let cursorSubtitle = document.getElementById('cursor-subtitle');
 let scrollButton = document.getElementById('scroll-button');
 
-// Type the title
 function typeTitle() {
   if (charIndex < textArray[0].length) {
     typedTextSpan.textContent += textArray[0].charAt(charIndex);
@@ -246,19 +246,16 @@ function typeTitle() {
   }
 }
 
-// Type the subtitle
 function typeSubtitle() {
-  cursorSubtitle.style.display = 'inline-block'; // Show cursor for subtitle typing
+  cursorSubtitle.style.display = 'inline-block';
   if (subtitleIndex < subtitleArray[0].length) {
     typedSubtitleSpan.textContent += subtitleArray[0].charAt(subtitleIndex);
     subtitleIndex++;
-    setTimeout(typeSubtitle, typingDelay);
+    setTimeout(typeSubtitle, subtitleDelay);
   } else {
-    // Remove cursor after typing subtitle
     cursorSubtitle.style.display = 'none';
-    // Show the button once all typing is complete
     scrollButton.style.display = 'inline-block';
-    scrollButton.classList.add('drop-down'); // Optional fade-in animation
+    scrollButton.classList.add('drop-down');
   }
 }
 

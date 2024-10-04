@@ -1685,11 +1685,21 @@ body.dark-theme .welcome {
   animation: blink 1s step-end infinite;
 }
 
-#cursor,
-#cursor-subtitle {
-  position: relative;
-  left: 0;
+#cursor {
+  height: 5rem; /* Cursor height for the header (Welcome) */
 }
+
+#cursor-subtitle {
+  height: 1.5rem; /* Cursor height for the subtitle */
+  display: none; /* Initially hidden until the Welcome text is typed */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 
 @keyframes dropDown {
   0% {
