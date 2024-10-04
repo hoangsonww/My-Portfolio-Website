@@ -1,6 +1,15 @@
 /* ==================== GOOGLE FONTS ====================*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    height: 100%;
+  }
+}
+
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;
@@ -338,14 +347,6 @@ img {
 .nav__close:hover {
   color: var(--first-color-alt);
 }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Ensure no horizontal scroll */
-  height: 100%;
-}
-
 
 /* show menu */
 .show-menu {
@@ -1630,7 +1631,7 @@ body {
 }
 
 .welcome {
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   background-color: var(--body-color);
   display: flex;

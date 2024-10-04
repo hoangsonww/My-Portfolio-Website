@@ -262,12 +262,10 @@ function typeSubtitle() {
   }
 }
 
-// Start typing animation when page loads
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(typeTitle, newTextDelay);
 });
 
-// Smooth scroll when button is clicked
 document.getElementById("scroll-button").addEventListener("click", function (event) {
   event.preventDefault();
   document.getElementById("home").scrollIntoView({ behavior: "smooth" });
