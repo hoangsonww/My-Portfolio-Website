@@ -847,6 +847,7 @@ img {
 
 .portfolio__content {
   padding: 0 1.5rem;
+  cursor: grab;
 }
 
 .portfolio__img {
