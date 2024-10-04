@@ -847,6 +847,7 @@ img {
 
 .portfolio__content {
   padding: 0 1.5rem;
+  cursor: grab;
 }
 
 .portfolio__img {
@@ -1415,7 +1416,7 @@ img {
   border-radius: 8px;
   margin-top: 40px;
   position: relative;
-  margin-bottom: 11px;
+  margin-bottom: 10px;
 }
 
 #chatbotBody {
@@ -1575,7 +1576,9 @@ body {
 .scroll-animation {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
 .scroll-in-view {
