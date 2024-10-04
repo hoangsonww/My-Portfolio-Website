@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 @media (max-width: 768px) {
-  html, body {
+  html,
+  body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -879,7 +880,6 @@ img {
   margin-right: var(--mb-0-25);
 }
 
-
 /* Active Modal */
 .active-modal {
   opacity: 1;
@@ -1685,7 +1685,8 @@ body.dark-theme .welcome {
   animation: blink 1s step-end infinite;
 }
 
-#cursor, #cursor-subtitle {
+#cursor,
+#cursor-subtitle {
   position: relative;
   left: 0;
 }

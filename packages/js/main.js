@@ -221,17 +221,17 @@ function scrollActive() {
   });
 }
 
-const textArray = ["Welcome!"];
-const subtitleArray = ["Explore my portfolio and see my journey as a software engineer."];
+const textArray = ['Welcome!'];
+const subtitleArray = ['Explore my portfolio and see my journey as a software engineer.'];
 let charIndex = 0;
 let subtitleIndex = 0;
 let typingDelay = 150;
 let newTextDelay = 1000; // Delay between current and next text
-let typedTextSpan = document.getElementById("typed-text");
-let typedSubtitleSpan = document.getElementById("typed-subtitle");
-let cursor = document.getElementById("cursor");
-let cursorSubtitle = document.getElementById("cursor-subtitle");
-let scrollButton = document.getElementById("scroll-button");
+let typedTextSpan = document.getElementById('typed-text');
+let typedSubtitleSpan = document.getElementById('typed-subtitle');
+let cursor = document.getElementById('cursor');
+let cursorSubtitle = document.getElementById('cursor-subtitle');
+let scrollButton = document.getElementById('scroll-button');
 
 // Type the title
 function typeTitle() {
@@ -258,17 +258,17 @@ function typeSubtitle() {
     cursorSubtitle.style.display = 'none';
     // Show the button once all typing is complete
     scrollButton.style.display = 'inline-block';
-    scrollButton.classList.add("drop-down"); // Optional fade-in animation
+    scrollButton.classList.add('drop-down'); // Optional fade-in animation
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   setTimeout(typeTitle, newTextDelay);
 });
 
-document.getElementById("scroll-button").addEventListener("click", function (event) {
+document.getElementById('scroll-button').addEventListener('click', function (event) {
   event.preventDefault();
-  document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+  document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
 });
 
 window.addEventListener('scroll', scrollActive);
@@ -438,7 +438,6 @@ const backToTopButton = document.getElementById('back-to-top');
 
 backToTopButton.addEventListener('click', function () {
   document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
-
 });
 
 window.addEventListener('scroll', function () {
