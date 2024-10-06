@@ -86,6 +86,7 @@ This project is open-source and available under the MIT License. See the [LICENS
 I'm always open to connecting, collaborations, and conversations!
 
 - [LinkedIn](https://www.linkedin.com/in/hoangsonw/)
+- [GitHub](https://github.com/hoangsonww)
 - [Email](mailto:hoangson091104@gmail.com)
 - [Portfolio](https://sonnguyenhoang.com)
 

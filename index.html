@@ -103,46 +103,41 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav__logo scroll-animation">Son Nguyen's Portfolio</a>
+        <a href="#" class="nav__logo">Son Nguyen's Portfolio</a>
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list grid">
-            <li class="nav__item scroll-animation">
+            <li class="nav__item">
               <a href="#home" class="nav__link" title="Back To The Beginning Of The Page">
                 <i class="uil uil-estate nav__icon" title="Back To The Beginning Of The Page"></i>Home
               </a>
             </li>
-            <li class="nav__item scroll-animation">
+            <li class="nav__item">
               <a href="#about" class="nav__link" title="Take A Look At My Introduction">
                 <i class="uil uil-user nav__icon" title="Take A Look At My Introduction"></i>About
               </a>
             </li>
-            <li class="nav__item scroll-animation">
+            <li class="nav__item">
               <a href="#skills" class="nav__link" title="See A Comprehensive, Interactive Overview Of My Skills">
                 <i class="uil uil-file-alt nav__icon" title="See A Comprehensive, Interactive Overview Of My Skills"></i>Skills
               </a>
             </li>
-            <li class="nav__item scroll-animation">
+            <li class="nav__item">
               <a href="#qualifications" class="nav__link" title="View My Qualifications">
                 <i class="uil uil-graduation-cap nav__icon" title="View My Qualifications"></i>Qualifications
               </a>
             </li>
-            <li class="nav__item scroll-animation">
-              <a href="#services" class="nav__link" title="View The Services That I Can Provide!">
-                <i class="uil uil-briefcase-alt nav__icon" title="View The Services That I Can Provide!"></i>Services
-              </a>
-            </li>
-            <li class="nav__item scroll-animation">
+            <li class="nav__item">
               <a href="#portfolio" class="nav__link" title="See My Notable Projects">
                 <i class="uil uil-scenery nav__icon" title="See My Notable Projects"></i>Projects
               </a>
             </li>
-            <li class="nav__item scroll-animation">
+            <li class="nav__item">
               <a href="#contact" class="nav__link" title="Contact Me!"> <i class="uil uil-message nav__icon" title="Contact Me!"></i>Contact </a>
             </li>
           </ul>
           <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
-        <div class="nav__btns scroll-animation" style="margin-left: 9px">
+        <div class="nav__btns" style="margin-left: 9px">
           <i class="uil uil-moon change-theme" id="theme-button" title="Toggle Between Light/Dark Modes"></i>
 
           <div class="nav__toggle" id="nav-toggle">
@@ -154,6 +149,18 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
+      <!--==================== WELCOME ====================-->
+      <section class="welcome section" id="welcome">
+        <div class="welcome__content">
+          <h1 class="welcome__title" style="font-size: 5rem"><span id="typed-text"></span><span class="cursor" id="cursor"></span></h1>
+          <h3 class="welcome__subtitle"><span id="typed-subtitle"></span><span class="cursor" id="cursor-subtitle"></span></h3>
+          <a href="#home" class="button button--flex welcome__button scroll-animation" id="scroll-button" style="display: none; margin-top: 3rem">
+            <i class="uil uil-arrow-down button__icon" style="margin-left: 0"></i>
+            Explore My Work
+          </a>
+        </div>
+      </section>
+
       <!--==================== HOME ====================-->
       <section class="home section" id="home">
         <div class="home__container container grid">
@@ -1136,7 +1143,7 @@
       </section>
 
       <!--==================== QUALIFICATIONS ====================-->
-      <section class="qualification__section" id="qualifications" style="padding-top: 50px">
+      <section class="qualification__section" id="qualifications" style="padding: 50px 0; margin-bottom: 50px">
         <h2 class="section__title scroll-animation" style="margin-top: 20px">Qualifications</h2>
         <span class="section__subtitle scroll-animation">My educational & professional journeys</span>
 
@@ -1535,6 +1542,75 @@
 
             <!--==================== QUALIFICATION CONTENT 2 - WORK ====================-->
             <div class="qualification__content" data-content id="work">
+              <!--==================== QUALIFICATION 2 ====================-->
+              <div class="qualification__data">
+                <div></div>
+                <div class="scroll-animation">
+                  <span class="qualification__rounder"></span>
+                  <span class="qualification__line"></span>
+                </div>
+
+                <div>
+                  <a title="Click to visit our website!" href="https://huonghuacoltd.com" style="color: inherit"
+                  ><h3 class="qualification__title scroll-animation">Undergraduate Teaching Assistant</h3></a
+                  >
+                  <span class="qualification__subtitle scroll-animation" style="margin-bottom: 0" title="Click to visit our website!">
+                    <a href="https://www.unc.edu" style="color: inherit">The University of North Carolina at Chapel Hill</a>
+                  </span>
+                  <div class="qualification__calendar scroll-animation">
+                    <i class="uil uil-calendar-alt"></i>
+                    August 2024 - Present
+                  </div>
+                  <span class="button button--flex button--small button--link services__button scroll-animation">
+                    View Details
+                    <i class="uil uil-arrow-right button__icon"></i>
+                  </span>
+                  <div class="services__modal">
+                    <div class="services__modal-content">
+                      <h4 class="services__modal-title">Huong Hua Co., Ltd. <br /></h4>
+                      <i class="uil uil-times services__modal-close"></i>
+
+                      <ul class="services__modal-services grid" style="overflow-x: auto">
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__modal-icon"></i>
+                          <p>Provided academic support to over 150 students across two semesters, improving their understanding of data structures and algorithms.</p>
+                        </li>
+
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__modal-icon"></i>
+                          <p>Conducted 15+ weekly office hours and review sessions, resulting in a 20% increase in student exam performance.</p>
+                        </li>
+
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__modal-icon"></i>
+                          <p>Graded and provided feedback on over 100 assignments and exams, maintaining a 98% on-time grading rate.</p>
+                        </li>
+
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__modal-icon"></i>
+                          <p>Collaborated with professors to enhance course materials, leading to a 25% increase in student engagement in labs and assignments.</p>
+                        </li>
+
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__modal-icon"></i>
+                          <p>Mentored 10+ students on complex individual projects, helping them tackle advanced algorithmic challenges efficiently.</p>
+                        </li>
+
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__modal-icon"></i>
+                          <p>Assisted teaching professor with lesson planning by incorporating feedback from students.</p>
+                        </li>
+
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__modal-icon"></i>
+                          <p>Technology Stack: <strong>Python, Java, Git, Data Structures (Arrays, Linked Lists, Trees, Hash Maps, Graphs).</strong></p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <!--==================== QUALIFICATION 1 ====================-->
               <div class="qualification__data">
                 <div>
@@ -1887,177 +1963,8 @@
         </div>
       </section>
 
-      <!--==================== SERVICES ====================-->
-      <section class="services section" id="services" style="margin-top: 50px">
-        <h2 class="section__title scroll-animation">Services</h2>
-        <span class="section__subtitle scroll-animation">What I have to offer</span>
-
-        <div class="services__container container grid">
-          <!--==================== SERVICES 1 ====================-->
-          <div class="services__content">
-            <div style="margin-left: -10px" class="scroll-animation">
-              <i class="uil uil-analytics skills__icon"></i>
-              <h3 class="services__title">Data Science & Analytics<br /></h3>
-            </div>
-            <span style="margin-left: -10px" class="button button--flex button--small button--link scroll-animation services__button">
-              View more
-              <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-
-            <div class="services__modal">
-              <div class="services__modal-content">
-                <h4 class="services__modal-title">Data Science & Analytics <br /></h4>
-                <i class="uil uil-times services__modal-close"></i>
-
-                <ul class="services__modal-services grid">
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Proficient in utilizing both supervised and unsupervised learning models to achieve desired outcomes.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>
-                      Experience in building and deploying predictive models with tools like TensorFlow, PyTorch, and Scikit-Learn & model fine-tuning
-                      with Optuna.
-                    </p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Adept at natural language processing (NLP) for tasks such as sentiment analysis, topic modeling, and chatbot development.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Skilled in constructing relational and non-relational databases to store and manage data efficiently.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Expertise in cleaning, transforming, and enriching raw data to produce reliable datasets.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Skilled in designing and implementing data visualizations to communicate complex information to stakeholders.</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!--==================== SERVICES 2 ====================-->
-          <div class="services__content">
-            <div style="margin-left: -10px" class="scroll-animation">
-              <i class="uil uil-money-bill skills__icon"></i>
-              <h3 class="services__title">Financial & Business-Related<br /></h3>
-            </div>
-            <span style="margin-left: -10px" class="button button--flex button--small scroll-animation button--link services__button">
-              View more
-              <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-
-            <div class="services__modal">
-              <div class="services__modal-content">
-                <h4 class="services__modal-title">Financial & Business-Related<br /></h4>
-                <i class="uil uil-times services__modal-close"></i>
-
-                <ul class="services__modal-services grid">
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Well-trained in economics and finance with strong knowledge in Accounting & Economic Principles.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Experience in business analysis and financial planning, including budgeting and forecasting.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Capable of forecasting financial trends and conducting risk assessments.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Expertise in financial modeling and building custom financial solutions.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Skilled in conducting market research and competitive analysis.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Experience in business development and strategic planning.</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!--==================== SERVICES 3 ====================-->
-          <div class="services__content">
-            <div class="scroll-animation" style="margin-left: -12.5px">
-              <i class="uil uil-arrow skills__icon"></i>
-              <h3 class="services__title">Software Development<br /></h3>
-            </div>
-            <span style="margin-left: -12px" class="button button--flex scroll-animation button--small button--link services__button">
-              View more
-              <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-
-            <div class="services__modal" style="overflow: scroll">
-              <div class="services__modal-content">
-                <h4 class="services__modal-title">Software Development<br /></h4>
-                <i class="uil uil-times services__modal-close"></i>
-
-                <ul class="services__modal-services grid">
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Experience with cloud platforms like Heroku and GCP for deploying and managing applications.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Proficiency in full-stack development - having worked with both front-end and back-end technologies.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Experience with designing & developing UI/UX.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Experience in mobile app development for both Android and iOS platforms using native and cross-platform frameworks.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Ability to integrate and work with different databases, both SQL and NoSQL.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Experience in containerization and orchestration with Docker and Kubernetes.</p>
-                  </li>
-
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Familiarity with CI/CD pipelines using tools like Jenkins and GitLab CI.</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!--==================== PORTFOLIO ====================-->
-      <section class="portfolio section" id="portfolio">
+      <section class="portfolio section" id="portfolio" style="margin-top: 50px">
         <h2 class="section__title scroll-animation">Projects</h2>
         <span class="section__subtitle scroll-animation">Take a look at my notable personal projects</span>
 
@@ -2110,6 +2017,23 @@
                   choose in the world.
                 </p>
                 <a href="https://hoangsonww.github.io/WeatherMate-App/" class="button button--flex button--small portfolio__button">
+                  View Live
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <!--==================== PORTFOLIO 7 ====================-->
+
+            <div class="portfolio__content grid swiper-slide">
+              <img src="./packages/images/docuthinker.png" alt="Employee Management App UI" class="portfolio__img" />
+
+              <div class="portfolio_">
+                <h3 class="portfolio__title">DocuThinker - AI-Powered Document Analysis App</h3>
+                <p class="portfolio__description">
+                  A web application that uses AI to summarize, extract key information, and analyze documents, images, and PDFs.
+                </p>
+                <a href="https://docuthinker-fullstack-app.vercel.app/" class="button button--flex button--small portfolio__button">
                   View Live
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
@@ -2235,6 +2159,23 @@
                 </p>
                 <a href="https://hoangsonww.github.io/2048-Game/" class="button button--flex button--small portfolio__button">
                   View Live
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <!--==================== PORTFOLIO 11 ====================-->
+
+            <div class="portfolio__content grid swiper-slide">
+              <img src="./packages/images/flappybird.png" alt="2048 game UI" class="portfolio__img" />
+
+              <div class="portfolio_">
+                <h3 class="portfolio__title">The Flappy Bird Game</h3>
+                <p class="portfolio__description">
+                  Flappy Bird is a classic, addictive, and challenging game that I built natively for iOS with SpriteKit and Swift.
+                </p>
+                <a href="https://github.com/hoangsonww/Flappy-Bird-Game" class="button button--flex button--small portfolio__button">
+                  View Repo
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
               </div>
@@ -2388,10 +2329,10 @@
 
           <ul class="footer__links">
             <li class="scroll-animation">
-              <a href="#services" class="footer__link scroll-animation">Services</a>
+              <a href="#skills" class="footer__link scroll-animation">Skills</a>
             </li>
             <li class="scroll-animation">
-              <a href="#portfolio" class="footer__link scroll-animation">Portfolio</a>
+              <a href="#portfolio" class="footer__link scroll-animation">Projects</a>
             </li>
             <li class="scroll-animation">
               <a href="#contact" class="footer__link scroll-animation">Contact</a>
@@ -2425,7 +2366,7 @@
     </a>
 
     <!--==================== SCROLL TO TOP ====================-->
-    <a class="scrollup" id="back-to-top" title="Back to Top" data-tooltip="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a class="scrollup" style="display: block" id="back-to-top" title="Back to Top" data-tooltip="Back to Top"><i class="fa fa-arrow-up"></i></a>
 
     <!--==================== SWIPER JS ====================-->
     <script src="./packages/js/swiper-bundle.min.js"></script>
