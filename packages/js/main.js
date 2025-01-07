@@ -358,14 +358,19 @@ async function elizaResponse(message) {
   } catch (error) {
     console.error('Error fetching response:', error.message);
     fullResponse =
-      'An error occurred while generating the response, possibly due to high traffic or safety concerns. I apologize for any inconvenience caused. Please try again with a different query or contact MovieVerse support for further assistance.';
+      'An error occurred while generating the response, possibly due to high traffic or safety concerns. I apologize for any inconvenience caused. Please try again later with a different query or contact me for further assistance.';
   }
 
   return removeMarkdown(fullResponse);
 }
 
 function getAIResponse() {
-  const response = 'QUl6YVN5Q1RoUWVFdmNUb01ka0NqWlM3UTNxNzZBNUNlNjVyMW9r';
+  const response = 'QUl6YVN5' +
+    'Q0R4QTNWWX' +
+    'VlY2NTQWR' +
+    'fQzNjcGJv' +
+    'ZUpVYXBhd' +
+    '2NZWGJR';
   return atob(response);
 }
 
