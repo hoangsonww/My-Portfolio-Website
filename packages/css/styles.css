@@ -1547,6 +1547,7 @@ img {
   justify-content: center;
   box-sizing: border-box;
   margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 /* Style the send button hover effect */
@@ -1875,6 +1876,7 @@ body.dark-theme .welcome {
   height: 40px;           /* Added fixed height to match the input */
   box-sizing: border-box; /* Ensure padding is included in height */
   margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 #chatbotModal #chatbotButton:hover {
