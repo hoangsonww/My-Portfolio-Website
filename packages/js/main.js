@@ -320,7 +320,7 @@ themeButton.addEventListener('click', () => {
 
 async function elizaResponse(message) {
   let conversationHistory = JSON.parse(sessionStorage.getItem('conversationHistory')) || [];
-  let fullResponse = 'Loading...';
+  let fullResponse = 'Generating response...';
 
   try {
     const genAI = new GoogleGenerativeAI(getAIResponse());
@@ -383,7 +383,8 @@ function removeMarkdown(text) {
 }
 
 const chatbotInput = document.getElementById('chatbotInput');
-const chatbotBody = document.getElementById('chatbotBody');
+const chatbotBody = document.getElementById( 'chatbotBody' );
+const mobileChatbotBody = document.querySelector('#chatbotModal #chatbotBody');
 
 chatbotInput.addEventListener('keydown', function (event) {
   if (event.key === 'Enter') {
@@ -406,7 +407,7 @@ async function sendMessage(message) {
   let dotCount = 0;
 
   let loadingInterval = setInterval(() => {
-    loadingElement.textContent = 'Loading' + '.'.repeat(dotCount);
+    loadingElement.textContent = 'Generating response' + '.'.repeat(dotCount);
     dotCount = (dotCount + 1) % 4;
   }, 500);
 
@@ -417,18 +418,63 @@ async function sendMessage(message) {
   chatbotBody.scrollTop = chatbotBody.scrollHeight;
 }
 
+async function sendMessage1(message) {
+  mobileChatbotBody.innerHTML += `
+    <div style="text-align: right; margin-bottom: 10px; color: white;">${message}</div>
+  `;
+
+  const loadingElement = document.createElement('div');
+  loadingElement.style.textAlign = 'left';
+  loadingElement.style.marginBottom = '10px';
+  loadingElement.style.color = 'white';
+  mobileChatbotBody.appendChild(loadingElement);
+
+  let dotCount = 0;
+
+  let loadingInterval = setInterval(() => {
+    loadingElement.textContent = 'Generating response' + '.'.repeat(dotCount);
+    dotCount = (dotCount + 1) % 4;
+  }, 500);
+
+  let botReply = await elizaResponse(message);
+
+  clearInterval(loadingInterval);
+  loadingElement.textContent = botReply;
+  mobileChatbotBody.scrollTop = chatbotBody.scrollHeight;
+}
+
 document.getElementById('minimizeButton').addEventListener('click', function () {
   const chatbotBody = document.getElementById('chatbotBody');
-  const chatbotInput = document.getElementById('chatbotInput');
+  const chatbotInput = document.getElementById( 'chatbotInput' );
+  const chatbotSendButton = document.getElementById('chatbotButton');
 
   if (chatbotBody.style.display !== 'none') {
     chatbotBody.style.display = 'none';
     chatbotInput.style.display = 'none';
+    chatbotSendButton.style.display = 'none';
   } else {
     chatbotBody.style.display = '';
     chatbotInput.style.display = '';
+    chatbotSendButton.style.display = '';
   }
-});
+} );
+
+document.addEventListener( 'DOMContentLoaded', function () {
+  const chatbotSendButton = document.getElementById( 'chatbotButton' );
+  chatbotSendButton.style.display = 'none';
+  chatbotSendButton.addEventListener( 'click', function () {
+    const chatbotInput = document.getElementById( 'chatbotInput' );
+    if ( chatbotInput ) {
+      console.log( chatbotInput.value );
+      if ( chatbotInput.value.trim() !== '' ) {
+        sendMessage( chatbotInput.value );
+        chatbotInput.value = '';
+      }
+    } else {
+      console.error( 'Chatbot input element not found' );
+    }
+  } );
+} );
 
 const chatbotContainer = document.getElementById('chatbotContainer');
 
@@ -521,4 +567,65 @@ document.addEventListener('DOMContentLoaded', function () {
   elementsToAnimate.forEach(element => {
     observer.observe(element);
   });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  // Toggle chatbot modal on mobile
+  document.getElementById('chatbot-toggle').addEventListener('click', function () {
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      const chatbotModal = document.getElementById('chatbotModal');
+      if (chatbotModal.classList.contains("show")) {
+        // Remove the "show" class to trigger the hide animation
+        chatbotModal.classList.remove("show");
+        // After animation completes, set display to none
+        setTimeout(() => {
+          chatbotModal.style.display = "none";
+        }, 300); // match transition duration (0.3s)
+      } else {
+        // Immediately override any inline display property
+        chatbotModal.style.display = "block";
+        // Use a tiny delay to allow the display update then add the "show" class
+        setTimeout(() => {
+          chatbotModal.classList.add("show");
+        }, 10);
+      }
+    }
+  });
+
+  // Close button event listener
+  document.getElementById('closeButton').addEventListener('click', function () {
+    const chatbotModal = document.getElementById('chatbotModal');
+    // Remove the "show" class to trigger the hide animation
+    chatbotModal.classList.remove("show");
+    // After the animation completes (300ms), set display to none
+    setTimeout(() => {
+      chatbotModal.style.display = "none";
+    }, 300);
+  });
+
+  // Send button event listener
+  document.getElementById('chatbotButton').addEventListener('click', function () {
+    const chatbotInput = document.querySelector('#chatbotModal #chatbotInput');
+    if (chatbotInput) {
+      console.log(chatbotInput.value);
+      if (chatbotInput.value.trim() !== '') {
+        sendMessage1(chatbotInput.value);
+        chatbotInput.value = '';
+      }
+    } else {
+      console.error("Chatbot input element not found");
+    }
+  });
+
+  // NEW: Pressing Enter in the input should also send the message
+  const chatbotInput = document.querySelector('#chatbotModal #chatbotInput');
+  if (chatbotInput) {
+    chatbotInput.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        if (chatbotInput.value.trim() !== '') {
+          sendMessage1(chatbotInput.value);
+          chatbotInput.value = '';
+        }
+      }
+    });
+  }
 });

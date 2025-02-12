@@ -137,6 +137,11 @@
           <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
         <div class="nav__btns" style="margin-left: 9px">
+          <!-- Chatbot btn -->
+          <div class="nav__toggle" id="chatbot-toggle">
+            <i class="uil uil-robot"></i>
+          </div>
+
           <i class="uil uil-moon change-theme" id="theme-button" title="Toggle Between Light/Dark Modes"></i>
 
           <div class="nav__toggle" id="nav-toggle">
@@ -1651,7 +1656,7 @@
                   </span>
                   <div class="qualification__calendar scroll-animation">
                     <i class="uil uil-calendar-alt"></i>
-                    April 2025 - Present
+                    March 2025 - August 2025
                   </div>
                   <span class="button button--flex button--small button--link services__button scroll-animation">
                     View Details
@@ -2339,6 +2344,23 @@
               </div>
             </div>
 
+            <!--==================== PORTFOLIO 10 ====================-->
+
+            <div class="portfolio__content grid swiper-slide">
+              <img src="./packages/images/lumina.png" alt="Lumina AI App UI" class="portfolio__img" />
+
+              <div class="portfolio_">
+                <h3 class="portfolio__title">Lumina AI - The Ultimate AI Chatbot</h3>
+                <p class="portfolio__description">
+                  A full-stack, AI-powered chatbot that uses GPT-3, Rasa, and LangChain to provide users with accurate, informative, and engaging responses.
+                </p>
+                <a href="https://lumina-david.vercel.app/" class="button button--flex button--small portfolio__button">
+                  View Live
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+
             <!--==================== PORTFOLIO 6 ====================-->
 
             <div class="portfolio__content grid swiper-slide">
@@ -2674,9 +2696,33 @@
         <div id="minimizeButton" data-tooltip="Minimize/Maximize Chat">+</div>
         <div id="chatbotHeader">My Personal Assistant</div>
         <div id="chatbotBody"></div>
-        <input id="chatbotInput" type="text" placeholder="Ask me something..." />
+        <!-- New container for the input and send button -->
+        <div id="chatbotInputContainer">
+          <input id="chatbotInput" type="text" placeholder="Ask me something..." />
+          <button id="chatbotButton" data-tooltip="Send Message">
+            <i class="uil uil-message"></i>
+          </button>
+        </div>
       </div>
     </a>
+
+    <!-- New Mobile Chatbot Modal -->
+    <div id="chatbotModal" style="display: none;">
+      <div id="chatbotContainer" style="position: relative;">
+        <div id="closeButton" data-tooltip="Close Chat">
+          <i class="uil uil-times"></i>
+        </div>
+        <div id="chatbotHeader">My Personal Assistant</div>
+        <div id="chatbotBody"></div>
+        <!-- New input container for chatbot input and send button -->
+        <div id="chatbotInputContainer">
+          <input id="chatbotInput" type="text" placeholder="Ask me something..." />
+          <button id="chatbotButton" data-tooltip="Send Message">
+            <i class="uil uil-message"></i>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!--==================== SCROLL TO TOP ====================-->
     <a class="scrollup" style="display: block" id="back-to-top" title="Back to Top" data-tooltip="Back to Top"><i class="fa fa-arrow-up"></i></a>
