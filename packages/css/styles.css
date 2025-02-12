@@ -1885,3 +1885,35 @@ body.dark-theme .welcome {
 #chatbotModal #chatbotBody {
   padding: 0.5rem 0;
 }
+
+#link1 {
+  color: inherit;
+  transition: color 0.2s;
+}
+
+#link1:hover {
+  color: var(--first-color-alt);
+}
+
+#link2 {
+  color: inherit;
+  transition: color 0.2s;
+}
+
+#link2:hover {
+  color: var(--first-color-alt);
+}
+
+.swiper-pagination-bullet:hover {
+  background-color: var(--first-color);
+}
+
+.swiper-button-next i:hover {
+  color: var(--first-color-alt);
+  transition: color 0.3s;
+}
+
+.swiper-button-prev i:hover {
+  color: var(--first-color-alt);
+  transition: color 0.3s;
+}
