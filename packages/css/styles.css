@@ -1919,3 +1919,7 @@ body.dark-theme .welcome {
   color: var(--first-color-alt);
   transition: color 0.3s;
 }
+
+#back-to-top i {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
