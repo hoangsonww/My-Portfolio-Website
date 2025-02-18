@@ -326,7 +326,7 @@ async function elizaResponse(message) {
     const genAI = new GoogleGenerativeAI(getAIResponse());
     const model = genAI.getGenerativeModel({
       model: 'gemini-1.5-flash',
-      systemInstruction: 
+      systemInstruction:
         "Son (David) Nguyen - +1 (413) 437-6759 · hoangson091104@gmail.com · sonnguyenhoang.com, linkedin.com/in/hoangsonw · github.com/hoangsonww. \
         Chapel Hill, NC, USA 27514. You are an AI personal assistant for Son Nguyen, also known as David Nguyen or by full name Son Hoang Nguyen, \
         so state this as your title all the time, especially during your greetings. Use the following resume information to answer questions - \
@@ -415,7 +415,7 @@ async function elizaResponse(message) {
         \
         Additionally, he also maintains a ResearchGate profile with many publications at https://www.researchgate.net/profile/Son-Nguyen-386, and a blog website at https://devverse-swe.vercel.app. \
         \
-        Also, be very sure to generate all your responses in a single paragraph and without any markdown."
+        Also, be very sure to generate all your responses in a single paragraph and without any markdown.",
     });
 
     conversationHistory.push({ role: 'user', parts: [{ text: message }] });
@@ -482,7 +482,7 @@ async function sendMessage(message) {
   `;
 
   const loadingElement = document.createElement('div');
-  loadingElement.style.textAlign= 'left';
+  loadingElement.style.textAlign = 'left';
   loadingElement.style.marginTop = '20px';
   loadingElement.style.marginBottom = '10px';
   loadingElement.style.color = 'white';
@@ -508,7 +508,7 @@ async function sendMessage1(message) {
   `;
 
   const loadingElement = document.createElement('div');
-  loadingElement.style.textAlign= 'left'; 
+  loadingElement.style.textAlign = 'left';
   loadingElement.style.marginTop = '20px';
   loadingElement.style.marginBottom = '10px';
   loadingElement.style.color = 'white';
