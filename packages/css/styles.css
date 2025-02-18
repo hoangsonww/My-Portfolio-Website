@@ -2042,3 +2042,8 @@ body.dark-theme .welcome {
     grid-template-columns: 1fr;
   }
 }
+
+#contact-btn:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
