@@ -1520,7 +1520,7 @@ img {
 /* Ensure the input fills available space and has a fixed height */
 #chatbotInputContainer #chatbotInput {
   flex: 1;
-  height: 40px; 
+  height: 40px;
   padding: 10px;
   border: none;
   border-radius: 8px;
@@ -1541,7 +1541,7 @@ img {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  height: 40px;      
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1806,7 +1806,9 @@ body.dark-theme .welcome {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   pointer-events: none;
   font-size: 1rem;
 }
@@ -1859,7 +1861,7 @@ body.dark-theme .welcome {
   font-size: var(--normal-font-size);
   background-color: #ffffff;
   color: black;
-  height: 40px;           /* Added fixed height */
+  height: 40px; /* Added fixed height */
   box-sizing: border-box; /* Ensure padding is included in height */
 }
 
@@ -1873,7 +1875,7 @@ body.dark-theme .welcome {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  height: 40px;           /* Added fixed height to match the input */
+  height: 40px; /* Added fixed height to match the input */
   box-sizing: border-box; /* Ensure padding is included in height */
   margin-bottom: 10px;
   font-size: 1rem;
@@ -1937,100 +1939,106 @@ body.dark-theme .welcome {
 
 /* Centering & Width Limitation */
 .useful-links-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    width: 80vw; /* 80% Viewport Width */
-    max-width: 1000px; /* Don't let it get too wide */
-    margin: 2rem auto; /* Center it */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 80vw; /* 80% Viewport Width */
+  max-width: 1000px; /* Don't let it get too wide */
+  margin: 2rem auto; /* Center it */
 }
 
 /* Card Styling */
 .useful-link-card {
-    background: var(--container-color);
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid transparent;
-    cursor: pointer;
+  background: var(--container-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 1.5rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .useful-link-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    border-color: var(--first-color);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: var(--first-color);
 }
 
 .useful-link-card a {
-    text-decoration: none;
-    color: var(--text-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 /* Icon Container */
 .icon-container {
-    background: var(--first-color-lighter);
-    padding: 15px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s ease;
-    width: 70px;
-    height: 70px;
+  background: var(--first-color-lighter);
+  padding: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+  width: 70px;
+  height: 70px;
 }
 
 .useful-link-card i {
-    font-size: 2.5rem;
-    color: var(--first-color);
-    transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 2.5rem;
+  color: var(--first-color);
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .useful-link-card:hover i {
-    transform: scale(1.1);
-    color: white;
+  transform: scale(1.1);
+  color: white;
 }
 
 .useful-link-card:hover .icon-container {
-    background: var(--first-color);
+  background: var(--first-color);
 }
 
 /* Text Styling */
 .useful-link-card h3 {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-semi-bold);
-    color: var(--title-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
 }
 
 .useful-link-card p {
-    font-size: var(--small-font-size);
-    color: var(--text-color-light);
-    max-width: 90%;
-    text-align: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  max-width: 90%;
+  text-align: center;
 }
 
 /* Scroll Animation */
 .scroll-animation {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .scroll-animation.active {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .useful-links-container {
-        grid-template-columns: 1fr;
-    }
+  .useful-links-container {
+    grid-template-columns: 1fr;
+  }
 }
