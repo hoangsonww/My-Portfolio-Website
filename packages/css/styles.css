@@ -842,6 +842,7 @@ img {
   visibility: hidden;
   transition: 0.3s;
   overflow-y: auto;
+  width: 100vw !important;
 }
 
 /* Modal content */
@@ -850,7 +851,8 @@ img {
   background-color: var(--container-color);
   padding: 1.5rem;
   border-radius: 0.5rem;
-  overflow-y: auto;
+  overflow-y: auto !important;
+  max-height: 80vh;
 }
 
 /* Modal services list */
@@ -868,6 +870,7 @@ img {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-1-5);
+  padding-right: 1rem;
 }
 
 /* Close icon for the modal */
@@ -878,6 +881,11 @@ img {
   font-size: 1.5rem;
   color: var(--first-color);
   cursor: pointer;
+  transition: color 0.3s;
+}
+
+.services__modal-close:hover {
+  color: var(--first-color-alt);
 }
 
 /* Modal icon styling */
@@ -1721,6 +1729,7 @@ body.dark-theme .welcome {
   font-size: 1.5rem;
   color: var(--text-color);
   margin-top: var(--mb-1);
+  padding: 0 1rem;
 }
 
 .welcome__button {
