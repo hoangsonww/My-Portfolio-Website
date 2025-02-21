@@ -253,13 +253,26 @@ function typeSubtitle() {
     subtitleIndex++;
     setTimeout(typeSubtitle, subtitleDelay);
   } else {
+    // Remove the cursor
     cursorSubtitle.style.display = 'none';
+
+    // Show the button
     setTimeout(() => {
       scrollButton.style.display = 'inline-block';
       scrollButton.classList.add('drop-down');
+
+      // Delay before showing the graphics
+      setTimeout(() => {
+        const graphicsElem = document.querySelector('.graphics');
+        if (graphicsElem) {
+          graphicsElem.classList.add('show-graphics');
+        }
+      }, 500); // Adjust this delay as needed
+
     }, 600);
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(typeTitle, newTextDelay);
@@ -658,6 +671,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(element);
   });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
   // Toggle chatbot modal on mobile
   document.getElementById('chatbot-toggle').addEventListener('click', function () {

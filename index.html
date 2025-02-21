@@ -156,6 +156,7 @@
 
     <!--==================== MAIN ====================-->
     <main class="main">
+
       <!--==================== WELCOME ====================-->
       <section class="welcome section" id="welcome">
         <div class="welcome__content">
@@ -165,6 +166,31 @@
             <i class="uil uil-arrow-down button__icon" style="margin-left: 0"></i>
             Explore My Work
           </a>
+        </div>
+
+        <div class="graphics scroll-animation" style="transition: background-color 0.5s, opacity 0.6s ease, transform 0.6s ease;">
+          <svg viewBox="0 0 1020 150" preserveAspectRatio="none">
+            <!-- Horizontal dotted line -->
+            <line class="horizontal-line" x1="0" y1="75" x2="1000" y2="75" />
+            <!-- Right arrow at the end of the horizontal line -->
+            <polygon class="arrow" points="1000,65 1020,75 1000,85" />
+
+            <!-- Nodes & Text (matching animation delays) -->
+            <circle class="node" cx="100" cy="75" r="5" fill="var(--title-color)" style="animation-delay: 0.45s;" />
+            <text x="100" y="40" text-anchor="middle" class="node-text" style="animation-delay: 0.45s;">Design</text>
+
+            <circle class="node" cx="300" cy="75" r="5" fill="var(--title-color)" style="animation-delay: 1.05s;" />
+            <text x="300" y="40" text-anchor="middle" class="node-text" style="animation-delay: 1.05s;">Develop</text>
+
+            <circle class="node" cx="500" cy="75" r="5" fill="var(--title-color)" style="animation-delay: 1.65s;" />
+            <text x="500" y="40" text-anchor="middle" class="node-text" style="animation-delay: 1.65s;">Test</text>
+
+            <circle class="node" cx="700" cy="75" r="5" fill="var(--title-color)" style="animation-delay: 2.25s;" />
+            <text x="700" y="40" text-anchor="middle" class="node-text" style="animation-delay: 2.25s;">Deploy</text>
+
+            <circle class="node" cx="900" cy="75" r="5" fill="var(--title-color)" style="animation-delay: 2.85s;" />
+            <text x="900" y="40" text-anchor="middle" class="node-text" style="animation-delay: 2.85s;">Innovate</text>
+          </svg>
         </div>
       </section>
 
