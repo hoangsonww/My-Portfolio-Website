@@ -1091,6 +1091,16 @@ img {
   margin-top: var(--mb-3);
 }
 
+.footer__copylink {
+  color: white;
+  text-decoration: underline;
+  font: inherit;
+}
+
+.footer__copylink:hover {
+  color: var(--first-color);
+}
+
 .footer__title,
 .footer__subtitle,
 .footer__link,
