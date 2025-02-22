@@ -268,11 +268,9 @@ function typeSubtitle() {
           graphicsElem.classList.add('show-graphics');
         }
       }, 500); // Adjust this delay as needed
-
     }, 600);
   }
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
   setTimeout(typeTitle, newTextDelay);

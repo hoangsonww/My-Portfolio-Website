@@ -1763,13 +1763,13 @@ body.dark-theme .welcome {
   fill: none;
   stroke: var(--title-color);
   stroke-width: 2;
-  stroke-dasharray: 4,4;
+  stroke-dasharray: 4, 4;
   stroke-linecap: round;
   stroke-dashoffset: 1000;
   animation: drawLine 3s forwards;
 }
 
-.graphics svg:hover .horizontal-line, 
+/* .graphics svg:hover .horizontal-line, 
 .graphics svg:hover .arrow, 
 .graphics svg:hover .node, 
 .graphics svg:hover .node-text {
@@ -1777,7 +1777,7 @@ body.dark-theme .welcome {
   color: var(--first-color);
   fill: var(--first-color);
   transition: stroke 0.3s, color 0.3s, fill 0.3s;
-}
+} */
 
 @keyframes drawLine {
   to {
@@ -1834,7 +1834,9 @@ body.dark-theme .welcome {
 .graphics {
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease, background-color 0.5s;
+  transition:
+    opacity 0.5s ease,
+    background-color 0.5s;
 }
 
 /* A helper class to handle the fade-in */
@@ -1871,8 +1873,8 @@ body.dark-theme .welcome {
 }
 
 #cursor-subtitle {
-  height: 1.5rem; 
-  display: none; 
+  height: 1.5rem;
+  display: none;
 }
 
 @keyframes blink {
