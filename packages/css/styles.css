@@ -231,7 +231,6 @@ img {
 }
 
 /*==================== LAYOUT ====================*/
-
 .container {
   max-width: 768px;
   margin-left: var(--mb-1-5);
@@ -1091,6 +1090,16 @@ img {
   margin-top: var(--mb-3);
 }
 
+.footer__copylink {
+  color: white;
+  text-decoration: underline;
+  font: inherit;
+}
+
+.footer__copylink:hover {
+  color: var(--first-color);
+}
+
 .footer__title,
 .footer__subtitle,
 .footer__link,
@@ -1741,6 +1750,122 @@ body.dark-theme .welcome {
   opacity: 0;
 }
 
+.graphics {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: var(--body-color);
+  color: var(--title-color);
+  overflow: hidden;
+  transition: background-color 0.5s;
+}
+
+.graphics svg {
+  width: 75%;
+  height: 100%;
+}
+
+/* Horizontal dotted line style and animation */
+.horizontal-line {
+  fill: none;
+  stroke: var(--title-color);
+  stroke-width: 2;
+  stroke-dasharray: 4, 4;
+  stroke-linecap: round;
+  stroke-dashoffset: 1000;
+  animation: drawLine 3s forwards;
+}
+
+/* .graphics svg:hover .horizontal-line, 
+.graphics svg:hover .arrow, 
+.graphics svg:hover .node, 
+.graphics svg:hover .node-text {
+  stroke: var(--first-color);
+  color: var(--first-color);
+  fill: var(--first-color);
+  transition: stroke 0.3s, color 0.3s, fill 0.3s;
+} */
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Right arrow fade-in */
+.arrow {
+  fill: var(--title-color);
+  opacity: 0;
+  animation: arrowFadeIn 0.5s forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes arrowFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Nodes fade-in-up (same effect as text) */
+.node {
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
+}
+
+/* Text labels for nodes with staggered fade-in-up animation */
+.node-text {
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  fill: var(--title-color);
+  opacity: 0;
+  animation: fadeInUp 0.5s forwards;
+  vector-effect: non-scaling-stroke !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.graphics {
+  display: none;
+  opacity: 0;
+  transition:
+    opacity 0.5s ease,
+    background-color 0.5s;
+}
+
+/* A helper class to handle the fade-in */
+.show-graphics {
+  display: block;
+  opacity: 1 !important;
+}
+
+@media screen and (max-width: 1400px) {
+  .graphics svg {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .graphics {
+    display: none;
+  }
+}
+
 .button__icon {
   margin-right: 10px;
 }
@@ -1753,12 +1878,12 @@ body.dark-theme .welcome {
 }
 
 #cursor {
-  height: 5rem; /* Cursor height for the header (Welcome) */
+  height: 5rem;
 }
 
 #cursor-subtitle {
-  height: 1.5rem; /* Cursor height for the subtitle */
-  display: none; /* Initially hidden until the Welcome text is typed */
+  height: 1.5rem;
+  display: none;
 }
 
 @keyframes blink {
@@ -2055,4 +2180,8 @@ body.dark-theme .welcome {
 #contact-btn:hover {
   background-color: #f0f0f0;
   transition: background-color 0.3s;
+}
+
+.main {
+  padding-left: 0 !important;
 }
