@@ -2,11 +2,11 @@
   "name": "son-nguyen-hoang-portfolio",
   "version": "1.0.0",
   "description": "Personal portfolio website of Son Nguyen Hoang, showcasing my skills and projects.",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "start": "http-server -o",
-    "build": "npm run start",
-    "test": "http-server -o",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "format": "prettier --config ./project-config/.prettierrc --write \"packages/js/*.{html,css,js,jsx,ts,tsx}\" \"packages/css/*.{html,css,js,jsx,ts,tsx}\" \"404.html\" \"index.html\"",
     "install-deps": "npm install"
   },
@@ -24,19 +24,11 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
+    "@google/generative-ai": "^0.22.0",
     "axios": "^1.7.2",
-    "formik": "^2.2.9",
     "prettier": "^3.5.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^5.0.1",
     "swiper": "^6.7.5",
-    "web-vitals": "^1.1.2",
-    "yup": "^0.32.9"
+    "vite": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^7.31.0",
