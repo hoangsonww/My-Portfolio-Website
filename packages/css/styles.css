@@ -1118,7 +1118,7 @@ img {
   border-radius: 8px;
   z-index: var(--z-tooltip);
   transition: 0.4s;
-  max-width: 25%;
+  max-width: 350px;
 }
 
 .scrollup:hover {
