@@ -365,9 +365,8 @@ async function elizaResponse(message) {
     conversationHistory.push({ role: 'model', parts: [{ text: fullResponse }] });
 
     sessionStorage.setItem('conversationHistory', JSON.stringify(conversationHistory));
-    console.log(conversationHistory);
   } catch (error) {
-    console.error('Error fetching response:', error.message);
+    console.log('Error fetching response:', error.message);
     fullResponse =
       'An error occurred while generating the response, possibly due to high traffic or safety concerns. I apologize for any inconvenience caused. Please try again later with a different query or contact me for further assistance.';
   }
@@ -484,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
         chatbotInput.value = '';
       }
     } else {
-      console.error('Chatbot input element not found');
+      console.log('Chatbot input element not found');
     }
   });
 });
@@ -626,7 +625,7 @@ document.addEventListener('DOMContentLoaded', function () {
         chatbotInput.value = '';
       }
     } else {
-      console.error('Chatbot input element not found');
+      console.log('Chatbot input element not found');
     }
   });
 
