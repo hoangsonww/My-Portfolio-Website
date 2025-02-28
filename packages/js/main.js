@@ -401,10 +401,15 @@ chatbotInput.addEventListener('keydown', function (event) {
 
 async function sendMessage(message) {
   chatbotBody.innerHTML += `
-    <div style="text-align: right; margin-bottom: 10px; color: white;">${message}</div>
+    <div class="chatbotMessage" style="text-align: right; margin-bottom: 10px; color: white;">
+      ${message}
+    </div>
   `;
 
+  chatbotBody.scrollTop = chatbotBody.scrollHeight;
+
   const loadingElement = document.createElement('div');
+  loadingElement.className = 'chatbotMessage';
   loadingElement.style.textAlign = 'left';
   loadingElement.style.marginTop = '20px';
   loadingElement.style.marginBottom = '10px';
@@ -412,14 +417,12 @@ async function sendMessage(message) {
   chatbotBody.appendChild(loadingElement);
 
   let dotCount = 0;
-
   let loadingInterval = setInterval(() => {
     loadingElement.textContent = 'Generating response' + '.'.repeat(dotCount);
     dotCount = (dotCount + 1) % 4;
   }, 500);
 
   let botReply = await elizaResponse(message);
-
   clearInterval(loadingInterval);
   loadingElement.textContent = botReply;
   chatbotBody.scrollTop = chatbotBody.scrollHeight;
@@ -429,6 +432,8 @@ async function sendMessage1(message) {
   mobileChatbotBody.innerHTML += `
     <div style="text-align: right; margin-bottom: 10px; color: white;">${message}</div>
   `;
+
+  mobileChatbotBody.scrollTop = mobileChatbotBody.scrollHeight;
 
   const loadingElement = document.createElement('div');
   loadingElement.style.textAlign = 'left';
@@ -448,7 +453,7 @@ async function sendMessage1(message) {
 
   clearInterval(loadingInterval);
   loadingElement.textContent = botReply;
-  mobileChatbotBody.scrollTop = chatbotBody.scrollHeight;
+  mobileChatbotBody.scrollTop = mobileChatbotBody.scrollHeight;
 }
 
 document.getElementById('minimizeButton').addEventListener('click', function () {
@@ -612,7 +617,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Send button event listener
-  document.getElementById('chatbotButton').addEventListener('click', function () {
+  document.getElementById('chatbotButton1').addEventListener('click', function () {
     const chatbotInput = document.querySelector('#chatbotModal #chatbotInput');
     if (chatbotInput) {
       console.log(chatbotInput.value);

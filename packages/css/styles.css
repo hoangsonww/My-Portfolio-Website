@@ -1489,7 +1489,6 @@ img {
 #chatbotBody {
   overflow-y: auto;
   max-height: 300px;
-  min-width: 300px;
   padding: 10px;
   border-radius: 8px;
   color: white;
@@ -1569,6 +1568,30 @@ img {
 
 /* Style the send button hover effect */
 #chatbotInputContainer #chatbotButton:hover {
+  background-color: white;
+  color: var(--first-color-alt);
+}
+
+#chatbotInputContainer #chatbotButton1 {
+  margin-left: 0.5rem;
+  padding: 10px;
+  border: none;
+  background-color: var(--first-color-alt);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Style the send button hover effect */
+#chatbotInputContainer #chatbotButton1:hover {
   background-color: white;
   color: var(--first-color-alt);
 }
@@ -2016,6 +2039,26 @@ body.dark-theme .welcome {
 }
 
 #chatbotModal #chatbotButton:hover {
+  background-color: white;
+  color: var(--first-color-alt);
+}
+
+#chatbotModal #chatbotButton1 {
+  margin-left: 0.5rem;
+  padding: 10px;
+  border: none;
+  background-color: var(--first-color-alt);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 40px; /* Added fixed height to match the input */
+  box-sizing: border-box; /* Ensure padding is included in height */
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+#chatbotModal #chatbotButton1:hover {
   background-color: white;
   color: var(--first-color-alt);
 }
