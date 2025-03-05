@@ -661,3 +661,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   elements.forEach(element => observer.observe(element));
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const aboutImage = document.querySelector('.about__img');
+
+  if (aboutImage) {
+    aboutImage.addEventListener('mouseenter', () => {
+      aboutImage.style.transform = 'scale(1.05)';
+      aboutImage.style.transition = 'transform 0.3s ease-in-out';
+    });
+
+    aboutImage.addEventListener('mouseleave', () => {
+      aboutImage.style.transform = 'scale(1)';
+    });
+  }
+});
