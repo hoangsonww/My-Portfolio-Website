@@ -399,10 +399,15 @@ img {
 .home__blob {
   width: 200px;
   fill: var(--first-color);
+  transition: transform 0.3s ease-in-out;
 }
 
 .home__blob-img {
-  width: 220px;
+  width: 200px;
+}
+
+.home__blob:hover {
+  transform: scale(1.05);
 }
 
 .home__data {
@@ -431,6 +436,22 @@ img {
 .home__scroll-button {
   color: var(--first-color);
   transition: 0.3s;
+}
+
+.home__scroll-button:hover .home__scroll-arrow {
+  transform: translateY(5px);
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Slight movement for mouse icon as well */
+.home__scroll-button:hover .home__scroll-mouse {
+  transform: translateY(5px);
+  transition: transform 0.3s ease;
+}
+
+.home__scroll-button:hover .home__scroll-name {
+  transform: translateY(5px);
+  transition: transform 0.3s ease;
 }
 
 .home__scroll-button:hover {
@@ -501,6 +522,11 @@ img {
 .button--link:hover {
   background-color: transparent;
   color: var(--first-color-alt);
+}
+
+.button:hover .button__icon {
+  transform: translateX(5px); /* Moves the icon 5px to the right */
+  transition: transform 0.3s ease; /* Smooth transition */
 }
 
 /*==================== ABOUT ====================*/
@@ -1336,9 +1362,11 @@ img {
       padding-top: 5.5rem;
       column-gap: 2rem;
     }
+
     .home__blob {
       width: 270px;
     }
+    
     .home__scroll {
       display: block;
     }
@@ -1843,7 +1871,7 @@ body.dark-theme .welcome {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 7rem; /* same height as before */
+  height: 6rem; /* same height as before */
   overflow: hidden;
   z-index: 1000;
 }
@@ -1855,7 +1883,7 @@ body.dark-theme .welcome {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 7rem;
+  height: 6rem;
   width: 100%;
   background: url(../images/wave.png);
   background-size: 100rem 11rem;

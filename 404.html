@@ -37,14 +37,14 @@
         --normal-font-size: 1rem;
         --mb-1-5: 1.5rem;
       }
-      
+
       /* Global Reset & Base Styles */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
-      
+
       body {
         position: relative;
         font-family: 'Poppins', sans-serif;
@@ -54,13 +54,19 @@
         overflow: hidden;
         color: #fff;
       }
-      
+
       @keyframes gradientBG {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
-      
+
       /* Floating Particles Background */
       .particles {
         position: absolute;
@@ -72,14 +78,14 @@
         z-index: 0;
         pointer-events: none;
       }
-      
+
       .particle {
         position: absolute;
         background: rgba(255, 255, 255, 0.15);
         border-radius: 50%;
         animation: float 10s linear infinite;
       }
-      
+
       @keyframes float {
         0% {
           transform: translateY(0) scale(1);
@@ -90,7 +96,7 @@
           opacity: 0;
         }
       }
-      
+
       .particle:nth-child(1) {
         width: 10px;
         height: 10px;
@@ -139,7 +145,7 @@
         animation-duration: 9s;
         animation-delay: 5s;
       }
-      
+
       /* Not Found Container */
       .not-found-container {
         position: relative;
@@ -159,13 +165,13 @@
         animation: fadeIn 1.5s ease-out forwards;
         opacity: 0;
       }
-      
+
       @keyframes fadeIn {
         to {
           opacity: 1;
         }
       }
-      
+
       /* Glitchy & Flicker Effect on Heading */
       .not-found-container h1 {
         font-size: var(--big-font-size);
@@ -198,34 +204,78 @@
         animation: glitch2 2s infinite linear alternate-reverse;
       }
       @keyframes glitch1 {
-        0% { clip: rect(42px, 9999px, 44px, 0); }
-        20% { clip: rect(12px, 9999px, 16px, 0); }
-        40% { clip: rect(82px, 9999px, 84px, 0); }
-        60% { clip: rect(22px, 9999px, 26px, 0); }
-        80% { clip: rect(12px, 9999px, 14px, 0); }
-        100% { clip: rect(42px, 9999px, 44px, 0); }
+        0% {
+          clip: rect(42px, 9999px, 44px, 0);
+        }
+        20% {
+          clip: rect(12px, 9999px, 16px, 0);
+        }
+        40% {
+          clip: rect(82px, 9999px, 84px, 0);
+        }
+        60% {
+          clip: rect(22px, 9999px, 26px, 0);
+        }
+        80% {
+          clip: rect(12px, 9999px, 14px, 0);
+        }
+        100% {
+          clip: rect(42px, 9999px, 44px, 0);
+        }
       }
       @keyframes glitch2 {
-        0% { clip: rect(12px, 9999px, 14px, 0); }
-        20% { clip: rect(82px, 9999px, 84px, 0); }
-        40% { clip: rect(22px, 9999px, 26px, 0); }
-        60% { clip: rect(42px, 9999px, 44px, 0); }
-        80% { clip: rect(12px, 9999px, 14px, 0); }
-        100% { clip: rect(82px, 9999px, 84px, 0); }
+        0% {
+          clip: rect(12px, 9999px, 14px, 0);
+        }
+        20% {
+          clip: rect(82px, 9999px, 84px, 0);
+        }
+        40% {
+          clip: rect(22px, 9999px, 26px, 0);
+        }
+        60% {
+          clip: rect(42px, 9999px, 44px, 0);
+        }
+        80% {
+          clip: rect(12px, 9999px, 14px, 0);
+        }
+        100% {
+          clip: rect(82px, 9999px, 84px, 0);
+        }
       }
       @keyframes flicker {
-        0% { opacity: 1; }
-        5% { opacity: 0.8; }
-        10% { opacity: 1; }
-        15% { opacity: 0.9; }
-        20% { opacity: 1; }
-        25% { opacity: 0.85; }
-        30% { opacity: 1; }
-        35% { opacity: 0.95; }
-        40% { opacity: 1; }
-        100% { opacity: 1; }
+        0% {
+          opacity: 1;
+        }
+        5% {
+          opacity: 0.8;
+        }
+        10% {
+          opacity: 1;
+        }
+        15% {
+          opacity: 0.9;
+        }
+        20% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0.85;
+        }
+        30% {
+          opacity: 1;
+        }
+        35% {
+          opacity: 0.95;
+        }
+        40% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
       }
-      
+
       /* Paragraph & Button Styles */
       .not-found-container p {
         font-size: var(--h2-font-size);
@@ -240,25 +290,29 @@
         padding: 1rem 2rem;
         border-radius: 0.5rem;
         text-decoration: none;
-        transition: background-color 0.3s, transform 0.3s;
+        transition:
+          background-color 0.3s,
+          transform 0.3s;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       }
       .not-found-container a:hover {
         background-color: var(--first-color-alt);
         transform: scale(1.05);
       }
-      
+
       /* Scroll Animation (for fade-in/up on scroll) */
       .scroll-animation {
         opacity: 0;
         transform: translateY(50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
       }
       .scroll-in-view {
         opacity: 1;
         transform: translateY(0);
       }
-      
+
       /* Dark Theme Adjustments */
       body.dark-theme {
         background: #121212;
@@ -267,7 +321,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69TKSZGS7T"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
+      function gtag() {
+        dataLayer.push(arguments);
+      }
       gtag('js', new Date());
       gtag('config', 'G-69TKSZGS7T');
     </script>
@@ -308,7 +364,7 @@
           observer.observe(element);
         });
       });
-      
+
       // Dark mode toggle based on stored preference
       const darkTheme = 'dark-theme';
       const selectedTheme = localStorage.getItem('selected-theme');

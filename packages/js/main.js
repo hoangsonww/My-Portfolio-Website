@@ -114,27 +114,28 @@ function linkAction() {
 
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
-const skillsContent = document.getElementsByClassName('skills__content'),
-  skillsHeader = document.querySelectorAll('.skills__header');
+const skillsContent = document.querySelectorAll('.skills__content');
+const skillsHeader = document.querySelectorAll('.skills__header');
 
 function toggleSkills() {
-  let itemClass = this.parentNode.className;
-  const offset = 100;
+  const itemClass = this.parentNode.classList.contains('skills__open');
 
-  for (let i = 0; i < skillsContent.length; i++) {
-    skillsContent[i].className = 'skills__content skills__close';
-  }
+  // Close all skill sections
+  skillsContent.forEach(content => content.classList.remove('skills__open'));
 
-  if (itemClass === 'skills__content skills__close') {
-    this.parentNode.className = 'skills__content skills__open';
+  // Open the clicked section only if it was closed before
+  if (!itemClass) {
+    this.parentNode.classList.add('skills__open');
 
+    // Smooth scroll to the newly opened section
+    const offset = 100;
     const elementPosition = this.parentNode.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
   }
 }
 
-skillsHeader.forEach(el => {
-  el.addEventListener('click', toggleSkills);
+skillsHeader.forEach(header => {
+  header.addEventListener('click', toggleSkills);
 });
 
 const tabs = document.querySelectorAll('[data-target]'),
