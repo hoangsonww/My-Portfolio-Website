@@ -1860,7 +1860,7 @@ body.dark-theme .welcome {
   background-size: 100rem 11rem;
   background-repeat: repeat-x;
   animation: waves 8s linear infinite;
-  filter: invert(1); /* Inverts the white wave to a darker tone for light backgrounds */
+  filter: invert(0.5); /* Inverts the white wave to a darker tone for light backgrounds */
 }
 
 /* Adjust individual wave animations as before */
