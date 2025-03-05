@@ -1,3 +1,9 @@
 {
-  "routes": [{ "src": "^(?!/$).+", "dest": "/404.html", "status": 404 }]
+  "routes": [
+    {
+      "src": "^(?!/(?:packages|utils|assets|static|css|js|images|fonts)/).*$",
+      "dest": "/404.html",
+      "status": 404
+    }
+  ]
 }
