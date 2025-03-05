@@ -1051,6 +1051,7 @@ img {
 .footer__bg {
   background-color: var(--first-color-second);
   padding: 2rem 0 3rem;
+  transition: background-color 0.5s;
 }
 
 .footer__title {
@@ -1729,7 +1730,7 @@ body {
 }
 
 .welcome {
-  width: 99vw;
+  width: 100vw;
   height: 100vh;
   background-color: var(--body-color);
   display: flex;
@@ -1860,7 +1861,8 @@ body.dark-theme .welcome {
   background-size: 100rem 11rem;
   background-repeat: repeat-x;
   animation: waves 8s linear infinite;
-  filter: invert(0.5); /* Inverts the white wave to a darker tone for light backgrounds */
+  filter: invert(0.5);
+  transition: filter 0.5s;
 }
 
 /* Adjust individual wave animations as before */
