@@ -1116,7 +1116,7 @@ img {
   opacity: 1;
   padding: 0 0.3rem;
   border-radius: 8px;
-  z-index: var(--z-tooltip);
+  z-index: 1000000;
   transition: 0.4s;
   max-width: 350px;
 }
@@ -1836,6 +1836,61 @@ body.dark-theme .welcome {
   }
 }
 
+/* Waves container remains unchanged */
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7rem; /* same height as before */
+  overflow: hidden;
+  z-index: 1000;
+}
+
+/* Apply the filter to all wave layers in light mode */
+.waves .wave,
+.waves .wave2,
+.waves .wave3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 7rem;
+  width: 100%;
+  background: url(../images/wave.png);
+  background-size: 100rem 11rem;
+  background-repeat: repeat-x;
+  animation: waves 8s linear infinite;
+  filter: invert(1); /* Inverts the white wave to a darker tone for light backgrounds */
+}
+
+/* Adjust individual wave animations as before */
+.waves .wave2 {
+  animation-direction: reverse;
+  animation-duration: 6s;
+  opacity: 0.3;
+}
+
+.waves .wave3 {
+  animation-duration: 4s;
+  opacity: 0.5;
+}
+
+@keyframes waves {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100rem;
+  }
+}
+
+/* In dark mode, remove the filter so waves stay white */
+body.dark-theme .waves .wave,
+body.dark-theme .waves .wave2,
+body.dark-theme .waves .wave3 {
+  filter: none;
+}
+
 /* Nodes fade-in-up (same effect as text) */
 .node {
   opacity: 0;
@@ -1956,7 +2011,7 @@ body.dark-theme .welcome {
   margin-bottom: 2rem;
   background-color: var(--first-color);
   border-radius: 8px;
-  z-index: var(--z-tooltip);
+  z-index: 100000;
   width: 80vw;
   padding-right: 1rem;
   padding-left: 1rem;
