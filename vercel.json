@@ -1,9 +1,7 @@
 {
   "routes": [
-    {
-      "src": "^(?!/(?:packages|utils|assets|static|css|js|images|fonts)/).*$",
-      "dest": "/404.html",
-      "status": 404
-    }
+    { "handle": "filesystem" },
+
+    { "src": "^(?!/$).*$", "dest": "/404.html", "status": 404 }
   ]
 }
