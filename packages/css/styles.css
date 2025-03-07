@@ -390,10 +390,12 @@ img {
 .home__social-icon {
   font-size: 1.25rem;
   color: var(--first-color);
+  transition: all 0.3s ease-in-out;
 }
 
 .home__social-icon:hover {
   color: var(--first-color-alt);
+  transform: scale(1.2) !important;
 }
 
 .home__blob {
@@ -1095,6 +1097,7 @@ img {
   display: flex;
   flex-direction: column;
   row-gap: 1.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .footer__link:hover {
@@ -1124,7 +1127,7 @@ img {
 }
 
 .footer__copylink:hover {
-  color: var(--first-color);
+  color: var(--first-color-lighter);
 }
 
 .footer__title,
