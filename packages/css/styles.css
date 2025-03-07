@@ -1328,7 +1328,7 @@ img {
     .body {
       margin: 0;
     }
-    
+
     .section {
       padding: 6rem 0 2rem;
     }
@@ -1352,6 +1352,7 @@ img {
       height: calc(var(--header-height) + 1.5rem);
       column-gap: 1rem;
     }
+
     .nav__icon,
     .nav__close,
     .nav__toggle {
@@ -1366,6 +1367,7 @@ img {
     .nav__menu {
       margin-left: auto;
     }
+
     .change-theme {
       margin: 0;
     }
@@ -1386,27 +1388,34 @@ img {
     .home__scroll {
       display: block;
     }
+
     .home__scroll-button {
       margin-left: 3rem;
     }
+
     .about__container {
       column-gap: 5rem;
     }
     .about__img {
       width: 350px;
     }
+
     .about__description {
       text-align: initial;
     }
+
     .about__info {
       justify-content: space-between;
     }
+
     .about__buttons {
       justify-content: initial;
     }
+
     .qualification__tabs {
       justify-content: center;
     }
+
     .qualification__button {
       margin: 0 var(--mb-1);
     }
@@ -1414,13 +1423,16 @@ img {
     .qualification__sections {
       grid-template-columns: 0.5fr;
     }
+
     .services__container {
       grid-template-columns: repeat(3, 218px);
       justify-content: center;
     }
+
     .services__icon {
       font-size: 2rem;
     }
+
     .services__content {
       padding: 6rem 0 2rem 2.5rem;
     }
@@ -1428,18 +1440,23 @@ img {
     .services__modal-content {
       width: 450px;
     }
+
     .portfolio__img {
       width: 320px;
     }
+
     .portfolio__content {
       align-items: center;
     }
+
     .project {
       text-align: initial;
     }
+
     .project__bg {
       background: none;
     }
+
     .project__container {
       background-color: var(--first-color-second);
       border-radius: 1rem;
@@ -1447,12 +1464,15 @@ img {
       grid-template-columns: 1fr max-content;
       column-gap: 3rem;
     }
+
     .project__data {
       padding-top: 0.8rem;
     }
+
     .footer__container {
       grid-template-columns: repeat(3, 1fr);
     }
+
     .footer__bg {
       padding: 3rem 0 3.5rem;
     }
@@ -1461,9 +1481,11 @@ img {
       flex-direction: row;
       column-gap: 2rem;
     }
+
     .footer__socials {
       justify-self: flex-end;
     }
+    
     .footer__copy {
       margin-top: 4.5rem;
     }
