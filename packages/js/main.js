@@ -728,6 +728,7 @@ document.querySelectorAll('.about__item').forEach(item => {
     if (el.animationFrameId) {
       cancelAnimationFrame(el.animationFrameId);
     }
+    
     el.textContent = (pad ? '0'.padStart(originalNumberStr.length, '0') : '0') + plusSign; // Show 00+ on reset
     hasAnimated = false;
 
