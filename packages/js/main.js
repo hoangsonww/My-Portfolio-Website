@@ -677,25 +677,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-document.querySelectorAll('.about__info-title').forEach(el => {
-  // Extract original text and settings
+document.querySelectorAll('.about__item').forEach(item => {
+  let el = item.querySelector('.about__info-title'); // Get the number inside the div
   let text = el.textContent.trim();
   let plusSign = text.includes('+') ? '+' : '';
   let originalNumberStr = text.replace('+', '');
-  // Determine if we need padding (e.g., "04" should keep two digits)
   let pad = originalNumberStr[0] === '0';
   let target = parseInt(originalNumberStr, 10);
   let duration = 1000; // animation duration in milliseconds
-  let hasAnimated = false; // to avoid re-animation on scroll
+  let hasAnimated = false;
+  let delay = 500; // 1s delay before animation
 
-  // The animation function counts from 0 to target
   function animate() {
     let startTime = null;
     function update(timestamp) {
       if (!startTime) startTime = timestamp;
       let progress = timestamp - startTime;
       let current = Math.min(Math.floor((progress / duration) * target), target);
-      // Format the number with padding if needed
       let formatted = pad ? current.toString().padStart(originalNumberStr.length, '0') : current.toString();
       el.textContent = formatted + plusSign;
       if (progress < duration) {
@@ -705,40 +703,41 @@ document.querySelectorAll('.about__info-title').forEach(el => {
     el.animationFrameId = requestAnimationFrame(update);
   }
 
-  // Observer to trigger animation when element is in view
+  // Observer to trigger animation when element is in view with a 1s delay
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !hasAnimated) {
           hasAnimated = true;
-          animate();
-          observer.unobserve(el);
+          el.textContent = (pad ? '0'.padStart(originalNumberStr.length, '0') : '0') + plusSign; // Show 00+ initially
+          setTimeout(() => {
+            animate();
+            observer.unobserve(item);
+          }, delay);
         }
       });
     },
     { threshold: 0.5 }
   );
 
-  observer.observe(el);
+  observer.observe(item);
 
-  // When the stat is clicked, reset and reanimate (if in view)
-  el.addEventListener('click', () => {
+  // Click event on the entire .about__item block to reset and reanimate
+  item.addEventListener('click', () => {
     if (el.animationFrameId) {
       cancelAnimationFrame(el.animationFrameId);
     }
-    // Reset counter display to 0 with the same padding if needed
-    let resetText = pad ? '0'.padStart(originalNumberStr.length, '0') : '0';
-    el.textContent = resetText + plusSign;
+    el.textContent = (pad ? '0'.padStart(originalNumberStr.length, '0') : '0') + plusSign; // Show 00+ on reset
     hasAnimated = false;
 
-    // Check if the element is currently in the viewport
-    let rect = el.getBoundingClientRect();
+    let rect = item.getBoundingClientRect();
     if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-      hasAnimated = true;
-      animate();
+      setTimeout(() => {
+        hasAnimated = true;
+        animate();
+      }, delay);
     } else {
-      // Reattach the observer to animate when it scrolls into view again
-      observer.observe(el);
+      observer.observe(item);
     }
   });
 });

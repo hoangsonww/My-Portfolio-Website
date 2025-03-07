@@ -400,7 +400,8 @@ img {
 
 .home__blob {
   width: 200px;
-  fill: var(--first-color);
+  fill: none;
+  border: none;
   transition: transform 0.3s ease-in-out;
 }
 
