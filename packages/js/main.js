@@ -689,7 +689,8 @@ document.querySelectorAll('.about__item').forEach(item => {
   let delay = 500; // 1s delay before animation
 
   function animate() {
-    let startTime = null;
+    let startTime=null;
+    
     function update(timestamp) {
       if (!startTime) startTime = timestamp;
       let progress = timestamp - startTime;
