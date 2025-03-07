@@ -686,7 +686,7 @@ document.querySelectorAll('.about__item').forEach(item => {
   let target = parseInt(originalNumberStr, 10);
   let duration = 1000; // animation duration in milliseconds
   let hasAnimated = false;
-  let delay = 500; // 1s delay before animation
+  let delay = 250; // 250ms delay before animation
 
   function animate() {
     let startTime=null;
