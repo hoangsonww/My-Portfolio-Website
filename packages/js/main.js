@@ -34,7 +34,7 @@ const skillsChart = new Chart(ctx, {
     datasets: [
       {
         label: 'Skill Level (%) - Experience and Proficiency',
-        data: [83, 92, 96, 85, 80, 90, 82, 85, 80],
+        data: [83, 92, 96, 85, 80, 90, 75, 85, 78],
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 2,
