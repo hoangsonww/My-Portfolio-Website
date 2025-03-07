@@ -527,8 +527,8 @@ img {
 }
 
 .button:hover .button__icon {
-  transform: translateX(5px); /* Moves the icon 5px to the right */
-  transition: transform 0.3s ease; /* Smooth transition */
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
 }
 
 /*==================== ABOUT ====================*/
@@ -892,7 +892,7 @@ img {
 
 /* Modal services list */
 .services__modal-services {
-  row-gap: 1rem; /* Space between services inside modal */
+  row-gap: 1rem;
 }
 
 /* Individual service in the modal */
@@ -1252,6 +1252,7 @@ img {
   .skills__title {
     font-size: var(--normal-font-size);
   }
+
   .qualification__data {
     gap: 0.5rem;
   }
@@ -1264,6 +1265,7 @@ img {
   .services__content {
     padding-right: 3.5rem;
   }
+
   .services__modal {
     padding: 0 0.5rem;
   }
@@ -1326,12 +1328,15 @@ img {
     .body {
       margin: 0;
     }
+    
     .section {
       padding: 6rem 0 2rem;
     }
+
     .section__subtitle {
       margin-bottom: 4rem;
     }
+
     .header {
       top: 0;
       bottom: initial;
