@@ -241,21 +241,29 @@ function typeTitle() {
     charIndex++;
     setTimeout(typeTitle, typingDelay);
   } else {
-    // Remove cursor after typing the title
-    cursor.style.display = 'none';
-    setTimeout(typeSubtitle, newTextDelay);
+    // Add blinking effect before transitioning
+    cursor.classList.add('blinking-cursor');
+
+    // Wait for one blink (about 1 second), then move to subtitle
+    setTimeout(() => {
+      cursor.classList.remove('blinking-cursor'); // Remove blinking
+      cursor.style.display = 'none'; // Hide cursor after blinking
+
+      setTimeout(typeSubtitle, 300); // Delay before subtitle starts
+    }, 1000); // Blinking happens once
   }
 }
 
 function typeSubtitle() {
-  cursorSubtitle.style.display = 'inline-block';
+  cursorSubtitle.style.display = 'inline-block'; // Ensure cursor appears
+
   if (subtitleIndex < subtitleArray[0].length) {
     typedSubtitleSpan.textContent += subtitleArray[0].charAt(subtitleIndex);
     subtitleIndex++;
     setTimeout(typeSubtitle, subtitleDelay);
   } else {
-    // Remove the cursor
-    cursorSubtitle.style.display = 'none';
+    // Cursor stays visible and blinks instead of disappearing
+    cursorSubtitle.classList.add('blinking-cursor');
 
     // Show the button
     setTimeout(() => {
@@ -689,8 +697,8 @@ document.querySelectorAll('.about__item').forEach(item => {
   let delay = 250; // 250ms delay before animation
 
   function animate() {
-    let startTime=null;
-    
+    let startTime = null;
+
     function update(timestamp) {
       if (!startTime) startTime = timestamp;
       let progress = timestamp - startTime;
@@ -728,7 +736,7 @@ document.querySelectorAll('.about__item').forEach(item => {
     if (el.animationFrameId) {
       cancelAnimationFrame(el.animationFrameId);
     }
-    
+
     el.textContent = (pad ? '0'.padStart(originalNumberStr.length, '0') : '0') + plusSign; // Show 00+ on reset
     hasAnimated = false;
 
