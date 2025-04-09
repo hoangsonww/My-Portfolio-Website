@@ -874,7 +874,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
-  z-index: var(--z-modal);
+  z-index: 100000000000000000000000000000;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
