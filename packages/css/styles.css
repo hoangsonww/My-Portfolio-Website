@@ -2360,3 +2360,13 @@ body.dark-theme .waves .wave3 {
 .main {
   padding-left: 0 !important;
 }
+
+.link {
+  color: var(--first-color);
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: var(--first-color-alt);
+}
