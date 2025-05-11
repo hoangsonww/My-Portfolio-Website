@@ -80,6 +80,53 @@
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#ffffff" />
 
+    <!-- ==================== JSON-LD SCHEMA ==================== -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://sonnguyenhoang.com/#website",
+        "url": "https://sonnguyenhoang.com",
+        "name": "Son Nguyen Hoang - Portfolio",
+        "description": "Professional portfolio showcasing software engineering projects, skills, and experience."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://sonnguyenhoang.com/#webpage",
+        "url": "https://sonnguyenhoang.com",
+        "name": "Home – Son Nguyen Hoang Portfolio",
+        "isPartOf": { "@id": "https://sonnguyenhoang.com/#website" },
+        "description": "Welcome page of Son Nguyen Hoang’s software engineering portfolio."
+      },
+      {
+        "@type": "Person",
+        "@id": "https://sonnguyenhoang.com/#person",
+        "name": "Son Nguyen Hoang",
+        "url": "https://sonnguyenhoang.com",
+        "image": "https://sonnguyenhoang.com/utils/image.webp",
+        "sameAs": [
+          "https://www.linkedin.com/in/hoangsonw/",
+          "https://github.com/hoangsonww"
+        ],
+        "jobTitle": "Software Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "The University of North Carolina at Chapel Hill"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://sonnguyenhoang.com/#organization",
+        "name": "Son Nguyen Hoang",
+        "url": "https://sonnguyenhoang.com",
+        "logo": "https://sonnguyenhoang.com/utils/favicon.ico"
+      }
+    ]
+  }
+  </script>
+
     <!--==================== PWAs ====================-->
     <link rel="manifest" href="manifest.json" />
 
