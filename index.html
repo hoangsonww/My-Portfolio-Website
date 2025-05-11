@@ -81,51 +81,399 @@
     <meta name="theme-color" content="#ffffff" />
 
     <!-- ==================== JSON-LD SCHEMA ==================== -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
+    <script type="application/ld+json">
       {
-        "@type": "WebSite",
-        "@id": "https://sonnguyenhoang.com/#website",
-        "url": "https://sonnguyenhoang.com",
-        "name": "Son Nguyen Hoang - Portfolio",
-        "description": "Professional portfolio showcasing software engineering projects, skills, and experience."
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://sonnguyenhoang.com/#webpage",
-        "url": "https://sonnguyenhoang.com",
-        "name": "Home – Son Nguyen Hoang Portfolio",
-        "isPartOf": { "@id": "https://sonnguyenhoang.com/#website" },
-        "description": "Welcome page of Son Nguyen Hoang’s software engineering portfolio."
-      },
-      {
-        "@type": "Person",
-        "@id": "https://sonnguyenhoang.com/#person",
-        "name": "Son Nguyen Hoang",
-        "url": "https://sonnguyenhoang.com",
-        "image": "https://sonnguyenhoang.com/utils/image.webp",
-        "sameAs": [
-          "https://www.linkedin.com/in/hoangsonw/",
-          "https://github.com/hoangsonww"
-        ],
-        "jobTitle": "Software Engineer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "The University of North Carolina at Chapel Hill"
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://sonnguyenhoang.com/#organization",
-        "name": "Son Nguyen Hoang",
-        "url": "https://sonnguyenhoang.com",
-        "logo": "https://sonnguyenhoang.com/utils/favicon.ico"
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://sonnguyenhoang.com/#website",
+            "url": "https://sonnguyenhoang.com",
+            "name": "Son Nguyen Hoang – Portfolio",
+            "description": "Professional portfolio showcasing software engineering projects, skills, and experience."
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://sonnguyenhoang.com/#about",
+            "name": "Son Nguyen Hoang",
+            "url": "https://sonnguyenhoang.com",
+            "logo": "https://sonnguyenhoang.com/utils/favicon.ico",
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "telephone": "+1-413-437-6759",
+                "contactType": "customer support",
+                "areaServed": "US"
+              },
+              {
+                "@type": "ContactPoint",
+                "telephone": "+84-368971072",
+                "contactType": "customer support",
+                "areaServed": "VN"
+              }
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Chapel Hill",
+              "addressRegion": "North Carolina",
+              "postalCode": "27514",
+              "addressCountry": "US"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/hoangsonw/",
+              "https://github.com/hoangsonww"
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://sonnguyenhoang.com/#person",
+            "name": "Son Nguyen Hoang",
+            "url": "https://sonnguyenhoang.com",
+            "image": "https://sonnguyenhoang.com/utils/image.webp",
+            "jobTitle": "Software Engineer",
+            "worksFor": { "@id": "https://sonnguyenhoang.com/#about" },
+            "telephone": "+1-413-437-6759",
+            "email": "mailto:hoangson091104@gmail.com",
+            "sameAs": [
+              "https://www.linkedin.com/in/hoangsonw/",
+              "https://github.com/hoangsonww"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://sonnguyenhoang.com/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home",           "item": "https://sonnguyenhoang.com/#home" },
+              { "@type": "ListItem", "position": 2, "name": "About",          "item": "https://sonnguyenhoang.com/#about" },
+              { "@type": "ListItem", "position": 3, "name": "Skills",         "item": "https://sonnguyenhoang.com/#skills" },
+              { "@type": "ListItem", "position": 4, "name": "Qualifications", "item": "https://sonnguyenhoang.com/#qualifications" },
+              { "@type": "ListItem", "position": 5, "name": "Projects",       "item": "https://sonnguyenhoang.com/#portfolio" },
+              { "@type": "ListItem", "position": 6, "name": "Useful Links",   "item": "https://sonnguyenhoang.com/#useful-links" },
+              { "@type": "ListItem", "position": 7, "name": "Contact",        "item": "https://sonnguyenhoang.com/#contact" }
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://sonnguyenhoang.com/#webpage",
+            "url": "https://sonnguyenhoang.com",
+            "name": "Home – Son Nguyen Hoang Portfolio",
+            "isPartOf": { "@id": "https://sonnguyenhoang.com/#website" },
+            "description": "Welcome page of Son Nguyen Hoang’s software engineering portfolio.",
+            "inLanguage": "en-US",
+            "breadcrumb": { "@id": "https://sonnguyenhoang.com/#breadcrumb" },
+            "hasPart": [
+              { "@id": "https://sonnguyenhoang.com/#portfolioList" },
+              { "@id": "https://sonnguyenhoang.com/#usefulLinksList" }
+            ],
+            "potentialAction": [
+              {
+                "@type": "CallAction",
+                "name": "Call US number",
+                "target": "tel:+14134376759"
+              },
+              {
+                "@type": "CallAction",
+                "name": "Call Vietnam number",
+                "target": "tel:+84368971072"
+              },
+              {
+                "@type": "SendAction",
+                "name": "Send message via form",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://formspree.io/f/mvojlgdq"
+                }
+              },
+              {
+                "@type": "SendAction",
+                "name": "Send e-mail",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "mailto:hoangson091104@gmail.com"
+                }
+              },
+              {
+                "@type": "ViewAction",
+                "name": "Download resume",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://sonnguyenhoang.com/packages/pdf/Son H Nguyen - Resume.pdf"
+                }
+              },
+              {
+                "@type": "NavigateAction",
+                "name": "View location on map",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://maps.app.goo.gl/Q32srm8aw4hgfTHD9"
+                }
+              }
+            ]
+          },
+      
+          {
+            "@type": "ItemList",
+            "@id": "https://sonnguyenhoang.com/#portfolioList",
+            "name": "Portfolio Projects",
+            "itemListElement": [
+              {
+                "@type": "ListItem","position":  1,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "The MovieVerse App",
+                  "url": "https://movie-verse.com",
+                  "description": "Search movies, TV shows & actors and view details."
+                }
+              },
+              {
+                "@type": "ListItem","position":  2,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "DocuThinker",
+                  "url": "https://docuthinker.vercel.app/",
+                  "description": "AI-powered document summarizer & analyzer."
+                }
+              },
+              {
+                "@type": "ListItem","position":  3,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Moodify",
+                  "url": "https://github.com/hoangsonww/Moodify-Emotion-Music-App/",
+                  "description": "AI-based music recommender via facial emotion analysis."
+                }
+              },
+              {
+                "@type": "ListItem","position":  4,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "EstateWise",
+                  "url": "https://estatewise.vercel.app/",
+                  "description": "Real estate chatbot with RAG & MoE AI models."
+                }
+              },
+              {
+                "@type": "ListItem","position":  5,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "SymptomSync",
+                  "url": "https://symptomsync.vercel.app/",
+                  "description": "Health tracker powered by Supabase & Next.js."
+                }
+              },
+              {
+                "@type": "ListItem","position":  6,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Customizable AI Chatbot",
+                  "url": "https://github.com/hoangsonww/Customizable-AI-Chatbot/",
+                  "description": "Build & personalize your own AI chatbot."
+                }
+              },
+              {
+                "@type": "ListItem","position":  7,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "AI-Powered Article Curator",
+                  "url": "https://github.com/hoangsonww/AI-Gov-Content-Curator",
+                  "description": "Daily curated summaries of trusted articles."
+                }
+              },
+              {
+                "@type": "ListItem","position":  8,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Collabify",
+                  "url": "https://collabify-pm.vercel.app/",
+                  "description": "Real-time project management with Next.js & Auth0."
+                }
+              },
+              {
+                "@type": "ListItem","position":  9,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Employee Management Fullstack App",
+                  "url": "https://github.com/hoangsonww/Employee-Management-Fullstack-App",
+                  "description": "Admin dashboard for employees, departments & projects."
+                }
+              },
+              {
+                "@type": "ListItem","position": 10,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Learning Management System Fullstack App",
+                  "url": "https://github.com/hoangsonww/Learning-Management-System-Fullstack",
+                  "description": "Course & student management web application."
+                }
+              },
+              {
+                "@type": "ListItem","position": 11,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Pokedex",
+                  "url": "https://pokedex-db.vercel.app/",
+                  "description": "Interactive Pokémon database."
+                }
+              },
+              {
+                "@type": "ListItem","position": 12,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Meadows",
+                  "url": "https://meadows.vercel.app/",
+                  "description": "Gen-Z social media platform."
+                }
+              },
+              {
+                "@type": "ListItem","position": 13,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Wordle",
+                  "url": "https://the-wordle-game.vercel.app/",
+                  "description": "Custom 5-letter word guessing game."
+                }
+              },
+              {
+                "@type": "ListItem","position": 14,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Budget Management Backend API",
+                  "url": "https://github.com/hoangsonww/Budget-Management-Backend-API/tree/master",
+                  "description": "REST & GraphQL APIs for budget tracking."
+                }
+              },
+              {
+                "@type": "ListItem","position": 15,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "AI Multipurpose Classifiers",
+                  "url": "https://github.com/hoangsonww/AI-ML-Classifiers/",
+                  "description": "ML models for vehicles, faces, moods & more."
+                }
+              },
+              {
+                "@type": "ListItem","position": 16,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "CollabNote",
+                  "url": "https://github.com/hoangsonww/CollabNote-Fullstack-App",
+                  "description": "Realtime note-taking with NestJS & Supabase."
+                }
+              },
+              {
+                "@type": "ListItem","position": 17,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "StudySync Study Buddy App",
+                  "url": "https://github.com/hoangsonww/StudySync-Study-Buddy-App",
+                  "description": "Vue-powered productivity suite for students."
+                }
+              },
+              {
+                "@type": "ListItem","position": 18,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "Tic-Tac-Toe Fullstack Game",
+                  "url": "https://github.com/hoangsonww/Tic-Tac-Toe-Fullstack-Game",
+                  "description": "Play online vs AI or players globally."
+                }
+              },
+              {
+                "@type": "ListItem","position": 19,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "React Native Task Management App",
+                  "url": "https://github.com/hoangsonww/Task-Manager-ReactNative",
+                  "description": "Mobile task tracker with charts & notifications."
+                }
+              },
+              {
+                "@type": "ListItem","position": 20,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "The 2048 Game",
+                  "url": "https://github.com/hoangsonww/2048-Game/",
+                  "description": "Classic 2048 puzzle game on web & mobile."
+                }
+              },
+              {
+                "@type": "ListItem","position": 21,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "The Flappy Bird Game",
+                  "url": "https://github.com/hoangsonww/Flappy-Bird-Game",
+                  "description": "SpriteKit & Swift iOS version of Flappy Bird."
+                }
+              },
+              {
+                "@type": "ListItem","position": 22,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": "The StickyNotes App",
+                  "url": "https://stickynotes-app.onrender.com/",
+                  "description": "Cloud-sync sticky notes web application."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://sonnguyenhoang.com/#usefulLinksList",
+            "name": "Useful Links",
+            "itemListElement": [
+              {
+                "@type": "ListItem","position": 1,
+                "item": {
+                  "@type": "WebPage",
+                  "name": "GitHub",
+                  "url": "https://github.com/hoangsonww"
+                }
+              },
+              {
+                "@type": "ListItem","position": 2,
+                "item": {
+                  "@type": "WebPage",
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/in/hoangsonw/"
+                }
+              },
+              {
+                "@type": "ListItem","position": 3,
+                "item": {
+                  "@type": "WebPage",
+                  "name": "Blog",
+                  "url": "https://devverse-swe.vercel.app"
+                }
+              },
+              {
+                "@type": "ListItem","position": 4,
+                "item": {
+                  "@type": "WebPage",
+                  "name": "Personal AI Assistant",
+                  "url": "https://lumina-david.vercel.app"
+                }
+              },
+              {
+                "@type": "ListItem","position": 5,
+                "item": {
+                  "@type": "WebPage",
+                  "name": "ResearchGate",
+                  "url": "https://www.researchgate.net/profile/Son-Nguyen-386"
+                }
+              },
+              {
+                "@type": "ListItem","position": 6,
+                "item": {
+                  "@type": "WebPage",
+                  "name": "Email",
+                  "url": "mailto:hoangson091104@gmail.com"
+                }
+              }
+            ]
+          }
+        ]
       }
-    ]
-  }
-  </script>
+      </script>      
 
     <!--==================== PWAs ====================-->
     <link rel="manifest" href="manifest.json" />
