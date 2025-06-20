@@ -1957,18 +1957,18 @@ body.dark-theme .welcome {
   }
 }
 
-/* Waves container remains unchanged */
 .waves {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 6rem; /* same height as before */
+  height: 6rem;
   overflow: hidden;
   z-index: 1000;
+  transform: translateY(100%);
+  animation: slideUp 0.8s ease-out forwards;
 }
 
-/* Apply the filter to all wave layers in light mode */
 .waves .wave,
 .waves .wave2,
 .waves .wave3 {
@@ -1977,15 +1977,13 @@ body.dark-theme .welcome {
   left: 0;
   height: 6rem;
   width: 100%;
-  background: url(../images/wave.png);
+  background: url(../images/wave.png) repeat-x;
   background-size: 100rem 11rem;
-  background-repeat: repeat-x;
   animation: waves 8s linear infinite;
   filter: invert(0.5);
   transition: filter 0.5s;
 }
 
-/* Adjust individual wave animations as before */
 .waves .wave2 {
   animation-direction: reverse;
   animation-duration: 6s;
@@ -2006,7 +2004,6 @@ body.dark-theme .welcome {
   }
 }
 
-/* In dark mode, remove the filter so waves stay white */
 body.dark-theme .waves .wave,
 body.dark-theme .waves .wave2,
 body.dark-theme .waves .wave3 {
@@ -2024,8 +2021,9 @@ body.dark-theme .waves .wave3 {
   width: 100%;
   height: 6rem;
   overflow: hidden;
-  transform: scaleY(-1);
   z-index: 500;
+  transform: rotateX(180deg) translateY(-100%);
+  animation: slideDownMirror 0.8s ease-out forwards;
 }
 
 .waves.waves--mirror .wave,
@@ -2043,7 +2041,6 @@ body.dark-theme .waves .wave3 {
   transition: filter 0.5s;
 }
 
-/* mirrored timing & opacity */
 .waves.waves--mirror .wave2 {
   animation-direction: reverse;
   animation-duration: 6s;
@@ -2055,11 +2052,28 @@ body.dark-theme .waves .wave3 {
   opacity: 0.5;
 }
 
-/* in dark-theme, remove the filter so they stay white */
 body.dark-theme .waves.waves--mirror .wave,
 body.dark-theme .waves.waves--mirror .wave2,
 body.dark-theme .waves.waves--mirror .wave3 {
   filter: none;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDownMirror {
+  from {
+    transform: rotateX(180deg) translateY(-100%);
+  }
+  to {
+    transform: rotateX(180deg) translateY(0);
+  }
 }
 
 /* Nodes fade-in-up (same effect as text) */

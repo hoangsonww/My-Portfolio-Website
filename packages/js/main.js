@@ -214,8 +214,8 @@ function scrollActive() {
   sections.forEach(current => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    const sectionId   = current.getAttribute('id');
-    const link        = document.querySelector(`.nav__menu a[href="#${sectionId}"]`);
+    const sectionId = current.getAttribute('id');
+    const link = document.querySelector(`.nav__menu a[href="#${sectionId}"]`);
     if (!link) return;
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
