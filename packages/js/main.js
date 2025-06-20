@@ -177,6 +177,8 @@ modalCloses.forEach(modalClose => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', scrollActive);
+
 const swiperPortfolio = new Swiper('.portfolio__container', {
   loop: true,
   loopAdditionalSlides: 3,
@@ -212,12 +214,14 @@ function scrollActive() {
   sections.forEach(current => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    let sectionId = current.getAttribute('id');
+    const sectionId   = current.getAttribute('id');
+    const link        = document.querySelector(`.nav__menu a[href="#${sectionId}"]`);
+    if (!link) return;
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
+      link.classList.add('active-link');
     } else {
-      document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link');
+      link.classList.remove('active-link');
     }
   });
 }

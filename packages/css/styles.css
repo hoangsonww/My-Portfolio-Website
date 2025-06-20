@@ -115,6 +115,43 @@ body.dark-theme {
   color: var(--first-color);
 }
 
+/* :root {
+  --bg-welcome:      #e0f7fa;
+  --bg-home:         #f1f1f1;
+  --bg-about:        #fffde7;
+  --bg-skills:       #e8f5e9;
+  --bg-qualifications:#ede7f6;
+  --bg-portfolio:    #fff3e0;
+  --bg-project:      #e3f2fd;
+  --bg-useful-links: #fce4ec;
+  --bg-contact:      #f3e5f5;
+  --bg-footer:       #fafafa;
+} */
+
+/* body.dark-theme {
+  --bg-welcome:      #0d1b2a;
+  --bg-home:         #1b263b;
+  --bg-about:        #212f45;
+  --bg-skills:       #23395b;
+  --bg-qualifications:#2e4a7d;
+  --bg-portfolio:    #1b3b5f;
+  --bg-project:      #112240;
+  --bg-useful-links: #2f2f2f;
+  --bg-contact:      #1e1e2e;
+  --bg-footer:       #0f0f0f;
+} */
+
+/* .welcome           { background-color: var(--bg-welcome); }
+.home              { background-color: var(--bg-home); }
+.about             { background-color: var(--bg-about); }
+.skills            { background-color: var(--bg-skills); }
+.qualification__section { background-color: var(--bg-qualifications); }
+.portfolio         { background-color: var(--bg-portfolio); }
+.project__bg       { background-color: var(--bg-project); }
+#useful-links      { background-color: var(--bg-useful-links); }
+.contact           { background-color: var(--bg-contact); }
+.footer__bg        { background-color: var(--bg-footer); } */
+
 /*==================== BASE ====================*/
 
 * {
@@ -1816,6 +1853,7 @@ body {
   text-align: center;
   position: relative;
   transition: background-color 0.5s;
+  margin-bottom: 0;
 }
 
 body.dark-theme .welcome {
@@ -1966,6 +2004,55 @@ body.dark-theme .welcome {
 body.dark-theme .waves .wave,
 body.dark-theme .waves .wave2,
 body.dark-theme .waves .wave3 {
+  filter: none;
+}
+
+.home.section {
+  position: relative;
+}
+
+.waves.waves--mirror {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  overflow: hidden;
+  transform: scaleY(-1);
+  z-index: 500;
+}
+
+.waves.waves--mirror .wave,
+.waves.waves--mirror .wave2,
+.waves.waves--mirror .wave3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem;
+  background: url(../images/wave.png) repeat-x;
+  background-size: 100rem 11rem;
+  animation: waves 8s linear infinite;
+  filter: invert(0.5);
+  transition: filter 0.5s;
+}
+
+/* mirrored timing & opacity */
+.waves.waves--mirror .wave2 {
+  animation-direction: reverse;
+  animation-duration: 6s;
+  opacity: 0.3;
+}
+
+.waves.waves--mirror .wave3 {
+  animation-duration: 4s;
+  opacity: 0.5;
+}
+
+/* in dark-theme, remove the filter so they stay white */
+body.dark-theme .waves.waves--mirror .wave,
+body.dark-theme .waves.waves--mirror .wave2,
+body.dark-theme .waves.waves--mirror .wave3 {
   filter: none;
 }
 
