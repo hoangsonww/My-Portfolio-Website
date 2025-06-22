@@ -320,7 +320,7 @@ function scrollUp1() {
 
 window.addEventListener('scroll', scrollUp1);
 
-// === Theme toggle setup ===
+// Theme toggle setup
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
 const iconTheme = 'uil-sun';
