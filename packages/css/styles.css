@@ -286,6 +286,7 @@ img {
   left: 0;
   z-index: var(--z-fixed);
   background-color: var(--body-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /*==================== NAV ====================*/
@@ -2458,6 +2459,10 @@ body.dark-theme .waves.waves--mirror .wave3 {
   .useful-links-container {
     grid-template-columns: 1fr;
   }
+
+  .header {
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+  }
 }
 
 #contact-btn:hover {
@@ -2467,7 +2472,6 @@ body.dark-theme .waves.waves--mirror .wave3 {
 
 .main {
   padding-left: 0 !important;
-  box-shadow: none !important;
 }
 
 .link {

@@ -331,24 +331,15 @@ const selectedTheme = localStorage.getItem('selected-theme');
 const selectedIcon = localStorage.getItem('selected-icon');
 
 // Helpers to read the current state
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? 'dark' : 'light';
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun';
+const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? 'dark' : 'light');
+const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun');
 
 // On load: apply saved theme & icon, and set meta theme-color
 if (selectedTheme) {
-  document.body.classList[
-    selectedTheme === 'dark' ? 'add' : 'remove'
-  ](darkTheme);
-  themeButton.classList[
-    selectedIcon === 'uil-moon' ? 'add' : 'remove'
-  ](iconTheme);
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+  themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme);
 
-  themeMeta.setAttribute(
-    'content',
-    selectedTheme === 'dark' ? '#162427' : '#ffffff'
-  );
+  themeMeta.setAttribute('content', selectedTheme === 'dark' ? '#162427' : '#ffffff');
 }
 
 // On click: toggle classes, save prefs, update meta
@@ -366,10 +357,7 @@ themeButton.addEventListener('click', () => {
   localStorage.setItem('selected-icon', currentIcon);
 
   // Update the address-bar tint immediately
-  themeMeta.setAttribute(
-    'content',
-    currentTheme === 'dark' ? '#162427' : '#ffffff'
-  );
+  themeMeta.setAttribute('content', currentTheme === 'dark' ? '#162427' : '#ffffff');
 });
 
 async function elizaResponse(message) {
