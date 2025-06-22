@@ -1655,7 +1655,7 @@ img {
   display: flex;
   align-items: center;
   margin: 10px auto;
-  max-width: 95%;
+  max-width: 95% !important;
 }
 #chatbotInputContainer #chatbotInput {
   flex: 1;
@@ -2352,11 +2352,14 @@ body.dark-theme .waves.waves--mirror .wave3 {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  max-width: 100% !important;
+  overflow: hidden; /* hide any overflow */
 }
 
 /* Chatbot input styling */
 #chatbotModal #chatbotInput {
-  flex: 1;
+  flex: 1 1 auto; /* allow it to grow & shrink */
+  min-width: 0; /* <— this is the key to letting it shrink */
   padding: 10px;
   border: none;
   border-radius: 8px;
@@ -2364,12 +2367,13 @@ body.dark-theme .waves.waves--mirror .wave3 {
   font-size: var(--normal-font-size);
   background-color: #ffffff;
   color: black;
-  height: 40px; /* Added fixed height */
-  box-sizing: border-box; /* Ensure padding is included in height */
+  height: 40px;
+  box-sizing: border-box;
 }
 
 /* Send button styling */
 #chatbotModal #chatbotButton {
+  flex: 0 0 auto; /* don’t let the button shrink */
   margin-left: 0.5rem;
   padding: 10px;
   border: none;
@@ -2378,8 +2382,8 @@ body.dark-theme .waves.waves--mirror .wave3 {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  height: 40px; /* Added fixed height to match the input */
-  box-sizing: border-box; /* Ensure padding is included in height */
+  height: 40px;
+  box-sizing: border-box;
   margin-bottom: 0 !important;
   font-size: 1rem;
 }
