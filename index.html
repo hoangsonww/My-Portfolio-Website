@@ -564,6 +564,11 @@
           <i class="uil uil-times nav__close" id="nav-close"></i>
         </div>
         <div class="nav__btns" style="margin-left: 9px">
+          <!-- Back to Top btn -->
+          <div class="nav__toggle" id="back-to-top-btn" title="Back to Top">
+            <i class="uil uil-arrow-up"></i>
+          </div>
+
           <!-- Chatbot btn -->
           <div class="nav__toggle" id="chatbot-toggle">
             <i class="uil uil-robot"></i>
@@ -3613,11 +3618,19 @@
     </footer>
 
     <!--==================== CHAT BOT ====================-->
-    <a class="scrollup" id="scroll-up" style="margin-bottom: -65px">
+    <a class="scrollup" id="scroll-up" style="margin-bottom: -65px; min-width: 20vw">
       <div id="chatbotContainer">
+        <!-- Clear history button -->
+        <div id="clearButton" onclick="clearHistory()" data-tooltip="Clear Chat">
+          <i class="uil uil-trash-alt"></i>
+        </div>
+        <!-- Minimize/maximize button -->
         <div id="minimizeButton" data-tooltip="Minimize/Maximize Chat">+</div>
+        <!-- Header -->
         <div id="chatbotHeader">My Personal Assistant</div>
+        <!-- Message body -->
         <div id="chatbotBody"></div>
+        <!-- Input + send -->
         <div id="chatbotInputContainer">
           <input id="chatbotInput" type="text" placeholder="Ask me something..." />
           <button id="chatbotButton" data-tooltip="Send Message">
@@ -3627,9 +3640,13 @@
       </div>
     </a>
 
-    <!-- New Mobile Chatbot Modal -->
+    <!-- Mobile Chatbot Modal -->
     <div id="chatbotModal" style="display: none">
       <div id="chatbotContainer" style="position: relative">
+        <!-- Clear history button -->
+        <div id="clearButton" onclick="clearHistory()" data-tooltip="Clear Chat">
+          <i class="uil uil-trash-alt"></i>
+        </div>
         <div id="closeButton" data-tooltip="Close Chat">
           <i class="uil uil-times"></i>
         </div>

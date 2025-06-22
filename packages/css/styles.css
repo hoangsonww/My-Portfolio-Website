@@ -325,6 +325,21 @@ img {
   margin-right: 1rem;
 }
 
+#back-to-top-btn {
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.chatbotMessage a {
+  color: #57c9e0;
+  text-decoration: underline;
+}
+
+.chatbotMessage a:hover {
+  color: #3a9dbf;
+}
+
 /* For mobile view */
 @media screen and (max-width: 767px) {
   .nav__menu {
@@ -1595,6 +1610,7 @@ img {
   }
 }
 
+/*===== Chat header =====*/
 #chatbotHeader {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -1607,7 +1623,17 @@ img {
   margin-bottom: 10px;
 }
 
+/*===== Divider between header & body =====*/
+.chatbotDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 0 10px 10px;
+}
+
+/*===== Chat body =====*/
 #chatbotBody {
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
   max-height: 300px;
   padding: 10px;
@@ -1615,46 +1641,22 @@ img {
   color: white;
   word-wrap: break-word;
   line-height: 1.4;
-}
-
-#chatbotInput {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  background-color: #ffffff;
-  color: black;
-  margin-bottom: 10px;
-}
-
-#chatbotContainer {
   position: relative;
 }
-
-#minimizeButton {
-  position: absolute;
-  top: -20px;
-  right: 0px;
-  cursor: pointer;
-  font-size: 20px;
-  color: white;
-  border-radius: 4px;
-  padding: 0 8px;
-  line-height: 24px;
-  z-index: 10;
+/* Clear floated bubbles */
+#chatbotBody::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
-/* New container to hold the input and send button on one line */
+/*===== Input & send button =====*/
 #chatbotInputContainer {
   display: flex;
   align-items: center;
   margin: 10px auto;
   max-width: 95%;
 }
-
-/* Ensure the input fills available space and has a fixed height */
 #chatbotInputContainer #chatbotInput {
   flex: 1;
   height: 40px;
@@ -1667,8 +1669,6 @@ img {
   color: black;
   box-sizing: border-box;
 }
-
-/* Style the send button so that it matches the input height */
 #chatbotInputContainer #chatbotButton {
   margin-left: 0.5rem;
   padding: 10px;
@@ -1683,40 +1683,169 @@ img {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  margin-bottom: 10px;
   font-size: 1rem;
 }
-
-/* Style the send button hover effect */
 #chatbotInputContainer #chatbotButton:hover {
   background-color: white;
   color: var(--first-color-alt);
 }
 
-#chatbotInputContainer #chatbotButton1 {
-  margin-left: 0.5rem;
-  padding: 10px;
-  border: none;
-  background-color: var(--first-color-alt);
-  color: white;
-  border-radius: 8px;
+/*===== Container & buttons =====*/
+#chatbotContainer {
+  position: relative;
+}
+#minimizeButton {
+  position: absolute;
+  top: -20px;
+  right: 0px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-  font-size: 1rem;
+  font-size: 20px;
+  color: white;
+  border-radius: 4px;
+  padding: 0 8px;
+  line-height: 24px;
+  z-index: 10;
+}
+#minimizeButton:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: -100%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  margin-bottom: 5px;
+  z-index: 20;
+}
+#minimizeButton:hover {
+  background-color: #30abc2;
 }
 
-/* Style the send button hover effect */
-#chatbotInputContainer #chatbotButton1:hover {
+/*===== Clear history button =====*/
+#clearButton {
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  border-radius: 4px;
+  padding: 0 8px;
+  line-height: 24px;
+  z-index: 10;
+}
+#clearButton:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  right: -1%;
+  transform: translateX(50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  margin-bottom: 5px;
+  z-index: 20;
+}
+#clearButton:hover {
+  background-color: #c23030;
+}
+
+/*===== Chat bubbles =====*/
+.chatbotMessage {
+  display: block;
+  clear: both;
   background-color: white;
-  color: var(--first-color-alt);
+  color: #345 !important;
+  padding: 8px 12px;
+  border-radius: 16px;
+  margin: 6px 10px; /* keeps vertical spacing */
+  max-width: 75%;
+  word-wrap: break-word;
+  transition: transform 0.2s ease;
 }
 
+/* Right‐side (user) bubble – flush to right edge */
+.chatbotMessage[style*='text-align: right'],
+.chatbotMessage[style*='text-align:right'] {
+  float: right;
+  margin-left: auto;
+  margin-right: 0; /* override the 10px */
+}
+
+@media (max-width: 1000px) {
+  /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+  /* Position the clear-history button in the mobile modal      */
+  /*––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+  #chatbotModal #clearButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    border-radius: 4px;
+    padding: 0 8px;
+    line-height: 24px;
+    z-index: 10;
+    background: transparent;
+  }
+
+  #chatbotModal #clearButton:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    right: -1%;
+    transform: translateX(50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    margin-bottom: 5px;
+    z-index: 20;
+  }
+
+  #chatbotModal #clearButton:hover {
+    background-color: #c23030;
+  }
+
+  #closeButton {
+    top: -5px !important; /* Adjusted for mobile */
+  }
+}
+
+/* Left‐side (bot) bubble – flush to left edge */
+.chatbotMessage[style*='text-align: left'],
+.chatbotMessage[style*='text-align:left'] {
+  float: left;
+  margin-left: 0; /* override the 10px */
+  margin-right: auto;
+}
+
+.chatbotMessage {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.chatbotMessage:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/*===== Back to top =====*/
 #back-to-top {
   position: fixed;
   left: 1rem;
@@ -1737,36 +1866,11 @@ img {
   opacity: 1;
   padding-left: 12px;
   padding-bottom: 42px;
-}
-
-#back-to-top:hover {
-  color: #30abc2;
-}
-
-#back-to-top {
   width: 40px;
   height: 40px;
 }
-
-#minimizeButton:hover::before {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: -100%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: nowrap;
-  pointer-events: none;
-  margin-bottom: 5px;
-  z-index: 20;
-}
-
-#minimizeButton:hover {
-  background-color: #30abc2;
+#back-to-top:hover {
+  color: #30abc2;
 }
 
 .skills-chart-container {
@@ -2236,10 +2340,19 @@ body.dark-theme .waves.waves--mirror .wave3 {
   background-color: transparent;
   z-index: 10;
   transition: color 0.3s ease;
+  border-radius: 8px;
 }
 
 #closeButton:hover {
-  color: var(--first-color-alt);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1000px) {
+  #chatbotInputContainer {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
 }
 
 /* Container for input and send button */
@@ -2275,7 +2388,7 @@ body.dark-theme .waves.waves--mirror .wave3 {
   transition: background-color 0.3s ease;
   height: 40px; /* Added fixed height to match the input */
   box-sizing: border-box; /* Ensure padding is included in height */
-  margin-bottom: 10px;
+  margin-bottom: 0 !important;
   font-size: 1rem;
 }
 
@@ -2295,7 +2408,6 @@ body.dark-theme .waves.waves--mirror .wave3 {
   transition: background-color 0.3s ease;
   height: 40px; /* Added fixed height to match the input */
   box-sizing: border-box; /* Ensure padding is included in height */
-  margin-bottom: 10px;
   font-size: 1rem;
 }
 
