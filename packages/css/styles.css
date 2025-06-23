@@ -712,6 +712,10 @@ img {
   background-color: var(--first-color);
 }
 
+.skills_baseline {
+  width: 100%;
+}
+
 .skills__html {
   width: 90%;
 }
